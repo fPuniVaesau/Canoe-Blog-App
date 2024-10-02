@@ -12,7 +12,7 @@ app.use(cors({ origin: ['http://localhost:8000'] }));
 app.use(AllRoutesRouter);
 
 app.get('/', (req, res) => {
-  res.send({ welcome: 'Filo Vaesau | Backend Development Server' });
+  res.send({ welcome: 'Filo Vaesau | Backend Server - CANOE BLOG APP' });
 });
 
 app.listen(PORT, '127.0.0.1', () => {
