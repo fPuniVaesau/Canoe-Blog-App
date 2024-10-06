@@ -1,0 +1,18 @@
+.headerContainer{
+    border: 1px solid tomato;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navContainer ul{
+    display: flex;
+    gap: 1rem;
+}
+
+.navContainer a{
+    color: inherit;
+}
+
+.navContainer a:hover {
+    color: rgb(177, 212, 0);
+}

@@ -1,14 +1,20 @@
+import style from "../logoLogin/LogoLogin.module.css";
+
 export default function LogoLogin() {
   return (
     <>
-      <header>
+      <header className={style.headerContainer}>
         <div>
           <p>my blog.</p>
         </div>
-        <nav>
+        <nav className={style.navContainer}>
           <ul>
-            <li>login.</li>
-            <li>register.</li>
+            <li>
+              <a href='#'>login</a>
+            </li>
+            <li>
+              <a href='#'>register</a>
+            </li>
           </ul>
         </nav>
       </header>
