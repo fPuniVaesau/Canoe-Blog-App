@@ -13,6 +13,7 @@ body{
 
 a {
     text-decoration: none;
+    color: inherit;
 }
 
 ol, li {
@@ -34,7 +35,7 @@ p{
 }
 
 @media (prefers-reduced-motion: no-preference){
-    :has {
+    :has(:target) {
         scroll-behavior: smooth;
     }
 }

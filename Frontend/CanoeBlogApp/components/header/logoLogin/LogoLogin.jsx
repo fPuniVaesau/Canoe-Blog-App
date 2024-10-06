@@ -5,7 +5,9 @@ export default function LogoLogin() {
     <>
       <header className={style.headerContainer}>
         <div>
-          <h1 className={style.title}>my blog.</h1>
+          <h1 className={style.title}>
+            <a href='#'>myBlog.</a>
+          </h1>
         </div>
         <nav className={style.navContainer}>
           <ul>

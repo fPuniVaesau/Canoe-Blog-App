@@ -9,10 +9,6 @@
     gap: 1rem;
 }
 
-.navContainer a{
-    color: inherit;
-}
-
 .navContainer a:hover {
     color: rgb(177, 212, 0);
 }
