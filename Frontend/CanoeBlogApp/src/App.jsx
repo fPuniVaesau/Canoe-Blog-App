@@ -3,7 +3,7 @@ export default function App() {
  
   return (
     <>
-      <div>
+      <header>
         <div>
           <p>my blog.</p>
         </div>
@@ -13,7 +13,7 @@ export default function App() {
             <li>register.</li>
           </ul>
         </nav>
-      </div>
+      </header>
     </>
   )
 };
