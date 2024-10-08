@@ -12,3 +12,8 @@
 .navContainer a:hover {
     color: rgb(177, 212, 0);
 }
+
+.title {
+    font-weight: 300;
+    font-size: 1rem;
+}
