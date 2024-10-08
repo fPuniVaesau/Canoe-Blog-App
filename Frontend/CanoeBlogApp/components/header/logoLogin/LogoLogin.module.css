@@ -4,20 +4,39 @@
   display: flex;
   justify-content: space-between;
   padding: 0px 10px;
+  
 }
 
 .navContainer ul {
   display: flex;
   gap: 1rem;
+  margin-left: 5px;
 }
+
+.navContainer a {
+    color: inherit;
+    transition: .3s ease-in-out;
+  }
 
 .navContainer a:hover {
   color: rgb(177, 212, 0);
+  font-weight: 500;
 }
 
-
+.titleContainer{
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
 
 .title {
   font-weight: 500;
   font-size: 1rem;
+  transition: .3s ease-in-out;
 }
+
+.title:hover {
+    letter-spacing: 3px;
+    color: orangered;
+  }
