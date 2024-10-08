@@ -4,3 +4,10 @@
   display: flex;
   gap: 1rem;
 }
+
+.authorTimeStampContainer a{
+  display: block;
+  margin-bottom: 0px;
+  font-weight: 500;
+  cursor: pointer;
+}
