@@ -10,6 +10,8 @@ export default function App() {
 
       <main>
         <BlogPosts />
+        <BlogPosts />
+        <BlogPosts />
       </main>
     </>
   );
