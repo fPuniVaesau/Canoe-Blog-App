@@ -3,7 +3,7 @@ import style from "../logoLogin/LogoLogin.module.css";
 export default function LogoLogin() {
   return (
     <>
-      <header className={style.headerContainer}>
+      <div className={style.headerContainer}>
         <div>
           <h1 className={style.title}>
             <a href='#'>myBlog.</a>
@@ -19,7 +19,7 @@ export default function LogoLogin() {
             </li>
           </ul>
         </nav>
-      </header>
+      </div>
     </>
   );
 }

@@ -1,3 +1,4 @@
+import style from "../BlogEntries/BlogEntries.module.css";
 
 export default function BlogEntries(){
 
