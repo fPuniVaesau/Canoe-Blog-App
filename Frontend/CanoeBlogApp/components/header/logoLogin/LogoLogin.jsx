@@ -4,7 +4,7 @@ export default function LogoLogin() {
   return (
     <>
       <div className={style.headerContainer}>
-        <div>
+        <div className={style.titleContainer}>
           <h1 className={style.title}>
             <a href='#'>Canoe.</a>
           </h1>
