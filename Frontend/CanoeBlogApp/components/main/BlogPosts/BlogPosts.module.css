@@ -1,4 +1,7 @@
 .blogPostContainer {
   border: 1px solid firebrick;
   margin-top: 30px;
+  display: flex;
+  gap: 1rem;
 }
+

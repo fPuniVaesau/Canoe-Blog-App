@@ -3,17 +3,22 @@ import style from './BlogPosts.module.css';
 export default function BlogPosts() {
   return (
     <div className={style.blogPostContainer}>
-      <img
-        src='https://images.unsplash.com/photo-1727972937004-daaf17edbcb2?q=80&w=3732&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-        alt='blog banner image'
-      />
-      <h2>demo blog title</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates qui
-        molestias sapiente ducimus placeat magni eaque cupiditate dicta
-        inventore omnis odio laboriosam aliquid, velit distinctio nulla et culpa
-        illo quis ipsam. Atque, dolorum?
-      </p>
+      <div className={style.postImageContainer}>
+        <img
+          src='https://images.unsplash.com/photo-1727972937004-daaf17edbcb2?q=80&w=3732&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+          alt='blog banner image'
+        />
+      </div>
+
+      <div className={style.titleDiscriptionContainer}>
+        <h2>demo blog title</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates
+          qui molestias sapiente ducimus placeat magni eaque cupiditate dicta
+          inventore omnis odio laboriosam aliquid, velit distinctio nulla et
+          culpa illo quis ipsam. Atque, dolorum?
+        </p>
+      </div>
     </div>
   );
 }
