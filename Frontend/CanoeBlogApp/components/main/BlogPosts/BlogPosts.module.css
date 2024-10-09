@@ -5,6 +5,7 @@
   gap: 1rem;
 }
 
+
 .authorTimeStampContainer a{
   display: block;
   margin-bottom: 0px;
@@ -28,7 +29,6 @@
   color: #777
 }
 
-
 .blogTitle{
   display: block;
   font-size: 2rem;
@@ -38,4 +38,8 @@
   margin-left: 0;
   margin-right: 0;
   font-weight: 700;
+}
+
+.blogSummary{
+  line-height: 1.3rem;
 }

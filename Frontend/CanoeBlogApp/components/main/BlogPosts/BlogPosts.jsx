@@ -16,7 +16,7 @@ export default function BlogPosts() {
           <a>Filo Vaesau</a>
           <time datetime="">2025-04-11 12:00am</time>
         </div>
-        <p>
+        <p className={style.blogSummary}>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates
           qui molestias sapiente ducimus placeat magni eaque cupiditate dicta
           inventore omnis odio laboriosam aliquid, velit distinctio nulla et
