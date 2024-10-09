@@ -11,6 +11,7 @@
   font-weight: 500;
   cursor: pointer;
   transition: .3s ease-in-out;
+  color: #333;
 }
 
 .authorTimeStampContainer a:hover{
@@ -26,6 +27,7 @@
   gap: .5rem;
   color: #777
 }
+
 
 .blogTitle{
   display: block;
