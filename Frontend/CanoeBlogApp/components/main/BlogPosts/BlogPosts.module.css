@@ -15,7 +15,8 @@
 
 .authorTimeStampContainer a:hover{
   display: block;
-  color: rgb(133, 196, 231);
+  color: rgb(234, 173, 107);
+  text-decoration: underline;
 }
 
 .authorTimeStampContainer{

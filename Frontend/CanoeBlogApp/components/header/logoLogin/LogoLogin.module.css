@@ -19,7 +19,7 @@
   }
 
 .navContainer a:hover {
-  color: rgb(177, 212, 0);
+  color: rgb(234, 173, 107);;
   font-weight: 500;
 }
 
@@ -38,5 +38,5 @@
 
 .title:hover {
     letter-spacing: 3px;
-    color: orangered;
+    color: rgb(255, 118, 45);
   }
