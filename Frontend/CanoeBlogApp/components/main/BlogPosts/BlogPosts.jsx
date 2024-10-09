@@ -11,7 +11,7 @@ export default function BlogPosts() {
       </div>
 
       <div className={style.titleDiscriptionContainer}>
-        <h2>demo blog title</h2>
+        <h2 className={style.blogTitle}>demo blog title.</h2>
         <div className={style.authorTimeStampContainer}>
           <a>Filo Vaesau</a>
           <time datetime="">2025-04-11 12:00am</time>
