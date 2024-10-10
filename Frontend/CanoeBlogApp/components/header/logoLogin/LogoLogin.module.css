@@ -7,19 +7,25 @@
   
 }
 
+.navContainer{
+  border: 1px solid limegreen;
+  padding: 0px 10px;
+}
+
 .navContainer ul {
   display: flex;
-  gap: 1rem;
+  gap: 1.25rem;
   margin-left: 5px;
 }
 
 .navContainer a {
     color: inherit;
     transition: .3s ease-in-out;
+    border: 1px solid navy;
   }
 
 .navContainer a:hover {
-  color: rgb(234, 173, 107);;
+  color: rgb(234, 173, 107);
   font-weight: 500;
 }
 
