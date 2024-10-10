@@ -1,6 +1,6 @@
 .headerContainer {
-  margin-top: 10px;
-  border: 1px solid tomato;
+  margin-top: 30px;
+  /* border: 1px solid tomato; */
   display: flex;
   justify-content: space-between;
   padding: 0px 10px;
