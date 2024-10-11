@@ -1,28 +1,25 @@
-
-.enterBtnContainer a{
+.enterBtnContainer a {
   display: block;
   text-align: center;
   border-radius: 7px;
   padding: 3px;
   margin: auto;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
-.enterBtnContainer a:hover{
+.enterBtnContainer a:hover {
   background-color: #555;
   color: whitesmoke;
   letter-spacing: 3px;
 }
 
-
-
-.welcomeContainer{
+.welcomeContainer {
   min-height: 100svh;
   display: grid;
   place-content: center;
 }
 
-.title{
+.title {
   /* border: 1px solid orangered; */
   font-size: 7rem;
   margin-bottom: 10px;
