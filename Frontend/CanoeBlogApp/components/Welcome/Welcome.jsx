@@ -1,4 +1,4 @@
-
+import style from "../Welcome/Welcome.module.css";
 export default function Welcome(){
 
   return(
