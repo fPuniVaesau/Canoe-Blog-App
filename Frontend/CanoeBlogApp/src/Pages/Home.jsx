@@ -1,8 +1,10 @@
-
+import BlogPosts from "../../components/main/BlogPosts/BlogPosts"
 export default function Home(){
   return(
     <>
-      <h1>Home Page</h1>
+      <main>
+        <BlogPosts />
+      </main>
     </>
   )
 }

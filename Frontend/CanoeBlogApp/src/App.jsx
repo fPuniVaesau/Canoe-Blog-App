@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import style from '../src/App.module.css';
 import LogoLogin from '../components/header/logoLogin/LogoLogin';
-import BlogPosts from '../components/main/BlogPosts/BlogPosts';
+import Home from "./Pages/Home.jsx";
 export default function App() {
   return (
     <>
@@ -10,7 +10,7 @@ export default function App() {
       </header>
 
       <Routes>
-        <Route />
+        <Route path='/' element={<Home />}/>
       </Routes>
     
     </>
