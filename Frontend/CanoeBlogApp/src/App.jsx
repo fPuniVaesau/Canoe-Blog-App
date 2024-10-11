@@ -3,7 +3,8 @@ import style from '../src/App.module.css';
 import LogoLogin from '../components/header/logoLogin/LogoLogin';
 import Welcome from '../components/Welcome/Welcome.jsx';
 import Home from "./Pages/Home.jsx";
-import Login from "./Pages/Login.jsx"
+import Login from "./Pages/Login.jsx";
+
 
 export default function App() {
   return (
