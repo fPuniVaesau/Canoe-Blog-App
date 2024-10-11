@@ -12,7 +12,8 @@ export default function App() {
       </header>
 
       <Routes>
-        <Route path='/' element={<Home />}/>
+        <Route path='/' element={<h1>Welcome Page.</h1>}/>
+        <Route path='/homepage' element={<Home />} />
         <Route path="/login" element={<Login />} />
       </Routes>
     
