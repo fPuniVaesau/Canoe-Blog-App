@@ -40,4 +40,9 @@
 .title:hover {
     letter-spacing: 3px;
     color: rgb(255, 118, 45);
-  }
+}
+
+.CanoeLogo{
+  max-height: 1rem;
+  margin-right: 3px;
+}

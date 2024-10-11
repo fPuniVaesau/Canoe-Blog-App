@@ -6,7 +6,7 @@ export default function LogoLogin() {
     <>
       <div className={style.headerContainer}>
         <div className={style.titleContainer}>
-          <img src={Logo} alt="Canoe Logo" />
+          <img className={style.CanoeLogo} src={Logo} alt="Canoe Logo" />
           <h1 className={style.title}>
             <a href='#'>Canoe.</a>
           </h1>
