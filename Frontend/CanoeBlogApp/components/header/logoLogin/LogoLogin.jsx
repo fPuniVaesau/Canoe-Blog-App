@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import style from "../logoLogin/LogoLogin.module.css";
 import Logo from "../../../Assets/CanoeLogoWebV2.png"
 
@@ -8,16 +9,16 @@ export default function LogoLogin() {
         <div className={style.titleContainer}>
           <img className={style.CanoeLogo} src={Logo} alt="Canoe Logo" />
           <h1 className={style.title}>
-            <a href='#'>Canoe.</a>
+            <Link to="/homepage">Canoe.</Link>
           </h1>
         </div>
         <nav className={style.navContainer}>
           <ul>
             <li>
-              <a href='login'>login</a>
+              <Link to="/login"> Login</Link >
             </li>
             <li>
-              <a href='register'>register</a>
+              <Link to='/register'>register</Link>
             </li>
           </ul>
         </nav>
