@@ -14,10 +14,10 @@ export default function LogoLogin() {
         <nav className={style.navContainer}>
           <ul>
             <li>
-              <a href='#'>login</a>
+              <a href='login'>login</a>
             </li>
             <li>
-              <a href='#'>register</a>
+              <a href='register'>register</a>
             </li>
           </ul>
         </nav>
