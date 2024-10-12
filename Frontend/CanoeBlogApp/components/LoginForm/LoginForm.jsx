@@ -1,4 +1,5 @@
 import { useState } from "react";
+import style from "../LoginForm/LoginForm.module.css";
 
 export default function LoginForm(){
     
@@ -22,16 +23,19 @@ export default function LoginForm(){
   }
 
   return (
-    <div>
+    <div className={style.LoginFormConatainer}>
       <form onSubmit={handleSubmit}>
-        <input
-          type='text'
-          value={formData.username}
-          name='username'
-          placeholder='username'
-          onChange={handleChange}
-        />
-        <input type='Password' name='password' placeholder='password' />
+        <div className={style.fieldsWrapper}>
+          <input
+            type='text'
+            value={formData.username}
+            name='username'
+            placeholder='username'
+            onChange={handleChange}
+          />
+          <input type='Password' name='password' placeholder='password' />
+        </div>
+
         <button type='submit'>login.</button>
       </form>
     </div>
