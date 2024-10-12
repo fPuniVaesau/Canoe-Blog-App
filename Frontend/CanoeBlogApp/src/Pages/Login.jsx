@@ -1,19 +1,10 @@
-import { useState } from "react"
-export default function Login(){
+import { useState } from "react";
+import LoginForm from "../../components/LoginForm/LoginForm";
 
-  const {username, setUsername} = useState();
-  const { password, setPassword } = useState();
-
-  
-
-
+export default function Login() {
   return(
     <>
-      <form>
-        <input type="text" name="username" placeholder="username"/>
-        <input type="Password" name="password" placeholder="password" />
-        <button>login.</button>
-      </form>
+      <LoginForm />
     </>
   )
 }
