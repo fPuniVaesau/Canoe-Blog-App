@@ -20,6 +20,9 @@ export default function LogoLogin() {
             <li>
               <Link to='/register'>register</Link>
             </li>
+            <li>
+              <Link>All Blogs</Link>
+            </li>
           </ul>
         </nav>
       </div>
