@@ -5,12 +5,12 @@
     min-height: 100svh;
 }
 
-/* .fieldsWrapper > *{
-    display: block;
-} */
+
 
 .fieldsWrapper{
     display: grid;
     gap: .5rem;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+    border: 1px solid purple;
+    display: grid;
 }
