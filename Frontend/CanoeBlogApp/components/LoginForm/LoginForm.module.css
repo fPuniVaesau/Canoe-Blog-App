@@ -1,7 +1,8 @@
 .LoginFormConatainer{
     border: 1px solid red;
     display: grid;
-    
+    place-content: center;
+    min-height: 100svh;
 }
 
 /* .fieldsWrapper > *{
@@ -12,5 +13,4 @@
     display: grid;
     gap: .5rem;
     margin-bottom: 30px;
-    max-width: 700px;
 }
