@@ -27,19 +27,18 @@ export default function LoginForm() {
       <div className={style.imageWrapper}>
         <img className={style.image} src={canoe3d} alt='canoe 3d logo' />
       </div>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <div className={style.fieldsWrapper}>
-            <input
-              type='text'
-              value={formData.username}
-              name='username'
-              placeholder='username'
-              onChange={handleChange}
-            />
-            <input type='Password' name='password' placeholder='password' />
-          </div>
-          <button type='submit'>login.</button>
+
+      <div className={style.formContainer}>
+        <form onSubmit={handleSubmit} action=''>
+          <input
+            type='text'
+            onChange={handleChange}
+            value={formData.username}
+            name='username'
+            placeholder='username'
+          />
+          <input type='password' name='password' placeholder='password' />
+          <button>login</button>
         </form>
       </div>
     </div>

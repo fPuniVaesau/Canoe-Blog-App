@@ -1,16 +1,25 @@
 .LoginFormConatainer{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: grid;
     place-content: center;
     min-height: 100svh;
+    gap: 1rem;
 }
 
+.image{
+    border: 1px solid rgb(8, 0, 255);
+}
 
+.formContainer{
+    border: 1px soild rgb(126, 252, 0);
+    place-content: center;
+
+}
 
 .fieldsWrapper{
     display: grid;
     gap: .5rem;
     margin-bottom: 10px;
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
     display: grid;
 }
