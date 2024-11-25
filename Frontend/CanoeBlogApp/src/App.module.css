@@ -1,0 +1,33 @@
+:root{
+  /* Fonts */
+  --font-heading: "Oxygen", sans-serif;
+  --font-body: "Source Sans 3", sans-serif;
+
+  /* Light Mode */
+  --light-primary-color: #42372f;
+  --light-secondary-color: #e1e5ea;
+  --light-accent-color: #95806a;
+  --light-text-color: #080a0c;
+  --light-background-color: #f6f7f9;
+
+  /* Dark mode */
+  --dark-primary-color: #d0c5bd;
+  --dark-secondary-color: #15191e;
+  --dark-accent-color: #95806a;
+  --dark-text-color: #f3f5f7;
+  --dark-background-color: #060709;
+
+ 
+}
+
+body{
+  font-family: var(--font-body);
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: var(--font-heading);
+}
+
+.wrapper{
+  color: var(--light-primary-color);
+}
