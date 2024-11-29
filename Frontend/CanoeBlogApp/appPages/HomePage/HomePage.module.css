@@ -1,3 +1,5 @@
+
+/* ///////////////////////////////////////////////////////////// logo and nav bar styling */
 .mainContainer{
     display: flex;
     justify-content: space-between;
@@ -31,7 +33,6 @@
     letter-spacing: 2px;
     font-weight: bold;
 }
-
 
 .buttonWrapper{
     display: flex;
@@ -71,7 +72,7 @@
 }
 
 
-/* search bar styling */
+/* ///////////////////////////////////////////////////////////// search bar styling */
 .searchBarWrapper{
     /* border: 1px solid tomato; */
     margin-top: 2rem;
