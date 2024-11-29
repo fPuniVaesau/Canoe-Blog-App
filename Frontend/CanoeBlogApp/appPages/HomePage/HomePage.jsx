@@ -3,6 +3,7 @@ import styles from "./HomePage.module.css";
 export default function HomePage(){
   return (
     <>
+      {/* navbar */}
       <div className={styles.mainContainer}>
         {/* Logo and Navigation */}
         <div className={styles.logoNavbarWrapper}>
@@ -35,10 +36,17 @@ export default function HomePage(){
 
         {/* Login and Register */}
         <div className={styles.buttonWrapper}>
-          <button>Log In</button>
+          <button className={styles.loginBtn}>Log In</button>
           <button className={styles.registerBtn}>Register</button>
         </div>
       </div>
+
+
+      {/* search bar */}
+      <div className={styles.searchBarWrapper}>
+        <input type="search" placeholder="Search" className={styles.searchBar} />
+      </div>
+
     </>
   );
 }
