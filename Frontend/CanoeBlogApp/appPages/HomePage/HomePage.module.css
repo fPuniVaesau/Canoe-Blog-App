@@ -8,6 +8,15 @@
     gap: 5rem;
 }
 
+.mainLogo{
+    /* border: 1px solid green; */
+    padding: .25rem;
+    height: 1.75rem;
+    margin: auto;
+    justify-self: center;
+    align-items: center;
+}
+
 .mainNavBarListWrapper ul{
     display: flex;
     gap: 1.5rem;
