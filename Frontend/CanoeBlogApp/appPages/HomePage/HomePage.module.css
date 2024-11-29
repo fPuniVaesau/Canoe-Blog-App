@@ -1,0 +1,15 @@
+.buttonWrapper{
+    display: flex;
+    gap: .5rem;
+}
+
+.buttonWrapper > *{
+    border: 1px solid #777;
+    padding: 0 .5rem;
+    border-radius: .5rem
+}
+
+.registerBtn{
+    background-color: #555;
+    color: #fff
+}
