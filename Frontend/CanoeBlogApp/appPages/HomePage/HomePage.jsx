@@ -3,15 +3,15 @@ import styles from "./HomePage.module.css";
 export default function HomePage(){
   return (
     <>
-      <div>
+      <div className={styles.mainContainer}>
         {/* Logo and Navigation */}
-        <div>
+        <div className={styles.logoNavbarWrapper}>
           <div>
             <a href=''>logo here</a>
           </div>
 
           <div>
-            <nav>
+            <nav className={styles.mainNavBarListWrapper}>
               <ul>
                 <li>
                   <a href=''>Features</a>
