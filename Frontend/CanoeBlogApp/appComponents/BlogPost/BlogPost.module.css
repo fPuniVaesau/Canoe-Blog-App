@@ -4,8 +4,10 @@
 }
 
 .blogPostCardContainer{
-  /* border: 1px solid blueviolet; */
+  border: 1px solid blueviolet;
+  margin-bottom: 1rem;
 }
+
 
 .blogImgAndAuthorWrapper{
   /* border: 1px solid coral; */
