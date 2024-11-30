@@ -43,7 +43,7 @@
 .buttonWrapper > *{
     border: 1px solid #777;
     padding: 0 .5rem;
-    border-radius: .5rem
+    border-radius: .5rem;
 }
 
 .registerBtn{
@@ -55,6 +55,8 @@
 
 .registerBtn:hover{
     background-color: rgb(145, 165, 114);
+    box-shadow: rgba(140, 170, 45, 0.4) 0px 5px, rgba(140, 170, 45, 0.3) 0px 10px, rgba(140, 170, 45, 0.2) 0px 15px, rgba(140, 170, 45, 0.1) 0px 20px, rgba(140, 170, 45, 0.05) 0px 25px;
+   
 }
 
 .registerBtn:active{
@@ -65,11 +67,14 @@
 
 .loginBtn{
     transition: .3s ease-in-out;
+    
 }
 
 .loginBtn:hover{
     color: rgb(145, 165, 114);
     border: 1px dotted rgb(145, 165, 114);
+    box-shadow: rgba(140, 170, 45, 0.4) 0px 5px, rgba(140, 170, 45, 0.3) 0px 10px, rgba(140, 170, 45, 0.2) 0px 15px, rgba(140, 170, 45, 0.1) 0px 20px, rgba(140, 170, 45, 0.05) 0px 25px;
+    
 }
 
 
