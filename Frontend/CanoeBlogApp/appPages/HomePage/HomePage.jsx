@@ -22,6 +22,7 @@ export default function HomePage() {
           <BlogPost />
           <BlogPost />
           <BlogPost />
+          <BlogPost />
         </div>
        
       </div>
