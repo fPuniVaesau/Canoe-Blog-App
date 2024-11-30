@@ -1,10 +1,6 @@
 /* blog posting stying */
 .blogPostWrapper{
   /* border: 1px solid lightseagreen; */
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  margin: auto 3rem;
-  gap: .25rem;
 }
 
 .blogPostCardContainer{
@@ -32,5 +28,5 @@
 }
 
 .blogPostDiscriptionWrapper{
-  border: solid tomato;
+  /* border: solid tomato; */
 }

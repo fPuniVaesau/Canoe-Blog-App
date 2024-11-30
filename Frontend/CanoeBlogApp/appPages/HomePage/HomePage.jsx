@@ -17,10 +17,13 @@ export default function HomePage() {
         {/* blog home page message */}
         <OpeningMessage />
 
-        {/* blog post preview */}
-        <BlogPost />
-        <BlogPost />
-        <BlogPost />
+        <div className={styles.blogCardContainer}>
+          {/* blog post preview */}
+          <BlogPost />
+          <BlogPost />
+          <BlogPost />
+        </div>
+       
       </div>
     </>
   );

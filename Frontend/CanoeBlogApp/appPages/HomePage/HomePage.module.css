@@ -1,0 +1,7 @@
+.blogCardContainer{
+    border: 1px solid lightseagreen;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: auto 3rem;
+    gap: 1.75rem;
+  }
