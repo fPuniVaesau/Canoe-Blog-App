@@ -58,7 +58,7 @@ export default function HomePage(){
 
       {/* blog home page message */}
       <div>
-
+        
       </div>
 
       {/* blog post preview */}
