@@ -58,12 +58,13 @@ export default function HomePage(){
 
       {/* blog home page message */}
       <div>
-        
+        <h2> Lose site of the shores to discover new sea's.</h2>
+        <h3>What is your journey?</h3>
       </div>
 
       {/* blog post preview */}
       <div>
-
+        
       </div>
     </>
   );
