@@ -111,10 +111,18 @@
 
 .openingMessageWrapper{
     margin-top: 10px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
+    display: grid;
+    place-content: center;
+    padding: 1rem;
 }
 
 .openingMessageWrapper h2{
     font-size: 2rem;
     text-align: center;
+}
+
+.welcomeQuoteWrapper{
+    border: 1px solid green;
+    width: 50rem;
 }

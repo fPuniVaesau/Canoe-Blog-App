@@ -68,9 +68,10 @@ export default function HomePage() {
 
       {/* blog home page message */}
       <div className={styles.openingMessageWrapper}>
-          <h2> Lose site of the shores to discover new sea's.
-            <span>what is your journey?</span>
-          </h2>
+        <div className={styles.welcomeQuoteWrapper}>
+          <h2>Take courage, lose site of the shores & discover new sea's.</h2>
+          <p>what is your journey?</p>
+        </div>
       </div>
 
       {/* blog post preview */}
