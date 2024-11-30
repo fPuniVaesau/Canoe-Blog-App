@@ -1,9 +1,7 @@
 .blogCardContainer {
-  /* border: 1px solid lightseagreen; */
-  /* display: grid; */
-  margin: auto 3rem;
-  /* grid-template-columns: 1fr; */
-  /* gap: 1rem; */
+
+  margin: 1.5rem 3rem;
+  
 }
 
 @media screen and (min-width: 1024px) {
@@ -11,7 +9,7 @@
     /* border: 1px solid lightseagreen; */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin: auto 3rem;
+    margin: 1.5rem 3rem;
     gap: 1.75rem;
   }
 }
