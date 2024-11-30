@@ -138,7 +138,7 @@
 
 /* blog posting stying */
 .blogPostWrapper{
-    border: 1px solid lightseagreen;
+    /* border: 1px solid lightseagreen; */
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     margin: auto 3rem;
@@ -147,11 +147,11 @@
 }
 
 .blogPostCardContainer{
-    border: 1px solid blueviolet;
+    /* border: 1px solid blueviolet; */
 }
 
 .blogImgAndAuthorWrapper{
-    border: 1px solid coral;
+    /* border: 1px solid coral; */
 }
 
 .blogAuthorDateWrapper{

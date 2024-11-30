@@ -1,51 +1,10 @@
 import styles from './HomePage.module.css';
-import canoeLogo from '../../canoeResources/CanoeLogoWebV2.png';
+import NavigationBar from '../../appComponents/NavigationBar/NavigationBar';
 export default function HomePage() {
   return (
     <>
       {/* navbar */}
-      <div className={styles.mainNavBarLogoContainer}>
-        {/* Logo and Navigation */}
-        <div className={styles.logoNavbarWrapper}>
-          <div>
-            <a href=''>
-              <img
-                className={styles.mainLogo}
-                src={canoeLogo}
-                alt='canoe logo'
-              />
-            </a>
-          </div>
-
-          <div>
-            <nav className={styles.mainNavBarListWrapper}>
-              <ul>
-                <li>
-                  <a href=''>Features</a>
-                </li>
-                <li>
-                  <a href=''>Blog</a>
-                </li>
-                <li>
-                  <a href=''>About</a>
-                </li>
-                <li>
-                  <a href=''>Contact</a>
-                </li>
-                <li>
-                  <a href=''>Projects</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-
-        {/* Login and Register */}
-        <div className={styles.buttonWrapper}>
-          <button className={styles.loginBtn}>Log In</button>
-          <button className={styles.registerBtn}>Register</button>
-        </div>
-      </div>
+      <NavigationBar />
 
       {/* search bar */}
       <div className={styles.searchBarWrapper}>
@@ -79,6 +38,7 @@ export default function HomePage() {
         <div className={styles.blogPostCardContainer}>
           <div className={styles.blogImgAndAuthorWrapper}>
             <img
+
               src='https://images.unsplash.com/photo-1701979397766-bbd6fdd29743?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDF8RS0tX3BuSWlyRzR8fGVufDB8fHx8fA%3D%3D'
               alt='blog post image'
             />
