@@ -1,6 +1,7 @@
 import styles from './HomePage.module.css';
 import NavigationBar from '../../appComponents/NavigationBar/NavigationBar';
 import SearchBar from '../../appComponents/SearchBar/SearchBar';
+import OpeningMessage from '../../appComponents/OpeningMessage/OpeningMessage';
 
 
 export default function HomePage() {
@@ -13,12 +14,7 @@ export default function HomePage() {
       <SearchBar />
 
       {/* blog home page message */}
-      <div className={styles.openingMessageWrapper}>
-        <div className={styles.welcomeQuoteWrapper}>
-          <h2>Take courage, lose site of the shores & discover new sea's.</h2>
-          <p>what is your journey?</p>
-        </div>
-      </div>
+      <OpeningMessage />
 
       {/* blog post preview */}
       <div className={styles.blogPostWrapper}>
