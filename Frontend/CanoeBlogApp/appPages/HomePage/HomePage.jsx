@@ -4,23 +4,24 @@ import SearchBar from '../../appComponents/SearchBar/SearchBar';
 import OpeningMessage from '../../appComponents/OpeningMessage/OpeningMessage';
 import BlogPost from '../../appComponents/BlogPost/BlogPost';
 
-
 export default function HomePage() {
   return (
     <>
-      {/* navbar */}
-      <NavigationBar />
+      <div className={styles.HomePageContainer}>
+        {/* navbar */}
+        <NavigationBar />
 
-      {/* search bar */}
-      <SearchBar />
+        {/* search bar */}
+        <SearchBar />
 
-      {/* blog home page message */}
-      <OpeningMessage />
+        {/* blog home page message */}
+        <OpeningMessage />
 
-      {/* blog post preview */}
-      <BlogPost />
-      <BlogPost />
-      <BlogPost />
+        {/* blog post preview */}
+        <BlogPost />
+        <BlogPost />
+        <BlogPost />
+      </div>
     </>
   );
 }
