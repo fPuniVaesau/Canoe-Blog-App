@@ -75,7 +75,11 @@ export default function HomePage() {
       </div>
 
       {/* blog post preview */}
-      <div></div>
+      <div>
+
+        
+
+      </div>
     </>
   );
 }
