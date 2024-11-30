@@ -106,3 +106,15 @@
 .iconSearch{
     height: 1rem;
 }
+
+/* opening message styles */
+
+.openingMessageWrapper{
+    margin-top: 10px;
+    border: 1px solid red;
+}
+
+.openingMessageWrapper h2{
+    font-size: 2rem;
+    text-align: center;
+}
