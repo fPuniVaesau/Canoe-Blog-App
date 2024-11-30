@@ -25,10 +25,12 @@
 }
 body{
   font-family: var(--font-body);
+  text-wrap: pretty;
 }
 
 h1,h2,h3,h4,h5,h6{
   font-family: var(--font-heading);
+  text-wrap: pretty;
 }
 
 img, picture, svg, video, canvas{
