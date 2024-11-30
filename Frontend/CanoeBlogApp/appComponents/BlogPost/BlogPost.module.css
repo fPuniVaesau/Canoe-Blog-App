@@ -1,0 +1,36 @@
+/* blog posting stying */
+.blogPostWrapper{
+  /* border: 1px solid lightseagreen; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: auto 3rem;
+  gap: .25rem;
+}
+
+.blogPostCardContainer{
+  /* border: 1px solid blueviolet; */
+}
+
+.blogImgAndAuthorWrapper{
+  /* border: 1px solid coral; */
+}
+
+.blogAuthorDateWrapper{
+  display: flex;
+  gap: .5rem;
+  margin: .25rem auto;
+}
+
+.blogAuthor{
+  font-style: italic;
+  font-weight: bold;
+}
+
+.dateAndTimeWrapper{
+  display: flex;
+  gap: .5rem;
+}
+
+.blogPostDiscriptionWrapper{
+  border: solid tomato;
+}
