@@ -1,0 +1,28 @@
+/* ///////////////////////////////////////////////////////////// search bar styling */
+.searchBarWrapper{
+  /* border: 1px solid tomato; */
+  margin-top: 2rem;
+  display: grid;
+  place-content: center;
+  gap: .5rem;
+  grid-template-columns: 1fr 2rem;
+  padding: 0 2.5rem;
+}
+
+.searchBar{
+  border: 1px solid #777;
+  min-width: 30rem;
+  padding: .25rem 1rem;
+  border-radius: .5rem;
+}
+
+.searchBtn{
+  margin: auto;
+  padding: .5rem;
+  border-radius: .25rem;
+  border: 1px solid #777;
+}
+
+.iconSearch{
+  height: 1rem;
+}
