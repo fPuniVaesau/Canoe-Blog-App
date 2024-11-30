@@ -135,3 +135,16 @@
     width: 50rem;
     padding: 1.5rem;
 }
+
+/* blog posting stying */
+.blogPostWrapper{
+    border: 1px solid lightseagreen;
+}
+
+.blogImgAndAuthorWrapper{
+    border: 1px solid coral;
+}
+
+.blogPostDiscriptionWrapper{
+    border: solid tomato;
+}
