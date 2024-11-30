@@ -141,7 +141,13 @@
     border: 1px solid lightseagreen;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    margin: auto 3rem;
+    gap: .25rem;
     
+}
+
+.blogPostCardContainer{
+    border: 1px solid blueviolet;
 }
 
 .blogImgAndAuthorWrapper{
@@ -156,6 +162,7 @@
 
 .blogAuthor{
     font-style: italic;
+    font-weight: bold;
 }
 
 .dateAndTimeWrapper{
@@ -164,9 +171,5 @@
 }
 
 .blogPostDiscriptionWrapper{
-    border: solid tomato;
-}
-
-.blogPostCardContainer{
-
+    /* border: solid tomato; */
 }
