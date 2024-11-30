@@ -118,11 +118,20 @@
 }
 
 .openingMessageWrapper h2{
-    font-size: 2rem;
+    font-size: 3rem;
     text-align: center;
+    line-height: 1.15;
+}
+
+.openingMessageWrapper p{
+    text-align: center;
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-top: 10px;
 }
 
 .welcomeQuoteWrapper{
-    border: 1px solid green;
+    /* border: 1px solid green; */
     width: 50rem;
+    padding: 1.5rem;
 }
