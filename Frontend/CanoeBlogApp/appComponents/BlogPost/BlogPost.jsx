@@ -1,7 +1,7 @@
 import styles from "./BlogPost.module.css";
 
 
-export default function BlogPost(){
+export default function BlogPost({imgUrl}){
   return(
     <>
        <div className={styles.blogPostWrapper}>
@@ -9,7 +9,7 @@ export default function BlogPost(){
           <div className={styles.blogImgAndAuthorWrapper}>
             <img
               className={styles.blogPostImage}
-              src='https://images.unsplash.com/photo-1701979397766-bbd6fdd29743?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDF8RS0tX3BuSWlyRzR8fGVufDB8fHx8fA%3D%3D'
+              src={imgUrl}
               alt='blog post image'
             />
             <div className={styles.blogAuthorDateWrapper}>
