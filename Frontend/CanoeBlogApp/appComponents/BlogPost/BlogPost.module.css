@@ -8,6 +8,9 @@
   margin-bottom: 1rem;
 }
 
+.blogPostImage{
+  border-radius: 25rem 25rem 0 0;
+}
 
 .blogImgAndAuthorWrapper{
   /* border: 1px solid coral; */
