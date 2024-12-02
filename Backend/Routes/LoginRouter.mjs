@@ -11,7 +11,9 @@ LoginRouter.get("/", async (request, response)=>{
 })
 
 LoginRouter.post("/", async (request, response)=>{
-    
+    const { body } = request;
+    console.log(body)
+    return response.sendStatus(200);
 })
 
 export default LoginRouter;
