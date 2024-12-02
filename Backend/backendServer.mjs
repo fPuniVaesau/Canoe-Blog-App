@@ -3,7 +3,7 @@ import cors from "cors";
 import AllRoutesRouter from "./Routes/Allroutes.mjs";
 
 const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 
 const corsOptions = {
     origin: "http://localhost:8000"
