@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import AllRoutesRouter from "./Routes/Allroutes.mjs";
 
 const app = express();
 const PORT = 8000;
@@ -11,6 +12,7 @@ const corsOptions = {
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors(corsOptions))
+app.use(AllRoutesRouter);
 
 app.listen(PORT, ()=>{
     console.log(`Server is running on http://localhost:${PORT}`);
