@@ -80,9 +80,36 @@
 }
 
 .dropdownMenu{
-  aspect-ratio: 1/1;
+  /* font-weight: bold; */
+  color: #000000;
   border: none;
-  height: 3rem;
+  outline: 1px dotted black;
+  border-radius: 10px;
+  outline: 3px solid double;
+  transition: .3s ease-in-out;
+  text-align: center;
+  width: 5rem;
   display: none;
 }
 
+.dropdownMenu:hover{
+  background-color: rgb(145, 165, 114);
+  color: #fff;
+  outline: none;
+  border-radius: 10px;
+  outline: 3px solid double;
+  transition: .3s ease-in-out;
+  text-align: center;
+  letter-spacing: 3px;
+  width: 10rem;
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+ .mainNavBarListWrapper{
+  display: none;
+ }
+
+ .dropdownMenu{
+  display: block;
+ }
+}
