@@ -10,8 +10,9 @@ const corsOptions = {
     origin: "http://localhost:8000"
 };
 
+const mongoDBusername = process.env.MONGODB_USER
 const mongoDBpassword = process.env.MONGODB_PW;
-const connectionString =`mongodb+srv://filovaesau:${mongoDBpassword}@projectcanoe.jcfsi.mongodb.net/?retryWrites=true&w=majority&appName=projectCANOE`;
+const connectionString =`mongodb+srv://${mongoDBusername}:${mongoDBpassword}@projectcanoe.jcfsi.mongodb.net/?retryWrites=true&w=majority&appName=projectCANOE`;
 
 
 
