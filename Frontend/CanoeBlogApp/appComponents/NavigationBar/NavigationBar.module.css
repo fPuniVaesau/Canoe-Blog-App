@@ -49,34 +49,39 @@
 }
 
 .registerBtn{
-  background-color: #555;
+  background-color: hsla(25, 17%, 22%, 0.958);
   color: #fff;
   border: none;
   transition: .3s ease-in-out;
 }
 
 .registerBtn:hover{
-  background-color: rgb(145, 165, 114);
-  box-shadow: rgba(140, 170, 45, 0.4) 0px 5px, rgba(140, 170, 45, 0.3) 0px 10px, rgba(140, 170, 45, 0.2) 0px 15px, rgba(140, 170, 45, 0.1) 0px 20px, rgba(140, 170, 45, 0.05) 0px 25px;
- 
+  background-color: rgb(215, 95, 3);
+  box-shadow: rgba(255, 115, 0, 0.4) 0px 5px, rgba(255, 115, 0, 0.3) 0px 10px, rgba(255, 115, 0, 0.2) 0px 15px, rgba(255, 115, 0, 0.1) 0px 20px, rgba(255, 115, 0, 0.05) 0px 25px;
 }
 
 .registerBtn:active{
   color: #fff;
-  background-color: #626886;
+  background-color: #52d484;
   border: 1px dotted #fff;
+  box-shadow: none;
 }
 
 .loginBtn{
-  transition: .3s ease-in-out;
-  
+  transition: .1s ease-in-out;
 }
 
 .loginBtn:hover{
-  color: rgb(145, 165, 114);
+  color: rgb(215, 95, 3);
   border: 1px dotted rgb(145, 165, 114);
-  box-shadow: rgba(140, 170, 45, 0.4) 0px 5px, rgba(140, 170, 45, 0.3) 0px 10px, rgba(140, 170, 45, 0.2) 0px 15px, rgba(140, 170, 45, 0.1) 0px 20px, rgba(140, 170, 45, 0.05) 0px 25px;
-  
+  box-shadow: rgba(255, 115, 0, 0.4) 0px 5px, rgba(255, 115, 0, 0.3) 0px 10px, rgba(255, 115, 0, 0.2) 0px 15px, rgba(255, 115, 0, 0.1) 0px 20px, rgba(255, 115, 0, 0.05) 0px 25px;
+}
+
+.loginBtn:active{
+  color: #fff;
+  background-color: #52d484;
+  border: 1px dotted #fff;
+  box-shadow: none;
 }
 
 .dropdownMenu{
