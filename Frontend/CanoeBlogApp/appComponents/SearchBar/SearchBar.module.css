@@ -26,3 +26,9 @@
 .iconSearch{
   height: 1rem;
 }
+
+@media (min-width: 320px) and (max-width: 425px){
+  .searchBar{
+    min-width: 20rem;
+  }
+}
