@@ -24,4 +24,18 @@
   /* border: 1px solid green; */
   width: 50rem;
   padding: 1.5rem;
+} 
+
+@media (min-width: 320px) and (max-width: 425px){
+  .openingMessageWrapper h2{
+    font-size: 1rem;
+    text-wrap: wrap;
+    line-height: .85;
+  }
+  
+  .openingMessageWrapper p{
+    text-align: center;
+    font-size: 1rem;
+    font-style: italic;
+  }
 }
