@@ -7,7 +7,7 @@ export default function SearchBar(){
       <div className={styles.searchBarWrapper}>
         <input
           type='search'
-          placeholder='Search'
+          placeholder='What peaks your intrests?'
           className={styles.searchBar}
         />
 
