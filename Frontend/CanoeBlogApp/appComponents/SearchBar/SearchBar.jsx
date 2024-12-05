@@ -4,6 +4,11 @@ import { useState } from "react";
 export default function SearchBar(){
   const [searchBlog, setBlog] = useState('');
 
+  const handleInputChange = (e) => {
+    setBlog(e.target.value);
+    console.log(e.target.value)
+  }
+
   return(
     <>
       <div className={styles.searchBarWrapper}>
@@ -11,6 +16,7 @@ export default function SearchBar(){
           type='search'
           placeholder='What peaks your intrests?'
           className={styles.searchBar}
+          onChange={(e)=>{handleInputChange(e)}}
         />
 
         <button className={styles.searchBtn}>
