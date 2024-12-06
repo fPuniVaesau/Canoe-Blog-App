@@ -1,4 +1,5 @@
 import express from "express";
+import session from "express-session";
 import cors from "cors";
 import mongoose from "mongoose";
 import AllRoutesRouter from "./Routes/Allroutes.mjs";
@@ -17,6 +18,14 @@ const connectionString =`mongodb+srv://${mongoDBusername}:${mongoDBpassword}@pro
 
 
 app.use(express.json());
+app.use(session({
+    secret: "blogPostBackend",
+    saveUninitialized: false,
+    resave: false,
+    cookie: {
+        maxAge: 60000 * 60
+    }
+}))
 app.use(express.urlencoded({ extended: false }));
 app.use(cors(corsOptions))
 app.use(AllRoutesRouter);
