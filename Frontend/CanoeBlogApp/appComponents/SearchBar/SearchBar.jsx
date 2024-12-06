@@ -4,11 +4,13 @@ import { useState } from "react";
 export default function SearchBar(){
   const [searchBlog, setBlog] = useState('');
 
+  // handles changes that take place in the input field of the search bar.
   const handleInputChange = (e) => {
     setBlog(e.target.value);
     console.log(e.target.value)
   }
 
+  // sets the searchBlog state to the value within the search bar.
   const handleSearchSubmit = (e) => {
     e.preventDefault()
     console.log("Search submitted with input", searchBlog, e)
