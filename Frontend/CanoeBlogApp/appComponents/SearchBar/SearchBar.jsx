@@ -9,10 +9,16 @@ export default function SearchBar(){
     console.log(e.target.value)
   }
 
+  const handleSearchSubmit = (e) => {
+    e.preventDefault()
+    console.log("Search submitted with input", searchBlog);
+  }
+
   return(
     <>
       <form 
       action=""
+      onSubmit={(e)=>{handleSearchSubmit(e)}}
       className={styles.searchBarWrapper}>
         <input
           type='search'
