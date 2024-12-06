@@ -16,7 +16,6 @@ const mongoDBpassword = process.env.MONGODB_PW;
 const connectionString =`mongodb+srv://${mongoDBusername}:${mongoDBpassword}@projectcanoe.jcfsi.mongodb.net/?retryWrites=true&w=majority&appName=projectCANOE`;
 
 
-
 app.use(express.json());
 app.use(session({
     secret: "blogPostBackend",
