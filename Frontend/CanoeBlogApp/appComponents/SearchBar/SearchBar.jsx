@@ -11,13 +11,14 @@ export default function SearchBar(){
 
   const handleSearchSubmit = (e) => {
     e.preventDefault()
-    console.log("Search submitted with input", searchBlog);
+    console.log("Search submitted with input", searchBlog, e)
+    setBlog("")
   }
 
   return(
     <>
       <form 
-      action=""
+      action="submit"
       onSubmit={(e)=>{handleSearchSubmit(e)}}
       className={styles.searchBarWrapper}>
         <input
@@ -25,6 +26,7 @@ export default function SearchBar(){
           placeholder='What peaks your intrests?'
           className={styles.searchBar}
           onChange={(e)=>{handleInputChange(e)}}
+          value={searchBlog}
         />
 
         <button className={styles.searchBtn}>
