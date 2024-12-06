@@ -1,3 +1,11 @@
 .welcomeWrapper{
   border: 1px solid tomato;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-content: center;
+  min-height: 100dvh;
+}
+
+.canoeImage{
+  border-radius: 1rem;
 }

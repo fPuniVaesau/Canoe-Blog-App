@@ -5,8 +5,8 @@ import LoginPage from "../appPages/LoginPage/LoginPage";
 function App() {
   return (
     <div className={styles.wrapper}>
-      <HomePage />
-      {/* <LoginPage /> */}
+      {/* <HomePage /> */}
+      <LoginPage />
     </div>
   );
 }

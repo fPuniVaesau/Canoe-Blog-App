@@ -6,11 +6,19 @@ export default function LoginPage() {
     <>
       <div className={styles.welcomeWrapper}>
         <div>
-          <img src={canoe3D} alt='canoe logo' />
-          <h1>canoe.</h1>
+          <img
+          className={styles.canoeImage}
+           src={canoe3D} alt='canoe logo' />
         </div>
 
-        <p>welcome back!</p>
+        <div>
+          <h2>canoe.</h2>
+          <p>welcome back!</p>
+
+          <form action="">
+            
+          </form>
+        </div>
       </div>
     </>
   );
