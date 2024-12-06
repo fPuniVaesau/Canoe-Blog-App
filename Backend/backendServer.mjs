@@ -4,18 +4,21 @@ import cors from "cors";
 import mongoose from "mongoose";
 import AllRoutesRouter from "./Routes/Allroutes.mjs";
 
+// express instance
 const app = express();
 const PORT = process.env.PORT || 8000;
 
+//cors options
 const corsOptions = {
     origin: "http://localhost:8000"
 };
 
+// mongoDB login credentials + connection string
 const mongoDBusername = process.env.MONGODB_USER
 const mongoDBpassword = process.env.MONGODB_PW;
 const connectionString =`mongodb+srv://${mongoDBusername}:${mongoDBpassword}@projectcanoe.jcfsi.mongodb.net/?retryWrites=true&w=majority&appName=projectCANOE`;
 
-
+// middleware 
 app.use(express.json());
 app.use(session({
     secret: "blogPostBackend",
@@ -29,6 +32,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors(corsOptions))
 app.use(AllRoutesRouter);
 
+// connection to the database
 mongoose.connect(connectionString)
 .then(()=>{
     console.log("Successfully connected to the database.")
