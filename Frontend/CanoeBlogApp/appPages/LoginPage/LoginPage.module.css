@@ -7,9 +7,23 @@
 }
 
 .canoeImage{
-  border-radius: 1rem;
+  border: 1px solid red;
+  /* border-radius: 1rem; */
 }
 
 .loginSignUpWrapper{
   border: 1px solid lime;
+}
+
+.formWrapper:not(:first-child){
+
+}
+
+.fieldInputs{
+  border: 1px solid #777;
+  border-radius: 7px;
+  padding: 10px;
+  display: block;
+  min-width: 25rem;
+  margin-top: 1.25rem;
 }

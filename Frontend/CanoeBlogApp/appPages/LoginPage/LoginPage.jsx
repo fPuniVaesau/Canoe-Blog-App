@@ -15,9 +15,9 @@ export default function LoginPage() {
           <h2>canoe.</h2>
           <p>welcome back!</p>
 
-          <form action="">
-            <input type="text" name="" id="" placeholder="name@email.com" required/>
-            <input type="password" name="" id="" placeholder="Password" required/>
+          <form className={styles.formWrapper} action="">
+            <input className={styles.fieldInputs} type="text" name="" id="" placeholder="name@email.com" required/>
+            <input className={styles.fieldInputs} type="password" name="" id="" placeholder="Password" required/>
           </form>
         </div>
       </div>
