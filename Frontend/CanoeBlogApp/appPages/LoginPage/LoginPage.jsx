@@ -10,7 +10,7 @@ export default function LoginPage() {
         </div>
 
         <div className={styles.loginSignUpWrapper}>
-          <div>
+          <div className={styles.loginInnerWrapper}>
             <div className={styles.welcomeMessageWrapper}>
               <h2>Welcome back</h2>
               <p>Let's enter your details!</p>

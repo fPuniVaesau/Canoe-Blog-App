@@ -4,6 +4,7 @@
   grid-template-columns: repeat(2, 1fr);
   place-content: center;
   min-height: 100dvh;
+  background-color: hsla(0, 0%, 100%, 0.656);
 }
 
 /* .canoeImage{
@@ -14,13 +15,24 @@
 .loginSignUpWrapper{
   /* border: 1px solid lime; */
   padding: 0 30px;
-  place-content: center;  
+  place-content: center;
+  justify-content: center;
+}
+
+.loginInnerWrapper{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  padding: 3.5rem;
+  /* max-width: 45rem; */
+  margin: auto;
+  border-radius: 1.5rem;
+  background-color: hsla(0, 0%, 96%, 0.656);
 }
 
 .welcomeMessageWrapper{
   margin-top: 10px;
   /* border: 1px solid orange; */
   width: 100%;
+  
 }
 
 .welcomeMessageWrapper h2{

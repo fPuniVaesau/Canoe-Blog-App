@@ -5,14 +5,16 @@
   padding: 3rem;
   display: grid;
   grid-template-columns: 1.5fr 2.5fr;
-  gap: .5rem;
+  gap: 1.5rem;
+  background-color: hsla(60, 1%, 86%, 0.5);
 }
 
 .messageFormWrapper{
   /* border: 1px solid blueviolet; */
   /* border: 3px solid #777; */
   padding: 3rem;
-  border-radius: 7px;
+  border-radius: 14px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
 }
 
 .signUpMessageWrapper{
