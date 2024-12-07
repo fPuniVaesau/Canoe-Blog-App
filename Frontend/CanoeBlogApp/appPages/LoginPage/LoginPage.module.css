@@ -9,3 +9,7 @@
 .canoeImage{
   border-radius: 1rem;
 }
+
+.loginSignUpWrapper{
+  border: 1px solid lime;
+}

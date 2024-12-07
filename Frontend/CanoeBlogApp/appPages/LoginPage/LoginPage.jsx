@@ -11,12 +11,13 @@ export default function LoginPage() {
            src={canoe3D} alt='canoe logo' />
         </div>
 
-        <div>
+        <div className={styles.loginSignUpWrapper}>
           <h2>canoe.</h2>
           <p>welcome back!</p>
 
           <form action="">
-            
+            <input type="text" name="" id="" placeholder="name@email.com" required/>
+            <input type="password" name="" id="" placeholder="Password" required/>
           </form>
         </div>
       </div>
