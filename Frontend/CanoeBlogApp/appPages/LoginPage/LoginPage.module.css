@@ -15,8 +15,8 @@
   border: 1px solid lime;
 }
 
-.formWrapper:not(:first-child){
-
+.formWrapper{
+  padding: 0 10px;
 }
 
 .fieldInputs{
@@ -24,6 +24,5 @@
   border-radius: 7px;
   padding: 10px;
   display: block;
-  min-width: 25rem;
-  margin-top: 1.25rem;
+  min-width: 100%;
 }
