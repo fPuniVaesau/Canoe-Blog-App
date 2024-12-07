@@ -6,9 +6,9 @@ import SignUpPage from "../appPages/SignUpPage/SignUpPage";
 function App() {
   return (
     <div className={styles.wrapper}>
-      {/* <HomePage /> */}
-      <LoginPage />
-      <SignUpPage />
+      <HomePage />
+      {/* <LoginPage /> */}
+      {/* <SignUpPage /> */}
     </div>
   );
 }
