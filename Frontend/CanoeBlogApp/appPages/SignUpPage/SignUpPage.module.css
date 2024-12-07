@@ -4,7 +4,7 @@
 }
 
 .messageFormWrapper{
-  border: 1px solid blueviolet;
+  /* border: 1px solid blueviolet; */
   
 }
 
@@ -38,4 +38,8 @@
   padding: 10px;
   /* display: block; */
   min-width: 100%;
+}
+
+.fieldInputs:placeholder-shown{
+  font-style: italic;
 }
