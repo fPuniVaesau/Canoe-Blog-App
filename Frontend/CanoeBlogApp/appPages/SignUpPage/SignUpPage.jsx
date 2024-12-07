@@ -12,13 +12,13 @@ export default function SignUpPage(){
 
           <form action="sumbit">
             <div className={styles.nameWrapper}>
-              <div>
+              <div className={styles.inputFieldWrappers}>
                 <label htmlFor="">First name</label>
-                <input type="text" placeholder="Silver" required />
+                <input className={styles.fieldInputs} type="text" placeholder="Silver" required />
               </div>
-              <div>
+              <div className={styles.inputFieldWrappers}>
                 <label htmlFor="">Last name</label>
-                <input type="text" placeholder="Surfer" required />
+                <input className={styles.fieldInputs} type="text" placeholder="Surfer" required />
               </div>
             </div>
           </form>

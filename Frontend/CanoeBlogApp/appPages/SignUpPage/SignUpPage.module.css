@@ -5,6 +5,7 @@
 
 .messageFormWrapper{
   border: 1px solid blueviolet;
+  
 }
 
 .signUpMessageWrapper{
@@ -19,4 +20,22 @@
 .signUpMessageWrapper p{
   font-style: italic;
   font-weight: 500;
+}
+
+.nameWrapper{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.inputFieldWrappers{
+  margin-top: 10px;
+}
+
+.fieldInputs{
+  border: 1px solid #777;
+  border-radius: 7px;
+  padding: 10px;
+  /* display: block; */
+  min-width: 100%;
 }
