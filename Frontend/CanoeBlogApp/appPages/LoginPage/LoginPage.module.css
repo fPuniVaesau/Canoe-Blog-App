@@ -14,12 +14,7 @@
 .loginSignUpWrapper{
   /* border: 1px solid lime; */
   padding: 0 30px;
-  place-content: center;
-  /* background-image: url("");
-  background-repeat: no-repeat;
-  background-position: center;
-  object-fit: cover; */
-  
+  place-content: center;  
 }
 
 .welcomeMessageWrapper{
