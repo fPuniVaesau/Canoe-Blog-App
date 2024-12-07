@@ -6,8 +6,8 @@ export default function SignUpPage(){
       <div className={styles.signUpPageContainer}>
         <div className={styles.messageFormWrapper}>
           <div className={styles.signUpMessageWrapper}>
-            <p>Document your journey</p>
             <h2>Create new account.</h2>
+            <p>Document your journey</p>
           </div>
 
           <form action="sumbit">
