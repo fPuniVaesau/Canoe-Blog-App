@@ -48,3 +48,29 @@
   display: block;
   min-width: 100%;
 }
+
+.joinNowLink{
+  font-weight: bold;
+  text-decoration: underline;
+  color: orangered;
+  transition: .3s ease-in-out;
+}
+
+.joinNowLink:hover{
+  color: hsla(211, 67%, 47%, 0.724)
+}
+
+.loginButtonWrapper{
+  margin-top: 30px;
+}
+
+.loginButton{
+  background-color: #574423;
+  color: antiquewhite;
+  border-radius: 7px;
+  padding: 10px;
+  display: block;
+  min-width: 100%;
+  transition: .3s ease-in-out;
+}
+

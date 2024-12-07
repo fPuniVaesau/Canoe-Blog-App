@@ -14,6 +14,7 @@ export default function LoginPage() {
             <div className={styles.welcomeMessageWrapper}>
               <h2>welcome back</h2>
               <p>Let's enter your details!</p>
+              <p>Dont have an account yet!? <a className={styles.joinNowLink} href="#">Join now!</a> Not much to get started today.</p>
             </div>
 
             <form className={styles.formWrapper} action='submit'>
@@ -38,6 +39,10 @@ export default function LoginPage() {
                   placeholder='Password'
                   required
                 />
+              </div>
+
+              <div className={styles.loginButtonWrapper}>
+                <button className={styles.loginButton}>Login</button>
               </div>
             </form>
           </div>
