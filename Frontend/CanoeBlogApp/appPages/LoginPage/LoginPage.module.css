@@ -1,5 +1,5 @@
 .welcomeWrapper{
-  border: 1px solid tomato;
+  /* border: 1px solid tomato; */
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   place-content: center;
@@ -12,9 +12,14 @@
 }
 
 .loginSignUpWrapper{
-  border: 1px solid lime;
+  /* border: 1px solid lime; */
   padding: 0 30px;
   place-content: center;
+  /* background-image: url("");
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover; */
+  
 }
 
 .welcomeMessageWrapper{
@@ -30,7 +35,7 @@
 
 .welcomeMessageWrapper p{
   font-style: italic;
-
+  font-weight: 500;
 }
 
 .formWrapper{
@@ -74,3 +79,22 @@
   transition: .3s ease-in-out;
 }
 
+.loginButton:hover{
+  background-color: hsla(211, 67%, 47%, 0.724);
+}
+
+.loginButton:active{
+  letter-spacing: 3px;
+  background-color: hsla(76, 67%, 47%, 0.724);
+}
+
+@media screen and (max-width: 768px){
+  .welcomeWrapper{
+    /* background-color: red; */
+    grid-template-columns: 1fr;
+  }
+
+  .loginButtonWrapper{
+    margin-bottom: 30px;
+  }
+}
