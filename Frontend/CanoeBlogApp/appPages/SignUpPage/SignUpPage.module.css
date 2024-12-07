@@ -1,15 +1,23 @@
 .signUpPageContainer{
   /* border: 1px solid orangered; */
   min-height: 100svh;
+  place-content: center;
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 1.5fr 2.5fr;
+  gap: .5rem;
 }
 
 .messageFormWrapper{
   /* border: 1px solid blueviolet; */
-  
+  /* border: 3px solid #777; */
+  padding: 3rem;
+  border-radius: 7px;
 }
 
 .signUpMessageWrapper{
   margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 .signUpMessageWrapper h2{
@@ -42,4 +50,52 @@
 
 .fieldInputs:placeholder-shown{
   font-style: italic;
+}
+
+.signUpButtonWrapper{
+  margin-top: 30px;
+}
+
+.signUpButton{
+  background-color: #574423;
+  color: antiquewhite;
+  border-radius: 7px;
+  padding: 10px;
+  display: block;
+  min-width: 100%;
+  transition: .3s ease-in-out;
+}
+
+.signUpButton:hover{
+  background-color: hsla(211, 67%, 47%, 0.724);
+}
+
+.signUpButton:active{
+  letter-spacing: 3px;
+  background-color: hsla(76, 67%, 47%, 0.724);
+}
+
+.signupImg{
+  border-radius: 7px;
+  margin: auto;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 1024px){
+  .signupImageWrapper{
+    display: none;
+  }
+
+  .signUpPageContainer {
+    display: block;
+  }
+
+}
+
+@media screen and (max-width: 425px){
+  .nameWrapper{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
