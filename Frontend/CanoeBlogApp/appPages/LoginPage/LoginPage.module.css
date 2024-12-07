@@ -49,6 +49,10 @@
   min-width: 100%;
 }
 
+.fieldInputs:placeholder-shown{
+  font-style: italic;
+}
+
 .joinNowLink{
   font-weight: bold;
   text-decoration: underline;
