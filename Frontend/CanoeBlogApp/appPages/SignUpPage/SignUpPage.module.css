@@ -1,0 +1,22 @@
+.signUpPageContainer{
+  /* border: 1px solid orangered; */
+  min-height: 100svh;
+}
+
+.messageFormWrapper{
+  border: 1px solid blueviolet;
+}
+
+.signUpMessageWrapper{
+
+}
+
+.signUpMessageWrapper h2{
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.signUpMessageWrapper p{
+  font-style: italic;
+  font-weight: 500;
+}
