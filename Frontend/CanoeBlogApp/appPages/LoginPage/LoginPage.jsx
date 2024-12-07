@@ -12,7 +12,7 @@ export default function LoginPage() {
         <div className={styles.loginSignUpWrapper}>
           <div>
             <div className={styles.welcomeMessageWrapper}>
-              <h2>welcome back</h2>
+              <h2>Welcome back</h2>
               <p>Let's enter your details!</p>
               <p>Dont have an account yet!? <a className={styles.joinNowLink} href="#">Join now!</a> Not much to get started today.</p>
             </div>
