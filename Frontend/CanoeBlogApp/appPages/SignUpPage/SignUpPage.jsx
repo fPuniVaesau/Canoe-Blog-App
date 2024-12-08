@@ -14,11 +14,11 @@ export default function SignUpPage(){
             <div className={styles.nameWrapper}>
               <div className={styles.inputFieldWrappers}>
                 <label htmlFor="first name">First name</label>
-                <input className={styles.fieldInputs} type="text" placeholder="Silver" required />
+                <input className={styles.fieldInputs} type="text" placeholder="silver" required />
               </div>
               <div className={styles.inputFieldWrappers}>
                 <label htmlFor="last name">Last name</label>
-                <input className={styles.fieldInputs} type="text" placeholder="Surfer" required />
+                <input className={styles.fieldInputs} type="text" placeholder="surfer" required />
               </div>
             </div>
             <div className={styles.inputFieldWrappers}>
@@ -27,11 +27,11 @@ export default function SignUpPage(){
             </div>
             <div className={styles.inputFieldWrappers}>
               <label htmlFor="password">Password</label>
-              <input className={styles.fieldInputs} type="password" placeholder="Password" required />
+              <input className={styles.fieldInputs} type="password" placeholder="password" required />
             </div>
             <div className={styles.inputFieldWrappers}>
               <label htmlFor="re-enter password">Re-enter Password</label>
-              <input className={styles.fieldInputs} type="password" placeholder="Re-enter password" required />
+              <input className={styles.fieldInputs} type="password" placeholder="re-enter password" required />
             </div>
             <div className={styles.signUpButtonWrapper}>
               <button className={styles.signUpButton}>Create account</button>
