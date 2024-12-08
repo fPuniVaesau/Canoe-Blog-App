@@ -4,7 +4,7 @@ import User from "../MongooseValidations/MongooseSchemas/UserSchema.mjs";
 const LoginRouter = Router();
 
 LoginRouter.get("/", async (request, response)=>{
-
+    console.log("inside the login router.")
     let allUsers = await User.find();
     response.status(200).send(allUsers);
   
