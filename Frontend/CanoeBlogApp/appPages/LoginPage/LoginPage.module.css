@@ -109,3 +109,9 @@
     margin-bottom: 30px;
   }
 }
+
+@media screen and (max-width: 2560px){
+  .loginInnerWrapper{
+    max-width: 45rem;
+  }
+}

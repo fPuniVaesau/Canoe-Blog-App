@@ -95,7 +95,7 @@
 
 }
 
-@media screen and (max-width: 425px){
+@media screen and (max-width: 768px){
   .nameWrapper{
     display: grid;
     grid-template-columns: 1fr;
