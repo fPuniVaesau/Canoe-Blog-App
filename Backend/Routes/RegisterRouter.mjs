@@ -1,9 +1,8 @@
-import { Router } from "express";
-
+import { response, Router } from "express";
 const RegistrationRouter = Router();
 
-RegistrationRouter.get("/", (req, res) => {
-  res.status(201).send({route: "Registration Router"});
+RegistrationRouter.get("/", (request, response) => {
+  response.send({router: "Registration Router"})
 })
 
 export default RegistrationRouter;
