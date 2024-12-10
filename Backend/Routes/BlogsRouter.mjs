@@ -22,7 +22,16 @@ const demoBlogData = [
 const BlogRouter = Router();
 
 BlogRouter.get("/", (request, response) => {
-    response.send({router: "Blog Router"})
+    const {query: {filter, value}} = request;
+    if(!filter && !value){
+        return response.status(400).send({ msg: "we hit a snag!", error : "invalid queries" });
+    }
+    if(filter && value){
+        // filtering through the data using the querie parameters
+        const filteredData = demoBlogData.filter(blog => blog[filter].includes(value));
+        response.status(200).send(filteredData);
+    }
+    return response.send(demoBlogData);
 })
 
 // this route fetches blogs by thier ids.
