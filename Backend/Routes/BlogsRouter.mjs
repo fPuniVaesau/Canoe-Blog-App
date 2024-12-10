@@ -8,8 +8,12 @@ BlogRouter.get("/", (request, response) => {
 
 BlogRouter.get("/:id", (request, response) => {
     const {params:{id}} = request
-    return response.send({userID: `${id}`});
+    const parsedID = parseInt(id);
+    
+    return response.send({userID: `${parsedID}`});
 })
+
+BlogRouter.get("/search?filter")
 
 export default BlogRouter;
 
