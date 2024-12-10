@@ -6,3 +6,5 @@ BlogRouter.get("/", (request, response) => {
     response.send({router: "Blog Router"})
 })
 
+export default BlogRouter;
+
