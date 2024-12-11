@@ -1,5 +1,6 @@
 import { response, Router } from "express";
 
+// Demo API Blog Data
 const demoBlogData = [
     {
         id: 1,
@@ -22,7 +23,7 @@ const demoBlogData = [
     {
         id: 4,
         title: "Understanding Game Development",
-        content: "This is demo content for jeerics article.",
+        content: "This is demo game content for jeerics article.",
         author: "Jeric"
     },
     {
@@ -35,7 +36,7 @@ const demoBlogData = [
 
 
 const BlogRouter = Router();
-
+// GET request to fetch blog data with user queries
 BlogRouter.get("/", (request, response) => {
     const {query: {filter, value}} = request;
     if(!filter && !value){
@@ -48,8 +49,7 @@ BlogRouter.get("/", (request, response) => {
     }
 })
 
-// this route fetches blogs by thier ids.
-
+// GET request used to fetch Blogs by ID.
 BlogRouter.get("/:id", (request, response) => {
     const {params:{id}} = request
     const parsedID = parseInt(id);
@@ -66,7 +66,10 @@ BlogRouter.get("/:id", (request, response) => {
     return response.send(findBlog);
 })
 
-// this route searchs and fetches blogs by the search query.
+// POST request to add new blog post.
+BlogRouter.post("/", (request, response) => {
+    return response.send({msg: "testing the post request."})
+})
 
 
 export default BlogRouter;
