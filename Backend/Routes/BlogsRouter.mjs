@@ -4,17 +4,32 @@ const demoBlogData = [
     {
         id: 1,
         title: "The life of Filo", 
-        content: "This is the content of the first blog post."
+        content: "This is the content of the first blog post.",
+        author: "Filo Vaesau"
     },
     {
         id: 2,
         title: "Learning javascript",
-        content: "This is the content of the second blog post."
+        content: "This is the content of the second blog post.",
+        author: "Filo Vaesau"
     },
     {
         id: 3,
         title: "Fullstack Development: Connecting the frontend to the backend.",
-        content: "This is the content of the third blog post."
+        content: "This is the content of the third blog post.",
+        author: "Filo Vaesau"
+    },
+    {
+        id: 4,
+        title: "Understanding Game Development",
+        content: "This is demo content for jeerics article.",
+        author: "Jeric"
+    },
+    {
+        id: 5, 
+        title: "The world of Cyber Security.",
+        content: "This is demo content for johns article.",
+        author: "John"
     }
 ]
 
