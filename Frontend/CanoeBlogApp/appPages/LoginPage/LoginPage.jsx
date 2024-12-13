@@ -1,7 +1,15 @@
 import styles from "./LoginPage.module.css";
 import canoe3D from "../../canoeResources/3dCanoeV2.png";
+import { useState } from "react";
 
 export default function LoginPage() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  let handleChange = ()=> {
+
+  }
+
   return (
     <>
       <div className={styles.welcomeWrapper}>
@@ -21,8 +29,10 @@ export default function LoginPage() {
               <div className={styles.inputFieldWrappers}>
                 <label htmlFor='emailAddress'>Email address</label>
                 <input
+                  onChange={(e)=>{setEmail(e.target.value)}}
+                  value={email}
                   className={styles.fieldInputs}
-                  type='text'
+                  type='email'
                   name=''
                   id=''
                   placeholder='name@email.com'
@@ -32,6 +42,8 @@ export default function LoginPage() {
               <div className={styles.inputFieldWrappers}>
                 <label htmlFor='Password'>Password</label>
                 <input
+                  onChange={(e)=>{setPassword(e.target.value)}}
+                  value={password}
                   className={styles.fieldInputs}
                   type='password'
                   name=''
