@@ -1,7 +1,8 @@
 /* blog posting stying */
-.blogPostWrapper{
-  /* border: 1px solid lightseagreen; */
-}
+
+/* .blogPostWrapper{
+  border: 1px solid lightseagreen;
+} */
 
 .blogPostCardContainer{
   /* border: 1px solid blueviolet; */
@@ -15,9 +16,9 @@
   height: 30rem;
 }
 
-.blogImgAndAuthorWrapper{
-  /* border: 1px solid coral; */
-}
+/* .blogImgAndAuthorWrapper{
+  border: 1px solid coral;
+} */
 
 .blogAuthorDateWrapper{
   display: flex;
@@ -35,9 +36,9 @@
   gap: .5rem;
 }
 
-.blogPostDiscriptionWrapper{
-  /* border: solid tomato; */
-}
+/* .blogPostDiscriptionWrapper{
+  border: solid tomato;
+} */
 
 
 .readFullBlogContainer{
