@@ -9,7 +9,16 @@ export default function SignUpPage(){
 
   const handleSubmit = (e) =>{
     e.preventDefault()
-
+    axios.post("https://127.0.0.1:8000/api/register", {
+      firstName,
+      lastName
+    })
+    .then(result => {
+      console.log(result);
+    })
+    .catch(error =>{
+      console.log(error)
+    })
   }
 
   return(
@@ -21,7 +30,7 @@ export default function SignUpPage(){
             <p>Document your journey</p>
           </div>
 
-          <form onSubmit={(e)=>{handleSubmit(e)}} action="sumbit">
+          <form onSubmit={handleSubmit} action="sumbit">
             {/* first and last name wrapper */}
             <div className={styles.nameWrapper}>
               {/* input field for the firstname */}
