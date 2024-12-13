@@ -4,6 +4,7 @@ import { useState } from "react"
 export default function SignUpPage(){
 
   const [firstName, setFirstName] = useState("")
+  const [lastName, setLastName] = useState("")
 
   return(
     <>
@@ -15,16 +16,23 @@ export default function SignUpPage(){
           </div>
 
           <form action="sumbit">
+            {/* first and last name wrapper */}
             <div className={styles.nameWrapper}>
+              {/* input field for the firstname */}
               <div className={styles.inputFieldWrappers}>
                 <label htmlFor="first name">First name</label>
-                <input className={styles.fieldInputs} type="text" placeholder="silver" required />
+                <input 
+                onChange={(e)=>{setFirstName(e.target.value)}}
+                value={firstName}
+                className={styles.fieldInputs} type="text" placeholder="silver" required />
               </div>
+                {/* input field for the lastname */}
               <div className={styles.inputFieldWrappers}>
                 <label htmlFor="last name">Last name</label>
-                <input className={styles.fieldInputs} type="text" placeholder="surfer" required />
+                <input onChange={(e=>{})} className={styles.fieldInputs} type="text" placeholder="surfer" required />
               </div>
             </div>
+
             <div className={styles.inputFieldWrappers}>
               <label htmlFor="email address">Email address</label>
               <input className={styles.fieldInputs} type="text" placeholder="emailaddress@example.com" required />
