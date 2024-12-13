@@ -6,6 +6,11 @@ export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   
+  const handleSubmit = (e) =>{
+    e.preventDefault();
+    setEmail("")
+    setPassword("")
+  }
 
   return (
     <>
@@ -22,7 +27,7 @@ export default function LoginPage() {
               <p>Dont have an account yet!? <a className={styles.joinNowLink} href="#">Join now!</a> Not much to get started today.</p>
             </div>
 
-            <form className={styles.formWrapper} action='submit'>
+            <form onSubmit={handleSubmit} className={styles.formWrapper} action='submit'>
               <div className={styles.inputFieldWrappers}>
                 <label htmlFor='emailAddress'>Email address</label>
                 <input
