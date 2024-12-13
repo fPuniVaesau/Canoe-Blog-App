@@ -38,3 +38,16 @@
 .blogPostDiscriptionWrapper{
   /* border: solid tomato; */
 }
+
+.readFullBlogContainer{
+  display: flex;
+  gap: 1rem;
+  border: 1px solid #777;
+  border-radius: 3px;
+  padding: 1rem;
+}
+
+.fullBlogIcon{
+  height: 1.25rem;
+
+}
