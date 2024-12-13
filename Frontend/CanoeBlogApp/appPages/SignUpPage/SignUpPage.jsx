@@ -29,7 +29,10 @@ export default function SignUpPage(){
                 {/* input field for the lastname */}
               <div className={styles.inputFieldWrappers}>
                 <label htmlFor="last name">Last name</label>
-                <input onChange={(e=>{})} className={styles.fieldInputs} type="text" placeholder="surfer" required />
+                <input 
+                onChange={(e=>{setLastName(e.target.value)})}
+                value={lastName}
+                className={styles.fieldInputs} type="text" placeholder="surfer" required />
               </div>
             </div>
 
