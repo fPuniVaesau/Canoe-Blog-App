@@ -2,6 +2,9 @@ import styles from "./SignUpPage.module.css"
 import { useState } from "react"
 
 export default function SignUpPage(){
+
+  const [firstName, setFirstName] = useState("")
+
   return(
     <>
       <div className={styles.signUpPageContainer}>
