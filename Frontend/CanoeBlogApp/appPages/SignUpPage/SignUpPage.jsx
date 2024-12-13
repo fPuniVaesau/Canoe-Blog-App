@@ -1,12 +1,16 @@
 import styles from "./SignUpPage.module.css"
 import { useState } from "react"
+import axios from "axios"
 
 export default function SignUpPage(){
 
   const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")
 
-  
+  const handleSubmit = (e) =>{
+    e.preventDefault()
+
+  }
 
   return(
     <>
@@ -17,7 +21,7 @@ export default function SignUpPage(){
             <p>Document your journey</p>
           </div>
 
-          <form action="sumbit">
+          <form onSubmit={(e)=>{handleSubmit(e)}} action="sumbit">
             {/* first and last name wrapper */}
             <div className={styles.nameWrapper}>
               {/* input field for the firstname */}
