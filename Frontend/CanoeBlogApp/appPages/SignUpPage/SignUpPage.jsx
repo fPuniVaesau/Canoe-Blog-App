@@ -1,4 +1,5 @@
 import styles from "./SignUpPage.module.css"
+import { useState } from "react"
 
 export default function SignUpPage(){
   return(
