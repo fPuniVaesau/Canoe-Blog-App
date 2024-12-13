@@ -1,6 +1,7 @@
 import styles from "./LoginPage.module.css";
 import canoe3D from "../../canoeResources/3dCanoeV2.png";
 import { useState } from "react";
+import axios from "axios"
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
