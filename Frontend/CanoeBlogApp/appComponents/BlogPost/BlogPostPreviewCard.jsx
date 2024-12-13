@@ -1,4 +1,4 @@
-import styles from "./BlogPost.module.css";
+import styles from "./BlogPostPreviewCard.module.css";
 
 
 export default function BlogPostPreviewCard({imgUrl, author}){
