@@ -1,7 +1,7 @@
 import styles from "./BlogPost.module.css";
 
 
-export default function BlogPost({imgUrl}){
+export default function BlogPost({imgUrl, author}){
   return(
     <>
        <div className={styles.blogPostWrapper}>
@@ -13,7 +13,7 @@ export default function BlogPost({imgUrl}){
               alt='blog post image'
             />
             <div className={styles.blogAuthorDateWrapper}>
-              <p className={styles.blogAuthor}>filo vaesau</p>
+              <p className={styles.blogAuthor}>{author}</p>
               <div className={styles.dateAndTimeWrapper}>
                 <p>12/1/2024</p>
                 <p>12:00am</p>
