@@ -1,7 +1,7 @@
 import styles from "./BlogPost.module.css";
 
 
-export default function BlogPost({imgUrl, author}){
+export default function BlogPostPreviewCard({imgUrl, author}){
   return(
     <>
        <div className={styles.blogPostWrapper}>

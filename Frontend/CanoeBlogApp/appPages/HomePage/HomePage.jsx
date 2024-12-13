@@ -2,7 +2,7 @@ import styles from './HomePage.module.css';
 import NavigationBar from '../../appComponents/NavigationBar/NavigationBar';
 import SearchBar from '../../appComponents/SearchBar/SearchBar';
 import OpeningMessage from '../../appComponents/OpeningMessage/OpeningMessage';
-import BlogPost from '../../appComponents/BlogPost/BlogPost';
+import BlogPost from '../../appComponents/BlogPost/BlogPostPreviewCard';
 
 export default function HomePage() {
   return (
