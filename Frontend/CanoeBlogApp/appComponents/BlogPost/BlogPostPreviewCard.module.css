@@ -39,15 +39,23 @@
   /* border: solid tomato; */
 }
 
+
 .readFullBlogContainer{
   display: flex;
   gap: 1rem;
-  border: 1px solid #777;
+  background-color: #888;
   border-radius: 3px;
   padding: 1rem;
+  color: #eaeaea;
+  transition: .3s ease-in-out;
+}
+
+.readFullBlogContainer:hover{
+  background-color: limegreen;
+
+  
 }
 
 .fullBlogIcon{
   height: 1.25rem;
-
 }
