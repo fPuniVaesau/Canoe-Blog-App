@@ -6,6 +6,8 @@ export default function SignUpPage(){
   const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")
 
+  
+
   return(
     <>
       <div className={styles.signUpPageContainer}>
