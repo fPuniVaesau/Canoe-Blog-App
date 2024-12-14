@@ -67,7 +67,7 @@ BlogRouter.get("/:id", (request, response) => {
 })
 
 // POST request to add new blog post.
-BlogRouter.post("/", (request, response) => {
+BlogRouter.post("/newPost", (request, response) => {
     const {body} = request
     return response.send({msg: "testing the post request.",
         data: body

@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.mjs",
   "scripts": {
-    "devServer": "node --trace-warnings --watch --env-file=.env backendServer.mjs"
+    "backend": "node --trace-warnings --watch --env-file=.env backendServer.mjs"
   },
   "author": "",
   "license": "MIT",
