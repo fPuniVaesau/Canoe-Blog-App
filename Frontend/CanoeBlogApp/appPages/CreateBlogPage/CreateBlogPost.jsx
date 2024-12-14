@@ -2,15 +2,15 @@ import { useState } from "react"
 import axios from "axios"
 
 export default function CreateBlogPost(){
-    const newBlogData = {
+ 
+    const [blogData, setBlogData] = ({
         author: "",
         title: "",
         content: ""
-    }
-    const [blogData, setBlogData] = (newBlogData)
+    })
 
     const handleChange = (e) => {
-        setBlogData({...newBlogData, [e.target.name]: e.target.value})
+        setBlogData({...blogData, [e.target.name]: e.target.value})
         console.log(blogData);
     }
 
@@ -32,6 +32,7 @@ export default function CreateBlogPost(){
             <form onSubmit={handleSubmit} action="submit">
                 <label htmlFor="">author</label>
                 <input
+                onChange={(e)=>{handleChange(e)}}
                 name="author"
                 value={blogData.value}
                  type="text" />
