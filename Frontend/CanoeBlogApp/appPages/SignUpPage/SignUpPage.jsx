@@ -1,17 +1,16 @@
-import styles from "./SignUpPage.module.css"
-import { useState } from "react"
-import axios from "axios"
-import { use } from "react"
+import styles from './SignUpPage.module.css';
+import { useState } from 'react';
+import axios from 'axios';
+import { use } from 'react';
 
-export default function SignUpPage(){
+export default function SignUpPage() {
+ 
+  const [userData, setUserData] = ("");
 
-  const [firstName, setFirstName] = useState("")
-  const [lastName, setLastName] = useState("")
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  const handleSubmit = (e) =>{
-    e.preventDefault()
+    /*
     axios.get("http://127.0.0.1:8000/api/blogs")
     .then(data => {
       console.log(data)
@@ -19,9 +18,11 @@ export default function SignUpPage(){
     .catch(error => {
       console.log(error)
     })
-  }
+    */
 
-  return(
+  };
+
+  return (
     <>
       <div className={styles.signUpPageContainer}>
         <div className={styles.messageFormWrapper}>
@@ -30,45 +31,70 @@ export default function SignUpPage(){
             <p>Document your journey</p>
           </div>
 
-          <form onSubmit={(e)=>{handleSubmit(e)}} action="sumbit">
+          <form
+            onSubmit={(e) => {
+              handleSubmit(e);
+            }}
+            action='sumbit'
+          >
             {/* first and last name wrapper */}
             <div className={styles.nameWrapper}>
               {/* input field for the firstname */}
               <div className={styles.inputFieldWrappers}>
-                <label htmlFor="first name">First name</label>
-                <input 
-                onChange={(e)=>{setFirstName(e.target.value)}}
-                value={firstName}
-                className={styles.fieldInputs} type="text" placeholder="silver" required />
+                <label htmlFor='first name'>First name</label>
+                <input
+                
+                  className={styles.fieldInputs}
+                  type='text'
+                  placeholder='silver'
+                  required
+                />
               </div>
-                {/* input field for the lastname */}
+              {/* input field for the lastname */}
               <div className={styles.inputFieldWrappers}>
-                <label htmlFor="last name">Last name</label>
-                <input 
-                onChange={(e=>{setLastName(e.target.value)})}
-                value={lastName}
-                className={styles.fieldInputs} type="text" placeholder="surfer" required />
+                <label htmlFor='last name'>Last name</label>
+                <input
+                  
+                  className={styles.fieldInputs}
+                  type='text'
+                  placeholder='surfer'
+                  required
+                />
               </div>
             </div>
 
             {/* email and password wrapper */}
             <div className={styles.inputFieldWrappers}>
               {/* input field for the email address */}
-              <label htmlFor="email address">Email address</label>
+              <label htmlFor='email address'>Email address</label>
               <input
-              onChange={(e)=>{setEmail(e.target.value)}}
-              value={email}
-              className={styles.fieldInputs} type="text" placeholder="emailaddress@example.com" required />
+                
+                className={styles.fieldInputs}
+                type='text'
+                placeholder='emailaddress@example.com'
+                required
+              />
             </div>
 
             <div className={styles.inputFieldWrappers}>
               {/* input field for the password */}
-              <label htmlFor="password">Password</label>
-              <input className={styles.fieldInputs} type="password" placeholder="password" required />
+              <label htmlFor='password'>Password</label>
+              <input
+               
+                className={styles.fieldInputs}
+                type='password'
+                placeholder='password'
+                required
+              />
             </div>
             <div className={styles.inputFieldWrappers}>
-              <label htmlFor="re-enter password">Re-enter Password</label>
-              <input className={styles.fieldInputs} type="password" placeholder="re-enter password" required />
+              <label htmlFor='re-enter password'>Re-enter Password</label>
+              <input
+                className={styles.fieldInputs}
+                type='password'
+                placeholder='re-enter password'
+                required
+              />
             </div>
             <div className={styles.signUpButtonWrapper}>
               <button className={styles.signUpButton}>Create account</button>
@@ -77,9 +103,13 @@ export default function SignUpPage(){
         </div>
 
         <div className={styles.signupImageWrapper}>
-          <img className={styles.signupImg} src="https://images.unsplash.com/photo-1730472528705-d91d6088b7a9?q=80&w=3732&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+          <img
+            className={styles.signupImg}
+            src='https://images.unsplash.com/photo-1730472528705-d91d6088b7a9?q=80&w=3732&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            alt=''
+          />
         </div>
       </div>
     </>
-  )
-};
+  );
+}
