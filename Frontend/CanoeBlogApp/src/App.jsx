@@ -8,8 +8,8 @@ function App() {
   return (
     <div className={styles.wrapper}>
       <HomePage />
-      <LoginPage />
-      <SignUpPage />
+      {/* <LoginPage /> */}
+      {/* <SignUpPage /> */}
       <CreateBlogPost />
     </div>
   );

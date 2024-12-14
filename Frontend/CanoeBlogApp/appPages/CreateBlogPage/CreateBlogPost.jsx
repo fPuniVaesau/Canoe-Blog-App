@@ -8,7 +8,7 @@ export default function CreateBlogPost(){
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        axios.get("https://localhost:8000")
+        axios.get("https://127.0.0.1:8000/api/blogs/newPost")
         .then(response => {
             console.log(response);
         })
