@@ -4,8 +4,7 @@ import axios from 'axios';
 import { use } from 'react';
 
 export default function SignUpPage() {
- 
-  const [userData, setUserData] = ("");
+  const [userData, setUserData] = '';
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,7 +18,6 @@ export default function SignUpPage() {
       console.log(error)
     })
     */
-
   };
 
   return (
@@ -43,7 +41,6 @@ export default function SignUpPage() {
               <div className={styles.inputFieldWrappers}>
                 <label htmlFor='first name'>First name</label>
                 <input
-                
                   className={styles.fieldInputs}
                   type='text'
                   placeholder='silver'
@@ -54,7 +51,6 @@ export default function SignUpPage() {
               <div className={styles.inputFieldWrappers}>
                 <label htmlFor='last name'>Last name</label>
                 <input
-                  
                   className={styles.fieldInputs}
                   type='text'
                   placeholder='surfer'
@@ -68,7 +64,6 @@ export default function SignUpPage() {
               {/* input field for the email address */}
               <label htmlFor='email address'>Email address</label>
               <input
-                
                 className={styles.fieldInputs}
                 type='text'
                 placeholder='emailaddress@example.com'
@@ -80,7 +75,6 @@ export default function SignUpPage() {
               {/* input field for the password */}
               <label htmlFor='password'>Password</label>
               <input
-               
                 className={styles.fieldInputs}
                 type='password'
                 placeholder='password'
