@@ -2,12 +2,13 @@ import { useState } from "react"
 import axios from "axios"
 
 export default function CreateBlogPost(){
+    const newBlogData = {
+    author: "",
+    title: "",
+    content: ""
+}
  
-    const [blogData, setBlogData] = ({
-        author: "",
-        title: "",
-        content: ""
-    })
+    const [blogData, setBlogData] = useState(newBlogData)
 
     const handleChange = (e) => {
         setBlogData({...blogData, [e.target.name]: e.target.value})
