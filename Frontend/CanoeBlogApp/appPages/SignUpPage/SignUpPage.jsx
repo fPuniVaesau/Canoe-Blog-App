@@ -4,7 +4,18 @@ import axios from 'axios';
 import { use } from 'react';
 
 export default function SignUpPage() {
-  const [userData, setUserData] = '';
+  const newUserData = {
+    first_name: "",
+    last_name: "",
+    email: "",
+    password: "",
+    password_check: ""
+  }
+
+  const [userData, setUserData] = useState(newUserData);
+  const handleChange = (e) => {
+    setUserData({...userData, [e.target.name] : e.target.value})
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,6 +52,9 @@ export default function SignUpPage() {
               <div className={styles.inputFieldWrappers}>
                 <label htmlFor='first name'>First name</label>
                 <input
+                  onChange={(e)=>{handleChange(e)}}
+                  name='first_name'
+                  value={userData.first_name}
                   className={styles.fieldInputs}
                   type='text'
                   placeholder='silver'
@@ -51,6 +65,9 @@ export default function SignUpPage() {
               <div className={styles.inputFieldWrappers}>
                 <label htmlFor='last name'>Last name</label>
                 <input
+                  onChange={(e)=>{handleChange(e)}}
+                  name='last_name'
+                  value={userData.last_name}
                   className={styles.fieldInputs}
                   type='text'
                   placeholder='surfer'
@@ -64,6 +81,9 @@ export default function SignUpPage() {
               {/* input field for the email address */}
               <label htmlFor='email address'>Email address</label>
               <input
+                onChange={(e)=>{handleChange(e)}}
+                name='email'
+                value={userData.email}
                 className={styles.fieldInputs}
                 type='text'
                 placeholder='emailaddress@example.com'
@@ -75,6 +95,9 @@ export default function SignUpPage() {
               {/* input field for the password */}
               <label htmlFor='password'>Password</label>
               <input
+                onChange={(e)=>{handleChange(e)}}
+                name='password'
+                value={userData.password}
                 className={styles.fieldInputs}
                 type='password'
                 placeholder='password'
@@ -84,6 +107,9 @@ export default function SignUpPage() {
             <div className={styles.inputFieldWrappers}>
               <label htmlFor='re-enter password'>Re-enter Password</label>
               <input
+                onChange={(e)=>{handleChange(e)}}
+                name='password_check'
+                value={userData.password_check}
                 className={styles.fieldInputs}
                 type='password'
                 placeholder='re-enter password'
