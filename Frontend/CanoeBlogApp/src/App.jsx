@@ -7,12 +7,14 @@ import CreateBlogPost from "../appPages/CreateBlogPage/CreateBlogPost";
 function App() {
   return (
     <div className={styles.wrapper}>
-      {/* <HomePage /> */}
-      {/* <LoginPage /> */}
-      {/* <SignUpPage /> */}
+      <HomePage />
+      <LoginPage />
+      <SignUpPage />
       <CreateBlogPost />
     </div>
   );
 }
+
+
 
 export default App;

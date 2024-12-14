@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 8000;
 
 //cors options
 const corsOptions = {
-    origin: "http://localhost:8000"
+    origin: "*",
 };
 
 // mongoDB login credentials + connection string

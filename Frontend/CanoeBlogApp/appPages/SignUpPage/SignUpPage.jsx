@@ -12,6 +12,13 @@ export default function SignUpPage(){
 
   const handleSubmit = (e) =>{
     e.preventDefault()
+    axios.get("http://127.0.0.1:8000/api/blogs")
+    .then(data => {
+      console.log(data)
+    })
+    .catch(error => {
+      console.log(error)
+    })
   }
 
   return(
@@ -23,7 +30,7 @@ export default function SignUpPage(){
             <p>Document your journey</p>
           </div>
 
-          <form onSubmit={handleSubmit} action="sumbit">
+          <form onSubmit={(e)=>{handleSubmit(e)}} action="sumbit">
             {/* first and last name wrapper */}
             <div className={styles.nameWrapper}>
               {/* input field for the firstname */}
