@@ -5,30 +5,37 @@ import { use } from 'react';
 
 export default function SignUpPage() {
   const newUserData = {
-    first_name: "",
-    last_name: "",
-    email: "",
-    password: "",
-    password_check: ""
-  }
+    first_name: '',
+    last_name: '',
+    email: '',
+    password: '',
+    password_check: '',
+  };
 
   const [userData, setUserData] = useState(newUserData);
   const handleChange = (e) => {
-    setUserData({...userData, [e.target.name] : e.target.value})
-  }
+    setUserData({ ...userData, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    
-    axios.post("http://127.0.0.1:8000/api/register")
-    .then(data => {
-      console.log(data)
-    })
-    .catch(error => {
-      console.log(error)
-    })
-    
+    axios
+      .post('http://127.0.0.1:8000/api/register')
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    setUserData({
+      first_name: '',
+      last_name: '',
+      email: '',
+      password: '',
+      password_check: '',
+    });
   };
 
   return (
@@ -52,7 +59,9 @@ export default function SignUpPage() {
               <div className={styles.inputFieldWrappers}>
                 <label htmlFor='first name'>First name</label>
                 <input
-                  onChange={(e)=>{handleChange(e)}}
+                  onChange={(e) => {
+                    handleChange(e);
+                  }}
                   name='first_name'
                   value={userData.first_name}
                   className={styles.fieldInputs}
@@ -65,7 +74,9 @@ export default function SignUpPage() {
               <div className={styles.inputFieldWrappers}>
                 <label htmlFor='last name'>Last name</label>
                 <input
-                  onChange={(e)=>{handleChange(e)}}
+                  onChange={(e) => {
+                    handleChange(e);
+                  }}
                   name='last_name'
                   value={userData.last_name}
                   className={styles.fieldInputs}
@@ -81,7 +92,9 @@ export default function SignUpPage() {
               {/* input field for the email address */}
               <label htmlFor='email address'>Email address</label>
               <input
-                onChange={(e)=>{handleChange(e)}}
+                onChange={(e) => {
+                  handleChange(e);
+                }}
                 name='email'
                 value={userData.email}
                 className={styles.fieldInputs}
@@ -95,7 +108,9 @@ export default function SignUpPage() {
               {/* input field for the password */}
               <label htmlFor='password'>Password</label>
               <input
-                onChange={(e)=>{handleChange(e)}}
+                onChange={(e) => {
+                  handleChange(e);
+                }}
                 name='password'
                 value={userData.password}
                 className={styles.fieldInputs}
@@ -107,7 +122,9 @@ export default function SignUpPage() {
             <div className={styles.inputFieldWrappers}>
               <label htmlFor='re-enter password'>Re-enter Password</label>
               <input
-                onChange={(e)=>{handleChange(e)}}
+                onChange={(e) => {
+                  handleChange(e);
+                }}
                 name='password_check'
                 value={userData.password_check}
                 className={styles.fieldInputs}
