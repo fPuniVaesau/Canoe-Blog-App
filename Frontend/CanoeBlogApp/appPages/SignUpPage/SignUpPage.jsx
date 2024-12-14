@@ -55,7 +55,10 @@ export default function SignUpPage(){
             <div className={styles.inputFieldWrappers}>
               {/* input field for the email address */}
               <label htmlFor="email address">Email address</label>
-              <input className={styles.fieldInputs} type="text" placeholder="emailaddress@example.com" required />
+              <input
+              onChange={(e)=>{setEmail(e.target.value)}}
+              value={email}
+              className={styles.fieldInputs} type="text" placeholder="emailaddress@example.com" required />
             </div>
 
             <div className={styles.inputFieldWrappers}>
