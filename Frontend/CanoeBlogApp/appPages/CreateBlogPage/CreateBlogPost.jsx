@@ -2,9 +2,18 @@ import { useState } from "react"
 import axios from "axios"
 
 export default function CreateBlogPost(){
-    const [author, setAuthor] = useState("")
-    const [title, setTitle] = useState("");
-    const [content, setContent] = useState("");
+    const newBlogData = {
+        author: "",
+        title: "",
+        content: ""
+    }
+    const [blogData, setBlogData] = (newBlogData)
+
+    const handleChange = (e) => {
+        setBlogData({...newBlogData, [e.target.name]: e.target.value})
+        console.log(blogData);
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -22,7 +31,10 @@ export default function CreateBlogPost(){
             <h2>Create blog here:</h2>
             <form onSubmit={handleSubmit} action="submit">
                 <label htmlFor="">author</label>
-                <input type="text" value={author} onChange={(e) => setAuthor(e.target.value)}/>
+                <input
+                name="author"
+                value={blogData.value}
+                 type="text" />
             </form>
         </>
     )
