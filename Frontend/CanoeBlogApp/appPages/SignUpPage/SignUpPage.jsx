@@ -20,15 +20,15 @@ export default function SignUpPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    /*
-    axios.get("http://127.0.0.1:8000/api/blogs")
+    
+    axios.post("http://127.0.0.1:8000/api/register")
     .then(data => {
       console.log(data)
     })
     .catch(error => {
       console.log(error)
     })
-    */
+    
   };
 
   return (
