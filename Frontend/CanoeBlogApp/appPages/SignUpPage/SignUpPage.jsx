@@ -1,24 +1,17 @@
 import styles from "./SignUpPage.module.css"
 import { useState } from "react"
 import axios from "axios"
+import { use } from "react"
 
 export default function SignUpPage(){
 
   const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("");
 
   const handleSubmit = (e) =>{
     e.preventDefault()
-    axios.post("https://127.0.0.1:8000/api/register", {
-      firstName,
-      lastName
-    })
-    .then(result => {
-      console.log(result);
-    })
-    .catch(error =>{
-      console.log(error)
-    })
   }
 
   return(
@@ -51,11 +44,15 @@ export default function SignUpPage(){
               </div>
             </div>
 
+            {/* email and password wrapper */}
             <div className={styles.inputFieldWrappers}>
+              {/* input field for the email address */}
               <label htmlFor="email address">Email address</label>
               <input className={styles.fieldInputs} type="text" placeholder="emailaddress@example.com" required />
             </div>
+
             <div className={styles.inputFieldWrappers}>
+              {/* input field for the password */}
               <label htmlFor="password">Password</label>
               <input className={styles.fieldInputs} type="password" placeholder="password" required />
             </div>
