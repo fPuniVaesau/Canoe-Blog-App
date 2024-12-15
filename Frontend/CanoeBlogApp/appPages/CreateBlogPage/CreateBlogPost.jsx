@@ -33,12 +33,14 @@ export default function CreateBlogPost(){
         <>
             <h2>Create blog here:</h2>
             <form onSubmit={handleSubmit} action="submit">
+               <div>
                 <label htmlFor="">author</label>
                 <input
                 onChange={(e)=>{handleChange(e)}}
                 name="author"
                 value={blogData.value}
                 type="text" />
+               </div>
 
                 <div className={styles.BlogContentContainer}>
                     <div>
