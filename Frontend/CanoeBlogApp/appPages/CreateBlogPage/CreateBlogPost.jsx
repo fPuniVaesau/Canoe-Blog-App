@@ -1,3 +1,4 @@
+import styles from "./CreateBlogPost.module.css"
 import { useState } from "react"
 import axios from "axios"
 
@@ -37,7 +38,10 @@ export default function CreateBlogPost(){
                 onChange={(e)=>{handleChange(e)}}
                 name="author"
                 value={blogData.value}
-                 type="text" />
+                type="text" />
+                <div className={styles.BlogContentContainer}>
+
+                </div>
             </form>
         </>
     )
