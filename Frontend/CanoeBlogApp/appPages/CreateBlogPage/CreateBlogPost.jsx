@@ -39,8 +39,16 @@ export default function CreateBlogPost(){
                 name="author"
                 value={blogData.value}
                 type="text" />
-                <div className={styles.BlogContentContainer}>
 
+                <div className={styles.BlogContentContainer}>
+                    <div>
+                        <label htmlFor="">title</label>
+                        <input 
+                        onChange={(e)=>{handleChange(e)}}
+                        name="title"
+                        value={blogData.title}
+                        type="text" />
+                    </div>
                 </div>
             </form>
         </>
