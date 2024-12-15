@@ -55,7 +55,11 @@ export default function CreateBlogPost(){
                         <textarea 
                         onChange={(e)=>{handleChange(e)}}
                         value={blogData.content}
-                        name="content" id=""></textarea>
+                        name="content"
+                        placeholder="Let's get started..."
+                        id=""
+                        >
+                        </textarea>
                     </div>
                 </div>
                 <div>
