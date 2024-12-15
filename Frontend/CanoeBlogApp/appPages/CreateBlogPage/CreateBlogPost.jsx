@@ -25,6 +25,7 @@ export default function CreateBlogPost(){
         .catch(error => {
             console.log(error)
         })
+
     }
 
     return(

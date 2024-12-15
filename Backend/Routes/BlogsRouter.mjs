@@ -51,7 +51,7 @@ BlogRouter.get("/", (request, response) => {
 
 // GET request used to fetch Blogs by ID.
 BlogRouter.get("/:id", (request, response) => {
-    const {params:{id}} = request
+    const { params:{id} } = request
     const parsedID = parseInt(id);
 
     if(isNaN(id)){
