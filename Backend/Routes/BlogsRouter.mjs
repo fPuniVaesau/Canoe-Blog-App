@@ -1,5 +1,5 @@
 import { response, Router } from "express";
-import { query } from "express-validator";
+import { query, validationResult, body } from "express-validator";
 
 // Demo API Blog Data
 const demoBlogData = [
