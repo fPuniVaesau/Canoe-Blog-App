@@ -6,7 +6,7 @@ export default function CreateBlogPost(){
     author: "",
     title: "",
     content: ""
-}
+    }
  
     const [blogData, setBlogData] = useState(newBlogData)
 
