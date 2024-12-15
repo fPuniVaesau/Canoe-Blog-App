@@ -49,6 +49,15 @@ export default function CreateBlogPost(){
                         value={blogData.title}
                         type="text" />
                     </div>
+                    <div>
+                        <textarea 
+                        onChange={(e)=>{handleChange(e)}}
+                        value={blogData.content}
+                        name="content" id=""></textarea>
+                    </div>
+                </div>
+                <div>
+                    <button onClick={(e)=>{handleSubmit(e)}}>create blog</button>
                 </div>
             </form>
         </>
