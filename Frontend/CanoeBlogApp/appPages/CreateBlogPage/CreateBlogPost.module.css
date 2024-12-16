@@ -15,7 +15,13 @@
 }
 
 .titleWrapper{
-  /* border: 1px solid #777; */
+  display: flex;
+  gap: 1rem;
+  padding: 0 10px;
+}
+
+.titleWrapper > input{
+  flex: 1;
 }
 
 .inputStyling{
