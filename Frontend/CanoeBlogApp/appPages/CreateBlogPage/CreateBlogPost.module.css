@@ -1,5 +1,5 @@
 .BlogContentContainer{
-  border: 1px solid tomato;
+  /* border: 1px solid tomato; */
 }
 
 .textAreaWrapper{
@@ -12,5 +12,12 @@
   border: 1px solid #777;
   border-radius: 7px;
   padding: 10px;
+}
 
+.titleWrapper{
+  /* border: 1px solid #777; */
+}
+
+.inputStyling{
+  border: 1px solid #777;
 }

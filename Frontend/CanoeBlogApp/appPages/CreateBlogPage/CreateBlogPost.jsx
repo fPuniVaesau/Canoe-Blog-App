@@ -36,6 +36,7 @@ export default function CreateBlogPost(){
                <div>
                 <label htmlFor="">author</label>
                 <input
+                className={styles.inputStyling}
                 onChange={(e)=>{handleChange(e)}}
                 name="author"
                 value={blogData.value}
@@ -43,9 +44,10 @@ export default function CreateBlogPost(){
                </div>
 
                 <div className={styles.BlogContentContainer}>
-                    <div>
+                    <div className={styles.titleWrapper}>
                         <label htmlFor="">title</label>
-                        <input 
+                        <input
+                        className={styles.inputStyling}
                         onChange={(e)=>{handleChange(e)}}
                         name="title"
                         value={blogData.title}
