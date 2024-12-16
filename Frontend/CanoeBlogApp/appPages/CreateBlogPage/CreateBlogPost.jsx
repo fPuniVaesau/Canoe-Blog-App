@@ -58,6 +58,7 @@ export default function CreateBlogPost(){
                         name="content"
                         placeholder="Let's get started..."
                         id=""
+                        className={styles.textAreaStyling}
                         >
                         </textarea>
                     </div>
