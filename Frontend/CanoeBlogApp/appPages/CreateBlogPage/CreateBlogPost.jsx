@@ -51,7 +51,7 @@ export default function CreateBlogPost(){
                         value={blogData.title}
                         type="text" />
                     </div>
-                    <div>
+                    <div className={styles.textAreaWrapper}>
                         <textarea 
                         onChange={(e)=>{handleChange(e)}}
                         value={blogData.content}

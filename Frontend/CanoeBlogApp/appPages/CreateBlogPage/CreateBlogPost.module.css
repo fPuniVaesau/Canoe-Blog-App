@@ -2,6 +2,10 @@
   border: 1px solid tomato;
 }
 
+.textAreaWrapper{
+  margin-top: 10px;
+}
+
 .textAreaStyling{
   width: 100%;
   resize: none;
