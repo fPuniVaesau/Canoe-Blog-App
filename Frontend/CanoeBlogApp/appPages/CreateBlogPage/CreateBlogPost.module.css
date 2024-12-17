@@ -1,14 +1,13 @@
-.mainContainer{
+.mainContainer {
   min-height: 100svh;
   border: 1px solid green;
 }
 
-
-.textAreaWrapper{
+.textAreaWrapper {
   margin: 10px;
 }
 
-.textAreaStyling{
+.textAreaStyling {
   width: 100%;
   resize: none;
   border: 1px solid #777;
@@ -17,23 +16,22 @@
   margin-top: 10px;
 }
 
-.titleWrapper{
+.titleWrapper {
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: 0.5rem;
   padding: 0 10px;
   margin-top: 10px;
 }
 
-
-.inputStyling{
+.inputStyling {
   border: 1px solid #777;
   flex: 1;
   padding: 10px;
   border-radius: 7px;
 }
 
-.buttonWrapper{
+.buttonWrapper {
   margin: 10px;
 }
 
