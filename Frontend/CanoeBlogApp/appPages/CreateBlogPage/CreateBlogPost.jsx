@@ -54,6 +54,7 @@ export default function CreateBlogPost(){
                         type="text" />
                     </div>
                     <div className={styles.textAreaWrapper}>
+                        <label htmlFor="">content</label>
                         <textarea 
                         onChange={(e)=>{handleChange(e)}}
                         value={blogData.content}
@@ -65,8 +66,8 @@ export default function CreateBlogPost(){
                         </textarea>
                     </div>
                 </div>
-                <div>
-                    <button onClick={(e)=>{handleSubmit(e)}}>create blog</button>
+                <div className={styles.buttonWrapper}>
+                    <button onClick={(e)=>{handleSubmit(e)}}>post</button>
                 </div>
             </form>
         </>

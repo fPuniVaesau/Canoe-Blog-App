@@ -1,6 +1,7 @@
 .BlogContentContainer{
   border: 1px solid tomato;
   display: grid;
+  gap: 1rem;
 }
 
 .textAreaWrapper{
@@ -14,6 +15,7 @@
   border: 1px solid #777;
   border-radius: 7px;
   padding: 10px;
+  margin-top: 10px;
 }
 
 .titleWrapper{
@@ -27,8 +29,20 @@
 .titleWrapper > input{
   flex: 1;
   padding: 10px;
+  border-radius: 7px;
 }
 
 .inputStyling{
   border: 1px solid #777;
+}
+
+.buttonWrapper{
+  margin: 10px;
+}
+
+.buttonWrapper > button {
+  background-color: tomato;
+  padding: 5px 10px;
+  border-radius: 7px;
+  width: 100%;
 }
