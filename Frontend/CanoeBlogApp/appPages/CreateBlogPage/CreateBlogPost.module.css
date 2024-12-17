@@ -3,6 +3,11 @@
   border: 1px solid green;
 }
 
+.mainContainer > h2{
+  font-size: 1.75rem;
+  margin: 10px 10px 0;
+}
+
 .textAreaWrapper {
   margin: 10px;
 }
