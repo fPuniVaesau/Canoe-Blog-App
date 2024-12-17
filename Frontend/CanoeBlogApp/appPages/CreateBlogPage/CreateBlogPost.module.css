@@ -1,6 +1,6 @@
 .mainContainer {
   min-height: 100svh;
-  border: 1px solid green;
+  /* border: 1px solid green; */
 }
 
 .mainContainer > h2{
