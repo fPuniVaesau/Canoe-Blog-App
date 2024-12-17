@@ -1,12 +1,11 @@
-.BlogContentContainer{
-  border: 1px solid tomato;
-  display: grid;
-  gap: 1rem;
+.mainContainer{
+  min-height: 100svh;
+  border: 1px solid green;
 }
 
+
 .textAreaWrapper{
-  margin-top: 10px;
-  margin: 0 10px;
+  margin: 10px;
 }
 
 .textAreaStyling{
@@ -26,14 +25,12 @@
   margin-top: 10px;
 }
 
-.titleWrapper > input{
-  flex: 1;
-  padding: 10px;
-  border-radius: 7px;
-}
 
 .inputStyling{
   border: 1px solid #777;
+  flex: 1;
+  padding: 10px;
+  border-radius: 7px;
 }
 
 .buttonWrapper{
