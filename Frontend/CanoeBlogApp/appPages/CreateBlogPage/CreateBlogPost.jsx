@@ -28,6 +28,7 @@ export default function CreateBlogPost() {
         console.log(error);
       });
       
+      setBlogData(newBlogData);
   };
 
   return (
@@ -43,7 +44,7 @@ export default function CreateBlogPost() {
               handleChange(e);
             }}
             name='author'
-            value={blogData.value}
+            value={blogData.author}
             type='text'
           />
         </div>
