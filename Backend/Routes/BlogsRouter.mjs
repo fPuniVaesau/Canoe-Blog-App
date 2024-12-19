@@ -70,6 +70,7 @@ BlogRouter.get("/:id", (request, response) => {
 // POST request to add new blog post.
 BlogRouter.post("/new_post", (request, response) => {
     const {body} = request
+    console.log(body)
     return response.send({msg: "testing the post request.",
         BodyData : body
     })

@@ -18,7 +18,7 @@ export default function CreateBlogPost(){
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
+        // making a HTTP request to the backend of the application.
         axios.post("http://127.0.0.1:8000/api/blogs/new_post", blogData)
         .then(response => {
             console.log(response);
