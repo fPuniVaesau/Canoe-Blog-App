@@ -72,7 +72,7 @@ BlogRouter.post("/new_post", (request, response) => {
     const {body} = request
     console.log(body)
     return response.send({msg: "testing the post request.",
-        BodyData : body
+        BlogData : body
     })
 })
 
