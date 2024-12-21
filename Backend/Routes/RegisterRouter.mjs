@@ -8,10 +8,16 @@ RegistrationRouter.get("/", (request, response) => {
   response.send({router: "Registration Router"})
 })
 
-RegistrationRouter.post("/", (request, response)=>{
-  const {body} = request;
-  console.log(body)
-  return response.send(body)
+RegistrationRouter.post("/", checkSchema(NewUserSChema), (request, response)=>{
+  const errorResults = validationResult(request)
+  
+  if(!errorResults.isEmpty()){
+    return response.status(400).send({credentialsError: errorResults.array()});
+  }
+
+  const userData = matchedData(request);
+  console.log(userData)
+  return response.status(201).send({userCredentials: userData});
 })
 
 export default RegistrationRouter;
