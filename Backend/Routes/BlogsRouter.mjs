@@ -71,9 +71,7 @@ BlogRouter.get("/:id", (request, response) => {
 // POST request to add new blog post.
 BlogRouter.post("/new_post",checkSchema(BlogPostSchema) ,(request, response) => {
     const errorResults = validationResult(request);
-    console.log(validationResult)
 
-    
     // checks if the validation results is not empty which means there are errors
     if(!errorResults.isEmpty()){
         return response.status(400).send({validationErrors : errorResults.array()});
@@ -81,6 +79,7 @@ BlogRouter.post("/new_post",checkSchema(BlogPostSchema) ,(request, response) => 
 
     // if all fields pass validation, send the confirmed body.
     const confrimedData = matchedData(request)
+    console.log(confrimedData);
     return response.send({msg: "testing the post request.",
         BlogData : confrimedData
     })

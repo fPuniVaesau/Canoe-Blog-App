@@ -15,7 +15,8 @@ const BlogPostSchema = {
     },
     isString: {
       errorMessage: "The title must be a string"
-    }
+    },
+    trim: true
   },
   // validation for the content field that is sent via POST request from the user.
   content: {
@@ -30,13 +31,22 @@ const BlogPostSchema = {
         min: 3
       },
       errorMessage: "Content is not long enough, it must be a minimim of 3 characters long."
-    }
+    },
+    trim: true
+  },
+  author: {
+    notEmpty: {
+      errorMessage: "Author field can not be empty"
+    },
+    isLength: {
+      options: {
+        min: 3, 
+        max: 70
+      }, 
+      errorMessage: "This field must be between min: 3 and max: 70 characters long."
+    },
+    trim: true
   }
-  
-
-  
-  
-  
 }
 
 export default BlogPostSchema;
