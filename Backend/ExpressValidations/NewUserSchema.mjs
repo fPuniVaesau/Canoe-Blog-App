@@ -52,8 +52,20 @@ const NewUserSChema = {
       },
       errorMessage: "Email must be min: 3 and max:70 characters long."
     }
+  },
+  // validation for the password field via POST request from user.
+  password:{
+    isLength: {
+      options: {
+        min: 7, 
+        max: 70
+      },
+      errorMessage: "Passwords must be min: 7 and max: 70 characters."
+    },
+    notEmpty: {
+      errorMessage: "Passwords can not be empty."
+    }
   }
-
 }
 
 export default NewUserSChema
