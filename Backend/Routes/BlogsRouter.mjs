@@ -81,7 +81,6 @@ BlogRouter.post("/new_post",checkSchema(BlogPostSchema) ,(request, response) => 
 
     // if all fields pass validation, send the confirmed body.
     const confrimedData = matchedData(request)
-    console.log(confrimedData)
     return response.send({msg: "testing the post request.",
         BlogData : confrimedData
     })
