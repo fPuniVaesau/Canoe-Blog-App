@@ -1,5 +1,6 @@
 import { response, Router } from "express";
-import { query, validationResult, body, matchedData } from "express-validator";
+import { query, validationResult, body, matchedData, check, checkSchema } from "express-validator";
+import BlogPostSchema from "../ExpressValidations/BlogPostSchema.mjs";
 
 // Demo API Blog Data
 const demoBlogData = [
@@ -68,7 +69,7 @@ BlogRouter.get("/:id", (request, response) => {
 })
 
 // POST request to add new blog post.
-BlogRouter.post("/new_post", (request, response) => {
+BlogRouter.post("/new_post",checkSchema(BlogPostSchema) ,(request, response) => {
     const {body} = request
     console.log(body)
     return response.send({msg: "testing the post request.",
