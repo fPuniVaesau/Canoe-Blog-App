@@ -34,6 +34,7 @@ const BlogPostSchema = {
     },
     trim: true
   },
+  // validation for the author field that is sent via POST request from the user.
   author: {
     notEmpty: {
       errorMessage: "Author field can not be empty"

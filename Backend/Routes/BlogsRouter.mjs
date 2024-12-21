@@ -1,5 +1,5 @@
 import { response, Router } from "express";
-import { query, validationResult, body, matchedData, check, checkSchema } from "express-validator";
+import { query, validationResult, matchedData, checkSchema } from "express-validator";
 import BlogPostSchema from "../ExpressValidations/BlogPostSchema.mjs";
 
 // Demo API Blog Data
@@ -69,7 +69,7 @@ BlogRouter.get("/:id", (request, response) => {
 })
 
 // POST request to add new blog post.
-BlogRouter.post("/new_post",checkSchema(BlogPostSchema) ,(request, response) => {
+BlogRouter.post("/new_post", checkSchema(BlogPostSchema), (request, response) => {
     const errorResults = validationResult(request);
 
     // checks if the validation results is not empty which means there are errors
