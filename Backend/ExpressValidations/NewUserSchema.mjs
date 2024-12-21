@@ -65,6 +65,12 @@ const NewUserSChema = {
     notEmpty: {
       errorMessage: "Passwords can not be empty."
     }
+  },
+  // validation to confirm if the password is correct before submitting.
+  confirm_password: {
+    notEmpty: {
+      errorMessage :  "Please re-enter password."
+    }
   }
 }
 
