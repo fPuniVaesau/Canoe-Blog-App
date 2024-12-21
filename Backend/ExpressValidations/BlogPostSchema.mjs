@@ -12,6 +12,9 @@ const BlogPostSchema = {
     required: true,
     notEmpty: {
       errorMessage: "the title field can not be empty."
+    },
+    isString: {
+      errorMessage: "title must be a string"
     }
 
   }
