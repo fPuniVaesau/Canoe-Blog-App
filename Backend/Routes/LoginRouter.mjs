@@ -6,7 +6,6 @@ const LoginRouter = Router();
 
 LoginRouter.get("/", async (request, response)=>{
     console.log("inside the login router.")
-    console.log(request.cookies)
     let allUsers = await User.find();
     response.status(200).send(allUsers);
   
