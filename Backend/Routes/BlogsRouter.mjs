@@ -40,7 +40,7 @@ const demoBlogData = [
 const BlogRouter = Router();
 // GET request to fetch blog data with user queries
 BlogRouter.get("/", (request, response) => {
-    response.cookie("secret", "Phileaux", {maxAge: 60000})
+    
     const {query: {filter, value}} = request;
     if(!filter && !value){
         return response.send(demoBlogData);
