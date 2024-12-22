@@ -5,73 +5,73 @@ const NewUserSChema = {
   first_name: {
     isLength: {
       options: {
-        min: 1, 
-        max: 70
-      }, 
-      errorMessage: "First name must be at least 1 character long."
+        min: 1,
+        max: 70,
+      },
+      errorMessage: "First name must be at least 1 character long.",
     },
     isString: {
-      errorMessage: "First name must be a string."
+      errorMessage: "First name must be a string.",
     },
     trim: true,
     notEmpty: {
-      errorMessage: "First name can not be empty"
-    }
+      errorMessage: "First name can not be empty",
+    },
   },
   // Validation for the last name via POST request from the user.
   last_name: {
     isLength: {
       options: {
-        min: 1, 
-        max: 70
-      }, 
-      errorMessage: "Last name must be at least 1 character long."
+        min: 1,
+        max: 70,
+      },
+      errorMessage: "Last name must be at least 1 character long.",
     },
     isString: {
-      errorMessage: "Last name must be a string."
+      errorMessage: "Last name must be a string.",
     },
     trim: true,
     notEmpty: {
-      errorMessage: "last name can not be empty."
-    }
+      errorMessage: "last name can not be empty.",
+    },
   },
   // Validation for the email request via POST request from the user.
   email: {
     isEmail: {
-      errorMessage: "This must be in email format."
+      errorMessage: "This must be in email format.",
     },
     normalizeEmail: true,
     trim: true,
-    notEmpty:{
-      errorMessage: "Email field can not be empty."
+    notEmpty: {
+      errorMessage: "Email field can not be empty.",
     },
     isLength: {
       options: {
-        min:3, 
-        max: 70
+        min: 3,
+        max: 70,
       },
-      errorMessage: "Email must be min: 3 and max:70 characters long."
-    }
+      errorMessage: "Email must be min: 3 and max:70 characters long.",
+    },
   },
   // validation for the password field via POST request from user.
-  password:{
+  password: {
     isLength: {
       options: {
-        min: 7, 
-        max: 70
+        min: 7,
+        max: 70,
       },
-      errorMessage: "Passwords must be min: 7 and max: 70 characters."
+      errorMessage: "Passwords must be min: 7 and max: 70 characters.",
     },
     notEmpty: {
-      errorMessage: "Passwords can not be empty."
-    }
+      errorMessage: "Passwords can not be empty.",
+    },
   },
   // validation to confirm if the password is correct before submitting.
   confirm_password: {
     notEmpty: {
-      errorMessage :  "Please re-enter password."
-    }
-  }
-}
+      errorMessage: "Please re-enter password.",
+    },
+  },
+};
 
-export default NewUserSChema
+export default NewUserSChema;
