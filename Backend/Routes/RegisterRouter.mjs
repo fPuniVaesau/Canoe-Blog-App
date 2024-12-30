@@ -10,11 +10,12 @@ RegistrationRouter.get("/", (request, response) => {
 
 RegistrationRouter.post("/", checkSchema(NewUserSChema), (request, response)=>{
   const errorResults = validationResult(request)
-  
+  // checks is there are any errors during the post request, validating through users inputs.
   if(!errorResults.isEmpty()){
     return response.status(400).send({credentialsError: errorResults.array()});
   }
 
+  // if no errors, the good data will be used to create a new user.
   const userData = matchedData(request);
   console.log(userData)
   return response.status(201).send({userCredentials: userData});
