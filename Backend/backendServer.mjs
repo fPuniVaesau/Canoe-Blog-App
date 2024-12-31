@@ -46,9 +46,13 @@ mongoose.connect(connectionString)
     console.log('unable to connect to the database');
 });
 
-app.get("/", (req, res)=>{s
+app.get("/", (req, res)=>{
     console.log(req.session);
     console.log(req.session.id)
+
+    //modifying the session will save the session data and cookies
+    req.session.visited = true;
+
     res.status(200).send({
         server : "Blog Post API Server",
         credentials: {
