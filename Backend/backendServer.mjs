@@ -24,10 +24,10 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(session({
     secret: "blogPostBackend",
-    saveUninitialized: false,
-    resave: false,
+    saveUninitialized: false, //Does not save un-motified sessions to session store.
+    resave: false, 
     cookie: {
-        maxAge: 60000 * 10
+        maxAge: 60000 * 10 //sets the life of the cookie
     }
 }))
 app.use(express.urlencoded({ extended: false }));
