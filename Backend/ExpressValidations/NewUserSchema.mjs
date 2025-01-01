@@ -72,6 +72,24 @@ const NewUserSChema = {
       errorMessage: "Please re-enter password.",
     },
   },
+
+  username: {
+    unique: true,
+    notEmpty: {
+      errorMessage: "Username can not be empty."
+    },
+    isLength: {
+      options:{
+        min: 3,
+        max: 70
+      },
+      errorMessage: "Username must be a min: 3 and max: 70 characters."
+    },
+    trim: true,
+    isString: {
+      errorMessage: "Username must be a string."
+    }
+  }
 };
 
 export default NewUserSChema;
