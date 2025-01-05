@@ -5,6 +5,7 @@ import NewUserSChema from "../ExpressValidations/NewUserSchema.mjs";
 const RegistrationRouter = Router();
 
 RegistrationRouter.get("/", (request, response) => {
+  console.log(request.session.id)
   response.send({router: "Registration Router"})
 })
 

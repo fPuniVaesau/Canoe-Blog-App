@@ -51,6 +51,7 @@ app.get("/", (req, res)=>{
     console.log(req.session.id)
 
     //modifying the session will save the session data and cookies
+    //Ideally this will be on the home page route and will prompt when the user initially accesses the application.
     req.session.visited = true;
 
     res.status(200).send({

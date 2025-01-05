@@ -72,7 +72,7 @@ const NewUserSChema = {
       errorMessage: "Please re-enter password.",
     },
   },
-
+  // validation to confirm if the username is correct and unique before submitting.
   username: {
     unique: true,
     notEmpty: {
