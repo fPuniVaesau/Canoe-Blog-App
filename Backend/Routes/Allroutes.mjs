@@ -6,7 +6,7 @@ import BlogRouter from "./BlogsRouter.mjs";
 
 const AllRoutesRouter = Router();
 
-AllRoutesRouter.use("/api/home")
+AllRoutesRouter.use("/api/home", HomePageRouter)
 AllRoutesRouter.use("/api/login", LoginRouter);
 AllRoutesRouter.use("/api/register", RegistrationRouter);
 AllRoutesRouter.use("/api/blogs", BlogRouter);
