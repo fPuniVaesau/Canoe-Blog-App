@@ -70,8 +70,12 @@ BlogRouter.get("/:id", (request, response) => {
 })
 
 // POST request to add new blog post.
+//This route should only be allowed for users ONLY. We can potentially guard this route by checking to see if the users session object contains the proper credentials. Check if the user is registered with the app, usernamen and password are correct and if so we can modify the session accordingly for access to create posts for the blog application.
 BlogRouter.post("/new_post", checkSchema(BlogPostSchema), (request, response) => {
     const errorResults = validationResult(request);
+    
+    //check for the user in the database; Only users can post, so if there is no user in the database that matches the search query then we do not modify the session obj with user credentials and deny access to post.
+    
 
     // checks if the validation results is not empty which means there are errors
     if(!errorResults.isEmpty()){
