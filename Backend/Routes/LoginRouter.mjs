@@ -37,6 +37,7 @@ LoginRouter.post("/", checkSchema(UserLoginSchema), async (request, response)=>{
     
     const foundUser = demoLoginData.filter(user => {
         if(user.username === validatedUserCredentials.username){
+            console.log(user)
             return user
         }
     })
@@ -46,7 +47,7 @@ LoginRouter.post("/", checkSchema(UserLoginSchema), async (request, response)=>{
     if(foundUser.password !== validatedUserCredentials.password){
        return response.status(401).send({error: "password does not match"});
     }
-    
+
     request.session.verfiedCredentials = true;
     request.session.userCredentials = validatedUserCredentials;
     console.log(request.session);
