@@ -7,7 +7,6 @@ const UserLoginSchema = {
         },
         isLength: {
             options: {
-                min: 3, 
                 max: 70
             },
             errorMessage: "Password must be min: 3 and max: 70 characters long."
@@ -21,7 +20,6 @@ const UserLoginSchema = {
         },
         isLength: {
             options: {
-                min: 3, 
                 max: 70
             },
             errorMessage: "Username must be between min: 3 and max: 70 characters long."
