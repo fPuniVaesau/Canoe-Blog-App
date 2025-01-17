@@ -37,10 +37,11 @@ LoginRouter.post("/", checkSchema(UserLoginSchema), async (request, response)=>{
     
     const foundUser = demoLoginData.filter(user => {
         if(user.username === validatedUserCredentials.username){
-            console.log(user)
             return user
         }
     })
+
+    console.log(foundUser)
 
     if(!foundUser) return response.status(401).send({error: "uesr can not be found at this time."})
 
