@@ -1,6 +1,7 @@
 import { Router } from "express";
+import { checkSchema, validationResult, matchedData } from "express-validator";
 import User from "../MongooseValidations/MongooseSchemas/UserSchema.mjs";
-import { cookie } from "express-validator";
+import UserLoginSchema from "../ExpressValidations/UserLoginSchema.mjs";
 
 const LoginRouter = Router();
 
@@ -11,7 +12,7 @@ LoginRouter.get("/", async (request, response)=>{
   
 })
 
-LoginRouter.post("/", async (request, response)=>{
+LoginRouter.post("/", checkSchema(UserLoginSchema), async (request, response)=>{
     const { body } = request;
     console.log(body)
     return response.sendStatus(200);
