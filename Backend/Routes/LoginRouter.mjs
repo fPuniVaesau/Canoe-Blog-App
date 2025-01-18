@@ -35,7 +35,7 @@ LoginRouter.post("/", checkSchema(UserLoginSchema), async (request, response)=>{
     
     const validatedUserCredentials = matchedData(request);
     
-    const foundUser = demoLoginData.filter(user => {
+    const foundUser = demoLoginData.find(user => {
         if(user.username === validatedUserCredentials.username){
             return user
         }
@@ -43,7 +43,9 @@ LoginRouter.post("/", checkSchema(UserLoginSchema), async (request, response)=>{
 
     console.log(foundUser)
 
-    if(!foundUser) return response.status(401).send({error: "uesr can not be found at this time."})
+    if(!foundUser){
+        return response.status(401).send({error: "uesr can not be found at this time."})
+    }
 
     if(foundUser.password !== validatedUserCredentials.password){
        return response.status(401).send({error: "password does not match"});
