@@ -3,6 +3,7 @@ import { checkSchema, validationResult, matchedData } from "express-validator";
 import User from "../MongooseValidations/MongooseSchemas/UserSchema.mjs";
 import UserLoginSchema from "../ExpressValidations/UserLoginSchema.mjs";
 
+// Demo data that we are using to test the api calls; Real data will be pulled from database.
 const demoLoginData = [
     {
         "username": "filo7",
@@ -18,8 +19,10 @@ const demoLoginData = [
     }
 ]
 
+// Router Object
 const LoginRouter = Router();
 
+//GET request to see all users in database.
 LoginRouter.get("/", async (request, response)=>{
     console.log("inside the login router.")
     let allUsers = await User.find();
