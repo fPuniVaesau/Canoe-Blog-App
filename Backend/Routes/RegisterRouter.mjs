@@ -9,6 +9,7 @@ RegistrationRouter.get("/", (request, response) => {
   response.send({router: "Registration Router"})
 })
 
+// creating a new user profile, we can save the session data.
 RegistrationRouter.post("/", checkSchema(NewUserSChema), (request, response)=>{
   const errorResults = validationResult(request)
   // checks is there are any errors during the post request, validating through users inputs.

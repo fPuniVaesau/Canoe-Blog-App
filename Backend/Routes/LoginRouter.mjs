@@ -26,7 +26,7 @@ LoginRouter.get("/", async (request, response)=>{
     response.status(200).send(allUsers);
   
 })
-
+//if login is successful we can modify the session with the users credentials and save session data.
 LoginRouter.post("/", checkSchema(UserLoginSchema), async (request, response)=>{
     const { body } = request;
     const errorResults = validationResult(request);
