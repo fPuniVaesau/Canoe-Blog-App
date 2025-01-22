@@ -4,6 +4,8 @@ import cors from "cors";
 import mongoose from "mongoose";
 import AllRoutesRouter from "./Routes/Allroutes.mjs";
 import cookieParser from "cookie-parser";
+import passport from "passport";
+import { Strategy } from "passport-local";
 
 // express instance
 const app = express();
@@ -30,6 +32,7 @@ app.use(session({
         maxAge: 60000 * 10 //sets the life of the cookie
     }
 }))
+app.use(passport.initialize())
 app.use(express.urlencoded({ extended: false }));
 app.use(cors(corsOptions))
 app.use(AllRoutesRouter);
