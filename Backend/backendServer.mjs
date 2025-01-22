@@ -31,7 +31,7 @@ app.use(session({
         maxAge: 60000 * 10 //sets the life of the cookie
     }
 }))
-app.use(passport.initialize())
+app.use(passport.initialize()) //used for user authentication
 app.use(express.urlencoded({ extended: false }));
 app.use(cors(corsOptions))
 app.use(AllRoutesRouter);
