@@ -5,7 +5,6 @@ import mongoose from "mongoose";
 import AllRoutesRouter from "./Routes/Allroutes.mjs";
 import cookieParser from "cookie-parser";
 import passport from "passport";
-import { Strategy } from "passport-local";
 
 // express instance
 const app = express();
