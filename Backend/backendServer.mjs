@@ -32,6 +32,7 @@ app.use(session({
     }
 }))
 app.use(passport.initialize()) //used for user authentication
+app.use(passport.session())
 app.use(express.urlencoded({ extended: false }));
 app.use(cors(corsOptions))
 app.use(AllRoutesRouter);
