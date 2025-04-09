@@ -2,7 +2,7 @@ import { ExpressValidator, query } from "express-validator";
 
 const NewUserSChema = {
   // Validation for the first name via POST request from the user.
-  first_name: {
+  firstname: {
     isLength: {
       options: {
         min: 1,
@@ -19,7 +19,7 @@ const NewUserSChema = {
     },
   },
   // Validation for the last name via POST request from the user.
-  last_name: {
+  lastname: {
     isLength: {
       options: {
         min: 1,
