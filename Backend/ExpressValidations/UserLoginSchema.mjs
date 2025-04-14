@@ -1,18 +1,6 @@
-import { ExpressValidator } from "express-validator";
 
 const UserLoginSchema = {
-    email: {
-        isString: {
-            errorMessage: "Email must be in string format"
-        },
-        isLength: {
-            options: {
-                max: 70
-            },
-            errorMessage: "Password must be min: 3 and max: 70 characters long."
-        },
-        trim: true
-    },
+    //criteria for a valid Username
     username: {
         unique: true,
         isString: {
@@ -26,6 +14,7 @@ const UserLoginSchema = {
         },
         trim: true, 
     },
+    // criteria for a valid Password
     password: {
         isString: {
             errorMessage: 'Password must be a string'
@@ -36,6 +25,19 @@ const UserLoginSchema = {
                 max: 70
             },
             errorMessage: "Password must be between min(3) and max(70) characters long."
+        },
+        trim: true
+    },
+    // criteria for a valid Email Address
+    email: {
+        isString: {
+            errorMessage: "Email must be in string format"
+        },
+        isLength: {
+            options: {
+                max: 70
+            },
+            errorMessage: "Password must be min: 3 and max: 70 characters long."
         },
         trim: true
     }
