@@ -27,8 +27,9 @@ const UserLoginSchema = {
             errorMessage: "Password must be between min(3) and max(70) characters long."
         },
         trim: true
-    },
+    }
     // criteria for a valid Email Address
+    /*
     email: {
         isString: {
             errorMessage: "Email must be in string format"
@@ -41,6 +42,7 @@ const UserLoginSchema = {
         },
         trim: true
     }
+    */    
 }
 
 export default UserLoginSchema

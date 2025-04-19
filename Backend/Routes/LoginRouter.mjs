@@ -23,8 +23,10 @@ const demoLoginData = [
 const LoginRouter = Router();
 
 //GET request to see all users in database.
-LoginRouter.get("/", async (request, response)=>{
-    console.log("inside the login router.")
+LoginRouter.get("/status", async (request, response)=>{
+    console.log("checking status of user");
+    //find single user in the database
+
     let allUsers = await User.find();
     response.status(200).send(allUsers);
   
@@ -38,12 +40,9 @@ LoginRouter.post("/", checkSchema(UserLoginSchema), async (request, response)=>{
     if(!errorResults.isEmpty()) return response.status(401).send({errors: errorResults.array()})
     
     const validatedUserCredentials = matchedData(request);
-    
-    const foundUser = demoLoginData.find(user => {
-        if(user.username === validatedUserCredentials.username){
-            return user
-        }
-    })
+    const foundUserName = validatedUserCredentials.username;
+    const foundPassword = validatedUserCredentials.password;
+    const foundUser = await User.find({username: foundUserName});
 
     console.log(foundUser)
 
@@ -51,12 +50,13 @@ LoginRouter.post("/", checkSchema(UserLoginSchema), async (request, response)=>{
         return response.status(401).send({error: "uesr can not be found at this time."})
     }
 
-    if(foundUser.password !== validatedUserCredentials.password){
+    if(foundUser.password !== foundPassword){
+        console.log(foundPassword.password);
        return response.status(401).send({error: "password does not match"});
     }
 
     request.session.verfiedCredentials = true;
-    request.session.userCredentials = validatedUserCredentials;
+    request.session.userCredentials = foundUser;
     console.log(request.session);
     return response.sendStatus(200);
 })
