@@ -2,7 +2,6 @@
 const UserLoginSchema = {
     //criteria for a valid Username
     username: {
-        unique: true,
         isString: {
             errorMessage: "Username must be in string format."
         },
