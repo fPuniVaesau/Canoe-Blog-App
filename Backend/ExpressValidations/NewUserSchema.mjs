@@ -74,7 +74,6 @@ const NewUserSChema = {
   },
   // validation to confirm if the username is correct and unique before submitting.
   username: {
-    unique: true,
     notEmpty: {
       errorMessage: "Username can not be empty."
     },
