@@ -5,15 +5,16 @@ import User from "../MongooseValidations/MongooseSchemas/UserSchema.mjs";
 //this function is responsible for taking the user we validated and storing it into the session.
 passport.serializeUser((user, done)=>{
   console.log("Inside Serialize User");
-  done(null, user.username)
+  // console.log(user);
+  done(null, user.id)
 });
 
-passport.deserializeUser( async (username, done)=>{
+passport.deserializeUser( async (id, done)=>{
   console.log("Inside De-serialize User");
   try {
-    const findUser = await User.findOne({username : username});
+    const findUser = await User.findOne({_id: id});
     if(!findUser) throw new Error("Deserialize: User not found");
-    done(null, user);
+    done(null, findUser);
 
   } catch (error) {
     done(error, null);

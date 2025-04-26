@@ -69,6 +69,8 @@ LoginRouter.get("/status", async (request, response)=>{
 //     return response.sendStatus(200);
 // })
 
-LoginRouter.post("/testing", passport.authenticate("local"), (request, response) => {});
+LoginRouter.post("/testing", passport.authenticate("local"), (request, response) => {
+    return response.status(200).send("authenticated")
+});
 
 export default LoginRouter;
