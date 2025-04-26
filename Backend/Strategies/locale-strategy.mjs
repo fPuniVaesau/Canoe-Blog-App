@@ -1,14 +1,41 @@
 import passport from "passport";
 import { Strategy } from "passport-local";
+import User from "../MongooseValidations/MongooseSchemas/UserSchema.mjs";
 
+//this function is responsible for taking the user we validated and storing it into the session.
+passport.serializeUser((user, done)=>{
+  console.log("Inside Serialize User");
+  done(null, user.username)
+});
+
+passport.deserializeUser( async (username, done)=>{
+  console.log("Inside De-serialize User");
+  try {
+    const findUser = await User.findOne({username : username});
+    if(!findUser) throw new Error("Deserialize: User not found");
+    done(null, user);
+
+  } catch (error) {
+    done(error, null);
+  }
+})
+
+//this function is for validating the user.
 export default passport.use(
   new Strategy(async (username, password, done)=>{
+    console.log("Inside Local Strategy Authenticator");
     try {
       //1. we need to find the user in the mongodb database.
-      const foundUser = await User.findOne({username: username}, ()=>{
-        if(!foundUser) throw new Error("User not found");
-        if(foundUser.password !== password) throw new Error("Passwrod does not match");
-      });
+      const foundUser = await User.findOne({username: username});
+      console.log(`username: ${username}`);
+      console.log(`password: ${password}`);
+
+      
+      if(!foundUser) throw new Error("Local Stratedy Authentication: User not found");
+      // if(foundUser.password !== password) throw new Error("Passwrod does not match");
+      console.log(foundUser.password);
+      console.log(foundUser);
+
       done(null, foundUser);
 
     } catch (error) {

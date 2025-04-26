@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 import AllRoutesRouter from "./Routes/Allroutes.mjs";
 import cookieParser from "cookie-parser";
 import passport from "passport";
+import localeStrategy from "./Strategies/locale-strategy.mjs";
 
 // express instance
 const app = express();
