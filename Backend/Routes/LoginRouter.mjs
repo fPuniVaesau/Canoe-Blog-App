@@ -26,9 +26,15 @@ const LoginRouter = Router();
 LoginRouter.get("/status", async (request, response)=>{
     console.log("checking status of user");
     //find single user in the database
+    // change to find user that is attached to the session object.
+    let findOneUser = await User.find({username : "filovaesau100" });
 
-    let allUsers = await User.find();
-    response.status(200).send(allUsers);
+    if(!findOneUser) return response.status(400).send({user: "no user found."});
+    
+    return response.status(200).send({
+        user: findOneUser, 
+        status: "Registered"
+    });
   
 })
 
