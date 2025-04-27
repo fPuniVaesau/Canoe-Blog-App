@@ -4,22 +4,6 @@ import passport from "passport";
 import UserLoginSchema from "../ExpressValidations/UserLoginSchema.mjs";
 import { checkSchema, validationResult, matchedData, check } from "express-validator";
 
-// Demo data that we are using to test the api calls; Real data will be pulled from database.
-// const demoLoginData = [
-//     {
-//         "username": "filo7",
-//         "password": "testpassword"
-//     },
-//     {
-//         "username": "morgan10",
-//         "password": "testpassword2"
-//     },
-//     {
-//         "username": "s11",
-//         "password": "testpassword3"
-//     }
-// ]
-
 // Router Object
 const LoginRouter = Router();
 
