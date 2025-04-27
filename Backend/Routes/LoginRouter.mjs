@@ -28,12 +28,12 @@ const LoginRouter = Router();
 LoginRouter.get("/authentication/status", async (request, response)=>{
     console.log("checking status of user");
     //find single user in the database
-    // change to find user that is attached to the session object.
     let x_username = request.user.username;
+    // Mongoose method to locate the usernamen in the DB if the username attached to the session obj matches.
     let findOneUser = await User.find({username : x_username });
-
+    // if no user is found we send status 400.
     if(!findOneUser) return response.status(400).send({user: "no user found."});
-    
+    // if we find user we return the response to the user with the username that is logged in and status of the user.
     return response.status(200).send({
         user: x_username, 
         status: "Registered"
