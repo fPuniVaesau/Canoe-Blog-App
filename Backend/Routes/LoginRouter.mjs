@@ -4,7 +4,6 @@ import passport from "passport";
 import UserLoginSchema from "../ExpressValidations/UserLoginSchema.mjs";
 import { checkSchema, validationResult, matchedData, check } from "express-validator";
 
-
 // Demo data that we are using to test the api calls; Real data will be pulled from database.
 // const demoLoginData = [
 //     {
