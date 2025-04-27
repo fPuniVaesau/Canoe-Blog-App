@@ -28,14 +28,9 @@ export default passport.use(
     try {
       //1. we need to find the user in the mongodb database.
       const foundUser = await User.findOne({username: username});
-      console.log(`username: ${username}`);
-      console.log(`password: ${password}`);
-
       
       if(!foundUser) throw new Error("Local Stratedy Authentication: User not found");
-      // if(foundUser.password !== password) throw new Error("Passwrod does not match");
-      console.log(foundUser.password);
-      console.log(foundUser);
+      if(foundUser.password !== password) throw new Error("Passwrod does not match");
 
       done(null, foundUser);
 

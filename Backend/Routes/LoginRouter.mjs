@@ -1,46 +1,54 @@
 import { Router } from "express";
-import { checkSchema, validationResult, matchedData } from "express-validator";
 import User from "../MongooseValidations/MongooseSchemas/UserSchema.mjs";
-import UserLoginSchema from "../ExpressValidations/UserLoginSchema.mjs";
 import passport from "passport";
-import localeStrategy from "../Strategies/locale-strategy.mjs";
+import UserLoginSchema from "../ExpressValidations/UserLoginSchema.mjs";
+import { checkSchema, validationResult, matchedData, check } from "express-validator";
+
 
 // Demo data that we are using to test the api calls; Real data will be pulled from database.
-const demoLoginData = [
-    {
-        "username": "filo7",
-        "password": "testpassword"
-    },
-    {
-        "username": "morgan10",
-        "password": "testpassword2"
-    },
-    {
-        "username": "s11",
-        "password": "testpassword3"
-    }
-]
+// const demoLoginData = [
+//     {
+//         "username": "filo7",
+//         "password": "testpassword"
+//     },
+//     {
+//         "username": "morgan10",
+//         "password": "testpassword2"
+//     },
+//     {
+//         "username": "s11",
+//         "password": "testpassword3"
+//     }
+// ]
 
 // Router Object
 const LoginRouter = Router();
 
 //GET request to see all users in database.
-LoginRouter.get("/status", async (request, response)=>{
+LoginRouter.get("/authentication/status", async (request, response)=>{
     console.log("checking status of user");
     //find single user in the database
     // change to find user that is attached to the session object.
-    let findOneUser = await User.find({username : "filovaesau100" });
+    let x_username = request.user.username;
+    let findOneUser = await User.find({username : x_username });
 
     if(!findOneUser) return response.status(400).send({user: "no user found."});
     
     return response.status(200).send({
-        user: findOneUser, 
+        user: x_username, 
         status: "Registered"
     });
   
 })
 
-//if login is successful we can modify the session with the users credentials and save session data.
+LoginRouter.post("/authentication", passport.authenticate("local"), (request, response) => {
+    console.log(`Inside the aunthentication endpoint`);
+    console.log(request.user);
+    return response.sendStatus(200);
+});
+
+
+// if login is successful we can modify the session with the users credentials and save session data.
 // LoginRouter.post("/", checkSchema(UserLoginSchema), async (request, response)=>{
 //     const { body } = request;
 //     const errorResults = validationResult(request);
@@ -68,9 +76,4 @@ LoginRouter.get("/status", async (request, response)=>{
 //     console.log(request.session);
 //     return response.sendStatus(200);
 // })
-
-LoginRouter.post("/testing", passport.authenticate("local"), (request, response) => {
-    return response.status(200).send("authenticated")
-});
-
 export default LoginRouter;
