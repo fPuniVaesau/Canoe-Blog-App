@@ -24,12 +24,22 @@ LoginRouter.get("/authentication/status", async (request, response)=>{
   
 })
 
+//Enpoint used to login in the user
 LoginRouter.post("/authentication", passport.authenticate("local"), (request, response) => {
     console.log(`Inside the aunthentication endpoint`);
     console.log(request.user);
     return response.sendStatus(200);
 });
 
+LoginRouter.post('/authentication/logout', (request, response)=>{
+    if(!request.user) return response.sendStatus(401);
+
+    request.logout((error)=>{
+        if(error) return response.sendStatus(400);
+        return response.status(200).send({logout: "successful"});
+    })
+
+});
 
 export default LoginRouter;
 
