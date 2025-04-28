@@ -46,7 +46,7 @@ authenticationRouter.post('/logout', (request, response)=>{
 
 export default authenticationRouter;
 
-//Passport modifys the session object for us
-//1. We are able to login in with local strategy using username and password saved in the database.
+//Passport modifys the session object for us ✅
+//1. We are able to login in with local strategy using username and password saved in the database. ✅
 //2. We will work on hashing the passwords to keep them safe
 //3. We will work on alternative login methods using Oauth2 login strategies.
