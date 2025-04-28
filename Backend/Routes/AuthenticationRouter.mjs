@@ -33,8 +33,10 @@ authenticationRouter.post("/login", passport.authenticate("local"), (request, re
 });
 
 authenticationRouter.post('/logout', (request, response)=>{
+    //if no user is logged in we send a status of 401
     if(!request.user) return response.sendStatus(401);
 
+    //if user is logged in we log user out.
     request.logout((error)=>{
         if(error) return response.sendStatus(400);
         return response.status(200).send({logout: "successful"});
