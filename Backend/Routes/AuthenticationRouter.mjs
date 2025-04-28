@@ -5,10 +5,10 @@ import UserLoginSchema from "../ExpressValidations/UserLoginSchema.mjs";
 import { checkSchema, validationResult, matchedData, check } from "express-validator";
 
 // Router Object
-const LoginRouter = Router();
+const authenticationRouter = Router();
 
 //GET request to see all users in database.
-LoginRouter.get("/authentication/status", async (request, response)=>{
+authenticationRouter.get("/status", async (request, response)=>{
     console.log("checking status of user");
     if(!request.user) return response.status(401).send({error: "No user logged in."})
     //find single user in the database
@@ -26,13 +26,13 @@ LoginRouter.get("/authentication/status", async (request, response)=>{
 })
 
 //Enpoint used to login in the user
-LoginRouter.post("/authentication", passport.authenticate("local"), (request, response) => {
+authenticationRouter.post("/login", passport.authenticate("local"), (request, response) => {
     console.log(`Inside the aunthentication endpoint`);
     console.log(request.user);
     return response.sendStatus(200);
 });
 
-LoginRouter.post('/authentication/logout', (request, response)=>{
+authenticationRouter.post('/logout', (request, response)=>{
     if(!request.user) return response.sendStatus(401);
 
     request.logout((error)=>{
@@ -42,7 +42,7 @@ LoginRouter.post('/authentication/logout', (request, response)=>{
 
 });
 
-export default LoginRouter;
+export default authenticationRouter;
 
 //Passport modifys the session object for us
 //1. We are able to login in with local strategy using username and password saved in the database.
