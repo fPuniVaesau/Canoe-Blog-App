@@ -10,6 +10,7 @@ const LoginRouter = Router();
 //GET request to see all users in database.
 LoginRouter.get("/authentication/status", async (request, response)=>{
     console.log("checking status of user");
+    if(!request.user) return response.status(401).send({error: "No user logged in."})
     //find single user in the database
     let x_username = request.user.username;
     // Mongoose method to locate the usernamen in the DB if the username attached to the session obj matches.
