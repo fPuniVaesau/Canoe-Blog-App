@@ -9,7 +9,7 @@ HomePageRouter.get("/", (request, response)=>{
   request.session.visited = true;
 
   console.log(request.session);
-  console.log(request.session.id)
+  // console.log(request.session.id)
 
   response.status(200).send({msg: "Welcome to the application."})
 });

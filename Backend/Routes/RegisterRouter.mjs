@@ -28,8 +28,10 @@ RegistrationRouter.post("/new_users", checkSchema(NewUserSChema), async (request
     if(existingUser) return response.status(409).send({error: `username of ${userData.username} already exists.`});
 
     //Before we pass in the data to create the new user we hash the password for added security to the application.
-    userData.password = await hashPassword(userData.hashPassword);
-    console.log(userData);
+    const newPassword = await hashPassword(userData.password);
+    userData.password = newPassword;
+    console.log(newPassword);
+
 
     //We create a new user to add to the database.
     const newUserCreated = await User.create(userData);
