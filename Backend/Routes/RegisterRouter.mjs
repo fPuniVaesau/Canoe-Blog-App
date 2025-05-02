@@ -28,7 +28,7 @@ RegistrationRouter.post("/new_users", checkSchema(NewUserSChema), async (request
 
     //Before we pass in the data to create the new user we hash the password for added security to the application.
     userData.hashPassword = await hashPassword(userData.hashPassword);
-    console.log(userData.hashPassword);
+    console.log(userData);
 
     //We create a new user to add to the database.
     const newUserCreated = await User.create(userData);
