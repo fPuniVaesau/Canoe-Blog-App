@@ -21,13 +21,14 @@ RegistrationRouter.post("/new_users", checkSchema(NewUserSChema), async (request
     const userData = matchedData(request);
 
     //We are searching to see if there is a user within the database that the user provided.
-    const existingUser = await User.find({username: userData.username});
+    const existingUser = await User.findOne({username: userData.username});
+    console.log(existingUser);
     
     //if there is a duplicate user in the database we will send bad status code and error message.
     if(existingUser) return response.status(409).send({error: `username of ${userData.username} already exists.`});
 
     //Before we pass in the data to create the new user we hash the password for added security to the application.
-    userData.hashPassword = await hashPassword(userData.hashPassword);
+    userData.password = await hashPassword(userData.hashPassword);
     console.log(userData);
 
     //We create a new user to add to the database.
