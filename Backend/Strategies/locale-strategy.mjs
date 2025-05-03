@@ -1,7 +1,7 @@
 import passport from "passport";
 import { Strategy } from "passport-local";
 import User from "../MongooseValidations/MongooseSchemas/UserSchema.mjs";
-import { hashPassword } from "../Utilities/helper.mjs";
+import { comparePassword } from "../Utilities/helper.mjs";
 
 //this function is responsible for taking the user we validated and storing it into the session.
 passport.serializeUser((user, done)=>{
@@ -35,7 +35,7 @@ export default passport.use(
       //if no user is found then we can throw error stating no user is found.
       if(!foundUser) throw new Error("Local Stratedy Authentication: User not found");
       //we call helper function from helper.mjs file to compare the hashed password to the provided password provided by the client.
-      if(!hashPassword(password, foundUser.password )) throw new Error("Passwrod does not match");
+      if(!comparePassword(password, foundUser.password )) throw new Error("Passwrod does not match");
       //we call the done function as this is middleware, this continues the logic.
       done(null, foundUser);
 
