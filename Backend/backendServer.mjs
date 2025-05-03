@@ -1,11 +1,12 @@
 import express from "express";
 import session from "express-session";
 import cors from "cors";
-import mongoose from "mongoose";
+import mongoose, { Mongoose } from "mongoose";
 import AllRoutesRouter from "./Routes/Allroutes.mjs";
 import cookieParser from "cookie-parser";
 import passport from "passport";
 import localeStrategy from "./Strategies/locale-strategy.mjs";
+import MongoStore from "connect-mongo";
 
 // express instance
 const app = express();
@@ -30,7 +31,10 @@ app.use(session({
     resave: false, 
     cookie: {
         maxAge: 60000 * 10 //sets the life of the cookie
-    }
+    },
+    store: MongoStore.create({
+        client: mongoose.connection.getClient();
+    })
 }))
 app.use(passport.initialize()) //used for user authentication
 app.use(passport.session())
