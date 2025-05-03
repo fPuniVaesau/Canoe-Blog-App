@@ -36,7 +36,10 @@ RegistrationRouter.post("/new_users", checkSchema(NewUserSChema), async (request
     //We create a new user to add to the database.
     const newUserCreated = await User.create(userData);
     console.log(userData)
-    return response.status(201).send({userCredentials: userData});    
+    return response.status(201).send({
+      msg: "User Registered",
+      userCredentials: userData,
+    });    
   } catch (error) {
       if (!errorResults.isEmpty()) {
         return response.status(400).send({ credentialsError: errorResults.array() });
