@@ -10,6 +10,7 @@ passport.serializeUser((user, done)=>{
   done(null, user.id)
 });
 
+//this function is used to get access to the user data.
 passport.deserializeUser( async (id, done)=>{
   console.log("Inside De-serialize User");
   try {
