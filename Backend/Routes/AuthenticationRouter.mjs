@@ -1,13 +1,13 @@
 import { Router } from "express";
 import User from "../MongooseValidations/MongooseSchemas/UserSchema.mjs";
 import passport from "passport";
-import UserLoginSchema from "../ExpressValidations/UserLoginSchema.mjs";
-import { checkSchema, validationResult, matchedData, check } from "express-validator";
+// import UserLoginSchema from "../ExpressValidations/UserLoginSchema.mjs";
+// import { checkSchema, validationResult, matchedData, check } from "express-validator";
 
 // Router Object
 const authenticationRouter = Router();
 
-//GET request to see all users in database.
+//GET request to check if the user is in database & the users status.
 authenticationRouter.get("/status", async (request, response)=>{
     console.log("checking status of user");
     if(!request.user) return response.status(401).send({status: "No user logged in."})
@@ -25,13 +25,14 @@ authenticationRouter.get("/status", async (request, response)=>{
   
 })
 
-//Enpoint used to login in the user
+//Post request used to login in the user
 authenticationRouter.post("/login", passport.authenticate("local"), (request, response) => {
     console.log(`Inside the aunthentication endpoint`);
     console.log(request.user);
     return response.status(200).send({status: `login sucessful, welcome ${request.user.username}`});
 });
 
+//Post request used to log the user out.
 authenticationRouter.post('/logout', (request, response)=>{
     //if no user is logged in we send a status of 401
     if(!request.user) return response.sendStatus(401);
