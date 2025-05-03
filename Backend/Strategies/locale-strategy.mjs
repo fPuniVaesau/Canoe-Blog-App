@@ -1,8 +1,7 @@
 import passport from "passport";
 import { Strategy } from "passport-local";
 import User from "../MongooseValidations/MongooseSchemas/UserSchema.mjs";
-import bcrypt, {compare} from "bcrypt";
-import { hashPassword, comparePassword } from "../Utilities/helper.mjs";
+import { hashPassword } from "../Utilities/helper.mjs";
 
 //this function is responsible for taking the user we validated and storing it into the session.
 passport.serializeUser((user, done)=>{
