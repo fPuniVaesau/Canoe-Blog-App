@@ -26,17 +26,20 @@ const connectionString =`mongodb+srv://${mongoDBusername}:${mongoDBpassword}@pro
 // middleware 
 app.use(express.json());
 app.use(cookieParser());
-app.use(session({
+app.use(
+  session({
     secret: "blogPostBackend",
     saveUninitialized: false, //Does not save un-motified sessions to session store.
-    resave: false, 
+    resave: false,
     cookie: {
-        maxAge: 60000 * 10 //sets the life of the cookie
+      maxAge: 60000 * 10, //sets the life of the cookie
     },
     store: MongoStore.create({
-        client : mongoose.connection.getClient()
+      mongoUrl : connectionString
     })
-}))
+
+  })
+);
 app.use(passport.initialize()) //used for user authentication
 app.use(passport.session())
 app.use(express.urlencoded({ extended: false }));
