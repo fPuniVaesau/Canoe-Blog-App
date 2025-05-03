@@ -1,6 +1,7 @@
 import passport from "passport";
 import { Strategy } from "passport-local";
 import User from "../MongooseValidations/MongooseSchemas/UserSchema.mjs";
+import bcrypt, {compare} from "bcrypt";
 
 //this function is responsible for taking the user we validated and storing it into the session.
 passport.serializeUser((user, done)=>{
@@ -28,9 +29,10 @@ export default passport.use(
     try {
       //1. we need to find the user in the mongodb database.
       const foundUser = await User.findOne({username: username});
-      
+    
       if(!foundUser) throw new Error("Local Stratedy Authentication: User not found");
-      if(foundUser.password !== password) throw new Error("Passwrod does not match");
+
+      if(!hashedPassword(password, foundUser.password )) throw new Error("Passwrod does not match");
 
       done(null, foundUser);
 
