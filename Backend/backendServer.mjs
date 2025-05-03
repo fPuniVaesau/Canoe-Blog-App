@@ -22,7 +22,6 @@ const mongoDBusername = process.env.MONGODB_USER
 const mongoDBpassword = process.env.MONGODB_PW;
 const connectionString =`mongodb+srv://${mongoDBusername}:${mongoDBpassword}@projectcanoe.jcfsi.mongodb.net/?retryWrites=true&w=majority&appName=projectCANOE`;
 
-
 // middleware 
 app.use(express.json());
 app.use(cookieParser());
@@ -34,10 +33,10 @@ app.use(
     cookie: {
       maxAge: 60000 * 10, //sets the life of the cookie
     },
+    //by default sessions are saved to local memory, we use mongo-connet to make the session data persistant.
     store: MongoStore.create({
       mongoUrl : connectionString
     })
-
   })
 );
 app.use(passport.initialize()) //used for user authentication
