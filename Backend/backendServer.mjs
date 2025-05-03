@@ -53,13 +53,6 @@ mongoose.connect(connectionString)
 app.get("/", (req, res)=>{
 
     res.status(200).send({
-        server : "Blog Post API Server",
-        credentials: {
-            role: "Owner",
-            name: "Filo Vaesau",
-            state: "California",
-            city: "San Ramon",
-            ID: 1
-        }
+        server : "Canoe | Connected",
     });
 });

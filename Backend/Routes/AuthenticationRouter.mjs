@@ -10,7 +10,7 @@ const authenticationRouter = Router();
 //GET request to see all users in database.
 authenticationRouter.get("/status", async (request, response)=>{
     console.log("checking status of user");
-    if(!request.user) return response.status(401).send({error: "No user logged in."})
+    if(!request.user) return response.status(401).send({status: "No user logged in."})
     //find single user in the database
     let x_username = request.user.username;
     // Mongoose method to locate the usernamen in the DB if the username attached to the session obj matches.
@@ -29,7 +29,7 @@ authenticationRouter.get("/status", async (request, response)=>{
 authenticationRouter.post("/login", passport.authenticate("local"), (request, response) => {
     console.log(`Inside the aunthentication endpoint`);
     console.log(request.user);
-    return response.sendStatus(200);
+    return response.status(200).send({status: `login sucessful, welcome ${request.user.username}`});
 });
 
 authenticationRouter.post('/logout', (request, response)=>{
@@ -39,7 +39,7 @@ authenticationRouter.post('/logout', (request, response)=>{
     //if user is logged in we log user out.
     request.logout((error)=>{
         if(error) return response.sendStatus(400);
-        return response.status(200).send({logout: "successful"});
+        return response.status(200).send({status: "logout successful"});
     })
 
 });
