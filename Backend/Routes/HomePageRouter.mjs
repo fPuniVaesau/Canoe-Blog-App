@@ -9,7 +9,13 @@ HomePageRouter.get("/", (request, response)=>{
   request.session.visited = true;
 
   console.log(request.session);
-  // console.log(request.session.id)
+  console.log(request.session.id);
+  //this is just to see the session store data
+  request.sessionStore.get(request.session.id, (err, sessionData)=>{
+    if(err) {console.log(err); throw err;};
+    console.log("Inside the session store GET");
+    console.log(sessionData);
+  });
 
   response.status(200).send({msg: "Welcome to the application."})
 });
