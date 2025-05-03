@@ -2,6 +2,7 @@ import passport from "passport";
 import { Strategy } from "passport-local";
 import User from "../MongooseValidations/MongooseSchemas/UserSchema.mjs";
 import bcrypt, {compare} from "bcrypt";
+import { hashPassword, comparePassword } from "../Utilities/helper.mjs";
 
 //this function is responsible for taking the user we validated and storing it into the session.
 passport.serializeUser((user, done)=>{
@@ -32,7 +33,7 @@ export default passport.use(
     
       if(!foundUser) throw new Error("Local Stratedy Authentication: User not found");
 
-      if(!hashedPassword(password, foundUser.password )) throw new Error("Passwrod does not match");
+      if(!hashPassword(password, foundUser.password )) throw new Error("Passwrod does not match");
 
       done(null, foundUser);
 
