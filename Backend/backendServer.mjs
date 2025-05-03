@@ -22,11 +22,6 @@ const mongoDBusername = process.env.MONGODB_USER
 const mongoDBpassword = process.env.MONGODB_PW;
 const connectionString =`mongodb+srv://${mongoDBusername}:${mongoDBpassword}@projectcanoe.jcfsi.mongodb.net/?retryWrites=true&w=majority&appName=projectCANOE`;
 
-//Connect-mongo to create persistant session data
-const connectMongoSessionStore = MongoStore.create({
-    mongoUrl : connectionString,
-    collectionName : "session_c"
-})
 
 // middleware 
 app.use(express.json());
@@ -37,7 +32,10 @@ app.use(session({
     resave: false, 
     cookie: {
         maxAge: 60000 * 10 //sets the life of the cookie
-    }
+    },
+    store: MongoStore.create({
+        client : mongoose.connection.getClient()
+    })
 }))
 app.use(passport.initialize()) //used for user authentication
 app.use(passport.session())
