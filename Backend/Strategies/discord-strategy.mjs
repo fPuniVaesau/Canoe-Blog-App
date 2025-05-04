@@ -5,13 +5,16 @@ const f_clientID = process.env.DISCORD_CLIENTiD;
 const f_discordSecret = process.env.DISCORD_SECRET;
 const f_scopes = ["identify", "emial", "guilds", "guilds.join" ];
 
-passport.use( new Strategy(
+export default passport.use( new Strategy(
     {
       clientID: f_clientID,
       clientSecret: f_discordSecret,
       callbackURL: "http://127.0.0.1:8000/api/authentication/discord/redirect",
       scope: f_scopes
     },
-    (accessToken, refreshToken, profile, cb) => {}
+
+    (accessToken, refreshToken, profile, done) => {
+      console.log(profile);
+    }
   )
 );
