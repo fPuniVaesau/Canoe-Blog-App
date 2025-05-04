@@ -1,6 +1,7 @@
 import { Router } from "express";
 import User from "../MongooseValidations/MongooseSchemas/UserSchema.mjs";
 import passport from "passport";
+import "../Strategies/discord-strategy.mjs";
 // import UserLoginSchema from "../ExpressValidations/UserLoginSchema.mjs";
 // import { checkSchema, validationResult, matchedData, check } from "express-validator";
 
@@ -26,7 +27,7 @@ authenticationRouter.get("/status", async (request, response)=>{
 })
 
 //Post request used to login user with discord credentials.
-authenticationRouter.post("/discord/redirect", (request, response) => {
+authenticationRouter.post("/discord", passport.authenticate("discord"), (request, response) => {
   return response.sendStatus(200);
 });
 
