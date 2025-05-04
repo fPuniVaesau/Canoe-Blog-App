@@ -23,8 +23,8 @@ const mongoDBpassword = process.env.MONGODB_PW;
 const connectionString =`mongodb+srv://${mongoDBusername}:${mongoDBpassword}@projectcanoe.jcfsi.mongodb.net/?retryWrites=true&w=majority&appName=projectCANOE`;
 
 // middleware 
-app.use(express.json());
-app.use(cookieParser());
+app.use(express.json()); //used to format json provided by clients
+app.use(cookieParser()); //used for working with cookies for users sessions.
 app.use(
   session({
     secret: "blogPostBackend",
@@ -40,10 +40,10 @@ app.use(
   })
 );
 app.use(passport.initialize()) //used for user authentication
-app.use(passport.session())
-app.use(express.urlencoded({ extended: false }));
-app.use(cors(corsOptions))
-app.use(AllRoutesRouter);
+app.use(passport.session()) //used for passport.js to use and modify session data.
+app.use(express.urlencoded({ extended: false })); //used for client to submit data.
+app.use(cors(corsOptions)) //used so other clients can access the server.
+app.use(AllRoutesRouter); //container that holds all routers for the API
 
 // connection to the database
 mongoose.connect(connectionString)
