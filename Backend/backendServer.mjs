@@ -63,3 +63,8 @@ app.get("/", (req, res)=>{
         server : "Canoe | Connected",
     });
 });
+
+//-------------using for discord, delete later -------------------
+//client ID : 1368644418369884220
+//client Secret : UwzzvBVf4_W4H3x77MxI7qdA-iGA7lL9
+//http://127.0.0.1:8000/api/authentication/discord/redirect
