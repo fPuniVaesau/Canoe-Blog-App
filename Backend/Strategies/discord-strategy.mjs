@@ -3,7 +3,7 @@ import { Strategy } from "passport-discord";
 
 const f_clientID = process.env.DISCORD_CLIENTiD;
 const f_discordSecret = process.env.DISCORD_SECRET;
-const f_scopes = ["identify", "guilds"];
+const f_scopes = ["identify", "emial", "guilds", "guilds.join" ];
 
 passport.use( new Strategy(
     {
@@ -12,6 +12,6 @@ passport.use( new Strategy(
       callbackURL: "http://127.0.0.1:8000/api/authentication/discord/redirect",
       scope: f_scopes
     },
-    () => {}
+    (accessToken, refreshToken, profile, cb) => {}
   )
 );
