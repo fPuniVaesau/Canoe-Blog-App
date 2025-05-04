@@ -25,15 +25,17 @@ authenticationRouter.get("/status", async (request, response)=>{
   
 })
 
+//Post request used to login user with discord credentials.
+authenticationRouter.post("/discord/redirect", (request, response) => {
+  return response.sendStatus(200);
+});
+
+
 //Post request used to login in the user using passport local strategy | username and password.
 authenticationRouter.post("/login", passport.authenticate("local"), (request, response) => {
     console.log(`Inside the aunthentication endpoint`);
     console.log(request.user);
     return response.status(200).send({status: `login sucessful, welcome ${request.user.username}`});
-});
-
-authenticationRouter.post("/discord/redirect", (request, response) => {
-    return response.sendStatus(200)
 });
 
 //Post request used to log the user out.
@@ -46,7 +48,6 @@ authenticationRouter.post('/logout', (request, response)=>{
         if(error) return response.sendStatus(400);
         return response.status(200).send({status: "logout successful"});
     })
-
 });
 
 export default authenticationRouter;
