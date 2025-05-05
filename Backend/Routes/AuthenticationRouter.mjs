@@ -23,7 +23,6 @@ authenticationRouter.get("/status", async (request, response)=>{
         user: x_username, 
         status: "Registered"
     });
-  
 })
 
 //Post request used to login in the user using passport local strategy | username and password.
