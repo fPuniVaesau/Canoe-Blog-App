@@ -21,7 +21,8 @@ passport.deserializeUser( async (id, done)=>{
     //we call the done function as this is middleware so the logic can continue.
     done(null, findUser);
 
-  } catch (error) {
+  } 
+  catch (error) {
     done(error, null);
   }
 })
@@ -40,7 +41,8 @@ export default passport.use(
       //we call the done function as this is middleware, this continues the logic.
       done(null, foundUser);
 
-    } catch (error) {
+    } 
+    catch (error) {
       done(error, null)
     }
   })
