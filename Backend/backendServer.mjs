@@ -6,6 +6,7 @@ import AllRoutesRouter from "./Routes/Allroutes.mjs";
 import cookieParser from "cookie-parser";
 import passport from "passport";
 import localeStrategy from "./Strategies/locale-strategy.mjs";
+import discordStrategy from "./Strategies/discord-strategy.mjs";
 import MongoStore from "connect-mongo";
 
 // express instance

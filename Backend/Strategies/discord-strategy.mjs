@@ -3,7 +3,15 @@ import { Strategy } from "passport-discord";
 
 const f_clientID = process.env.DISCORD_CLIENTiD;
 const f_discordSecret = process.env.DISCORD_SECRET;
-const f_scopes = ["identify", "emial", "guilds", "guilds.join" ];
+const f_scopes = ["identify", "emial", "guilds", "guilds.join", "connections"];
+
+passport.serializeUser((user, done) => {
+  done(null, user);
+});
+
+passport.deserializeUser((obj, done) => {
+  done(null, obj);
+});
 
 export default passport.use( new Strategy(
     {
@@ -15,6 +23,7 @@ export default passport.use( new Strategy(
 
     (accessToken, refreshToken, profile, done) => {
       console.log(profile);
+      done(null, profile);
     }
   )
 );

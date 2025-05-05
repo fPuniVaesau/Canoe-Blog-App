@@ -26,12 +26,6 @@ authenticationRouter.get("/status", async (request, response)=>{
   
 })
 
-//Post request used to login user with discord credentials.
-authenticationRouter.post("/discord", passport.authenticate("discord"), (request, response) => {
-  return response.sendStatus(200);
-});
-
-
 //Post request used to login in the user using passport local strategy | username and password.
 authenticationRouter.post("/login", passport.authenticate("local"), (request, response) => {
     console.log(`Inside the aunthentication endpoint`);
@@ -50,6 +44,9 @@ authenticationRouter.post('/logout', (request, response)=>{
         return response.status(200).send({status: "logout successful"});
     })
 });
+
+//Post request used to login user with discord credentials. (we need to work on this to implement correctly.)
+authenticationRouter.get("/discord", passport.authenticate("discord"));
 
 export default authenticationRouter;
 
