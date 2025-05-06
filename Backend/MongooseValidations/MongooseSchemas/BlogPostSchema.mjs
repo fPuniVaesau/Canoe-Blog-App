@@ -4,7 +4,7 @@ const blogPostSchema = new Schema({
   author: {
     required: true,
     Types: String
-  }
+  },
   title: {
     required: true,
     Types: String
