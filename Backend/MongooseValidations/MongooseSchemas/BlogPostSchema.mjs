@@ -1,6 +1,10 @@
-import mongoose, { Schema } from "mongoose"; 
+import mongoose, { Schema, Types } from "mongoose"; 
 
 const blogPostSchema = new Schema({
+  author: {
+    required: true,
+    Types: String
+  }
   title: {
     required: true,
     Types: String
