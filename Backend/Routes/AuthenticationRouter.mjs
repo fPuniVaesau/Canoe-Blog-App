@@ -45,7 +45,7 @@ authenticationRouter.post('/logout', (request, response)=>{
 });
 
 //Post request used to login user with discord credentials. (we need to work on this to implement correctly.)
-authenticationRouter.get("/discord", passport.authenticate("discord"));
+// authenticationRouter.get("/discord", passport.authenticate("discord"));
 
 export default authenticationRouter;
 
