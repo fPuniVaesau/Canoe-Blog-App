@@ -4,6 +4,7 @@ import { Strategy } from "passport-discord";
 const f_clientID = process.env.DISCORD_CLIENTiD;
 const f_discordSecret = process.env.DISCORD_SECRET;
 const f_scopes = ["identify", "emial", "guilds", "guilds.join", "connections"];
+const f_token = process.env.DISCORD_TOKEN;
 
 passport.serializeUser((user, done) => {
   done(null, user);
