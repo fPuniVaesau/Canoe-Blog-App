@@ -95,6 +95,4 @@ BlogRouter.post("/new_post", checkSchema(BlogPostSchema), (request, response) =>
 })
 
 
-
-
 export default BlogRouter;
