@@ -1,17 +1,17 @@
-import mongoose, { Schema, Types } from "mongoose"; 
+import mongoose, { Schema } from "mongoose"; 
 
 const blogPostSchema = new Schema({
-  author: {
-    required: true,
-    Types: String
+  author:{
+    type: ObjectId,
+    ref: "User"
   },
   title: {
     required: true,
-    Types: String
+    types: String
   },
   content: {
     required: true,
-    Types: String
+    types: String
   }
 
 }, {timestamps: true})
