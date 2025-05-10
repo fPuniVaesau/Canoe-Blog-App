@@ -13,7 +13,6 @@ const blogPostSchema = new Schema({
     required: true,
     types: String
   }
-
 }, {timestamps: true})
 
 const BlogPost = mongoose.model("BlogPost", blogPostSchema);
