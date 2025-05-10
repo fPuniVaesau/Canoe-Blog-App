@@ -23,7 +23,8 @@ const createNewUserSchema = new Schema({
     email:{
         require: true, 
         type: String
-    }
+    },
+    blogs : [{type: ObjectID, ref: "BlogPost"}]
 }, {timestamps: true})
 
 const User = mongoose.model("User", createNewUserSchema);
