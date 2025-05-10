@@ -1,4 +1,4 @@
-import { response, Router } from "express";
+import { Router } from "express";
 import { query, validationResult, matchedData, checkSchema } from "express-validator";
 import BlogPostSchema from "../ExpressValidations/BlogPostSchema.mjs";
 
