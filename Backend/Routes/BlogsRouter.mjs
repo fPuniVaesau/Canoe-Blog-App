@@ -79,7 +79,7 @@ BlogRouter.post("/new_post", checkSchema(BlogPostSchema), async (request, respon
     const errorResults = validationResult(request);
     const {user} = passport.session
     //check for the user in the database; Only users can post, so if there is no user in the database that matches the search query then we do not modify the session obj with user credentials and deny access to post.
-    if(!user) response.status(401).send({msg : "you do not have access to create blogs. Please log in."});
+    if(!user) return response.status(401).send({msg : "you do not have access to create blogs. Please log in."});
 
     // checks if the validation results is not empty which means there are errors
     if(!errorResults.isEmpty()){
