@@ -24,6 +24,7 @@ const createNewUserSchema = new Schema({
         require: true, 
         type: String
     },
+    // since a user can have multiple blogs, the blogs field is an array.
     blogs : [{type: ObjectID, ref: "BlogPost"}]
 }, {timestamps: true})
 
