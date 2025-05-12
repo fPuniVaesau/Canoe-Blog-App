@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { query, validationResult, matchedData, checkSchema } from "express-validator";
 import BlogPostSchema from "../ExpressValidations/BlogPostSchema.mjs";
+import passport from "passport";
 
 // Demo API Blog Data
 const demoBlogData = [
@@ -75,11 +76,9 @@ BlogRouter.get("/:id", (request, response) => {
 //This route should only be allowed for users ONLY. We can potentially guard this route by checking to see if the users session object contains the proper credentials. Check if the user is registered with the app, usernamen and password are correct and if so we can modify the session accordingly for access to create posts for the blog application.
 BlogRouter.post("/new_post", checkSchema(BlogPostSchema), (request, response) => {
     const errorResults = validationResult(request);
-    const {verified} = request.session;
+    const {user} = passport.session
     //check for the user in the database; Only users can post, so if there is no user in the database that matches the search query then we do not modify the session obj with user credentials and deny access to post.
-    if(!verified){
-        return response.status(401).send({message: "Only users are allowed to post new blogs."})
-    }
+    
 
     // checks if the validation results is not empty which means there are errors
     if(!errorResults.isEmpty()){
@@ -89,9 +88,12 @@ BlogRouter.post("/new_post", checkSchema(BlogPostSchema), (request, response) =>
     // if all fields pass validation, send the confirmed body.
     const confrimedData = matchedData(request)
     console.log(confrimedData);
+    console.log(user)
     return response.send({msg: "testing the post request.",
         BlogData : confrimedData
     })
+
+    return response.status(200).send("ok")
 })
 
 
