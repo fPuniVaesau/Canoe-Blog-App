@@ -90,23 +90,39 @@ BlogRouter.post("/new_post", checkSchema(BlogPostSchema), async(request, respons
         return response.status(401).send({msg : "unauthorized user."});
     }
 
-    const userId = request.session.passport.user._id
+    const userID = request.session.passport.user._id
     // if all fields pass validation, send the confirmed body.
     const confrimedData = matchedData(request)
-    console.log(confrimedData);
+    // console.log(confrimedData);
  
-    const newBlog = await BlogPost.create(confrimedData);
+    const newBlog = await BlogPost.create({...confrimedData, author : userID});
     console.log(newBlog);
+
+    const foundUser = await User.findById(newBlog.author); //find the user. 
+    await foundUser.blogs.push(newBlog._id);
+    const savedData = await foundUser.save();
+    const populatedData = await User.findById(newBlog.author).populate("blogs");
+    console.log('Updated User: ', populatedData );
    
     return response.status(200).send({newBlog});
 })
 
 //working on adding blog data created by the user to the its collection.
 BlogRouter.get("/dev/myBlogs", async(request, response)=>{
-    const userId = request.session.passport.user._id;
-    const myBlogData = await User.findById({_id : userId }).populate("blogs");
+    const userID = request.session.passport.user._id;
+    const myBlogData = await User.findById(userID)
+    console.log(myBlogData)
+    console.log(myBlogData.blogs);
 
-    return response.status(201).send({Data : myBlogData});
+    return response.status(201).send({msg: "ok"});
 })
 
 export default BlogRouter;
+
+//Find the user data, 
+//Get the ID of the newly created blog.
+//Update the array for the user data with the new Blog _id
+//save userdate.
+//Populate new user data with the blog _ids.
+
+//when we delete a post we have to make sure that the ref objectID is deleted in the users blogs array as well.

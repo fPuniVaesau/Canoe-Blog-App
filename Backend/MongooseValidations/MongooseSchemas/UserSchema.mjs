@@ -25,7 +25,7 @@ const createNewUserSchema = new Schema({
         type: String
     },
     // since a user can have multiple blogs, the blogs field is an array.
-    blogs : [{type: ObjectID, ref: "BlogPost"}]
+    blogs : [{type: mongoose.Schema.Types.ObjectID, ref: "BlogPost"}]
 }, {timestamps: true})
 
 const User = mongoose.model("User", createNewUserSchema);
