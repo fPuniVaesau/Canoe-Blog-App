@@ -1,8 +1,9 @@
 import { Router } from "express";
 import { query, validationResult, matchedData, checkSchema } from "express-validator";
 import BlogPostSchema from "../ExpressValidations/BlogPostSchema.mjs";
-import passport from "passport";
 import BlogPost from "../MongooseValidations/MongooseSchemas/BlogPostSchema.mjs";
+import User from "../MongooseValidations/MongooseSchemas/UserSchema.mjs";
+import passport from "passport";
 
 // Demo API Blog Data
 const demoBlogData = [
@@ -41,13 +42,14 @@ const demoBlogData = [
 
 const BlogRouter = Router();
 // GET request to fetch blog data with user queries
-BlogRouter.get("/", (request, response) => {
+BlogRouter.get("/", async (request, response) => {
     //test set user to session
-    // request.session.user = demoBlogData[1].author;
+    // console.log(request.session);
     
     const {query: {filter, value}} = request;
     if(!filter && !value){
-        return response.send(demoBlogData);
+        const allBlogs = await BlogPost.find({})
+        return response.send(allBlogs);
     }
     if(filter && value){
         // filtering through the data using the querie parameters
@@ -75,24 +77,36 @@ BlogRouter.get("/:id", (request, response) => {
 
 // POST request to add new blog post.
 //This route should only be allowed for users ONLY. We can potentially guard this route by checking to see if the users session object contains the proper credentials. Check if the user is registered with the app, usernamen and password are correct and if so we can modify the session accordingly for access to create posts for the blog application.
-BlogRouter.post("/new_post", checkSchema(BlogPostSchema), async (request, response) => {
+BlogRouter.post("/new_post", checkSchema(BlogPostSchema), async(request, response) => {
     const errorResults = validationResult(request);
-    const {user} = passport.session
-    //check for the user in the database; Only users can post, so if there is no user in the database that matches the search query then we do not modify the session obj with user credentials and deny access to post.
-    if(!user) return response.status(401).send({msg : "you do not have access to create blogs. Please log in."});
-
     // checks if the validation results is not empty which means there are errors
     if(!errorResults.isEmpty()){
         return response.status(400).send({validationErrors : errorResults.array()});
     }
+    
+    console.log(request.session.passport);
+    if(!request.session.passport.user){
+        console.log(request.session)
+        return response.status(401).send({msg : "unauthorized user."});
+    }
 
+    const userId = request.session.passport.user._id
     // if all fields pass validation, send the confirmed body.
     const confrimedData = matchedData(request)
     console.log(confrimedData);
-    console.log(user)
+ 
     const newBlog = await BlogPost.create(confrimedData);
-    return response.status(201).send({newBlog});
+    console.log(newBlog);
+   
+    return response.status(200).send({newBlog});
 })
 
+//working on adding blog data created by the user to the its collection.
+BlogRouter.get("/dev/myBlogs", async(request, response)=>{
+    const userId = request.session.passport.user._id;
+    const myBlogData = await User.findById({_id : userId }).populate("blogs");
+
+    return response.status(201).send({Data : myBlogData});
+})
 
 export default BlogRouter;
