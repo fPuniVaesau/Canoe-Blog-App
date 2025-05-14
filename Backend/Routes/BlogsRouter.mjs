@@ -119,7 +119,7 @@ BlogRouter.get("/dev/myBlogs", async(request, response)=>{
 
 export default BlogRouter;
 
-//Find the user data, 
+// Find the user data, 
 //Get the ID of the newly created blog.
 //Update the array for the user data with the new Blog _id
 //save userdate.
