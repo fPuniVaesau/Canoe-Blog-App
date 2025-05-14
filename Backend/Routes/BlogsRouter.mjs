@@ -5,42 +5,9 @@ import BlogPost from "../MongooseValidations/MongooseSchemas/BlogPostSchema.mjs"
 import User from "../MongooseValidations/MongooseSchemas/UserSchema.mjs";
 import passport from "passport";
 
-// Demo API Blog Data
-const demoBlogData = [
-    {
-        id: 1,
-        title: "The life of Filo", 
-        content: "This is the content of the first blog post.",
-        author: "Filo Vaesau"
-    },
-    {
-        id: 2,
-        title: "Learning javascript",
-        content: "This is the content of the second blog post.",
-        author: "Filo Vaesau"
-    },
-    {
-        id: 3,
-        title: "Fullstack Development: Connecting the frontend to the backend.",
-        content: "This is the content of the third blog post.",
-        author: "Filo Vaesau"
-    },
-    {
-        id: 4,
-        title: "Understanding Game Development",
-        content: "This is demo game content for jeerics article.",
-        author: "Jeric"
-    },
-    {
-        id: 5, 
-        title: "The world of Cyber Security.",
-        content: "This is demo content for johns article.",
-        author: "John"
-    }
-]
-
-
+//Blog Router
 const BlogRouter = Router();
+
 // GET request to fetch blog data with user queries
 BlogRouter.get("/", async (request, response) => {
     //test set user to session
@@ -107,7 +74,7 @@ BlogRouter.post("/new_post", checkSchema(BlogPostSchema), async(request, respons
     return response.status(200).send({newBlog});
 })
 
-//working on adding blog data created by the user to the its collection.
+//Devlopement route to llok up all blogs from a specific user
 BlogRouter.get("/dev/myBlogs", async(request, response)=>{
     const userID = request.session.passport.user._id;
     const myBlogData = await User.findById(userID)
