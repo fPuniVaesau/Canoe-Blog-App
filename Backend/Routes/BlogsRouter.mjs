@@ -15,14 +15,22 @@ BlogRouter.get("/", async (request, response) => {
     
     const {query: {filter, value}} = request;
     if(!filter && !value){
+       
         const allBlogs = await BlogPost.find({})
         return response.send(allBlogs);
     }
-    if(filter && value){
-        // filtering through the data using the querie parameters
-        const filteredData = demoBlogData.filter(blog => blog[filter].includes(value));
-        response.status(200).send(filteredData);
-    }
+    //working on filtering logic for searches
+    // if(filter && value){
+    //     // filtering through the data using the querie parameters
+    //     const foundUser = await User.find({username : value});
+    //     const {_id} = foundUser;
+    //     const foundBlogs = await BlogPost.find({author : _id});
+    //     // console.log(`filter: ${filter}, value: ${value}`);
+    //     console.log(foundUser);
+    //     console.log (foundBlogs);
+    //     // const filteredData = demoBlogData.filter(blog => blog[filter].includes(value));
+    //     response.status(200).send(foundBlogs);
+    // }
 })
 
 // GET request used to fetch Blogs by ID.
