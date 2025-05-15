@@ -10,12 +10,12 @@ function App() {
   return (
     <div className={styles.wrapper}>
       {/* <HomePage /> */}
-      {/* <LoginPage /> */}
+      <LoginPage />
       {/* <SignUpPage /> */}
       {/* <CreateBlogPost /> */}
       {/* <BlogPostPage /> */}
 
-      <DevPages></DevPages>
+      {/* <DevPages></DevPages> */}
     </div>
   );
 }

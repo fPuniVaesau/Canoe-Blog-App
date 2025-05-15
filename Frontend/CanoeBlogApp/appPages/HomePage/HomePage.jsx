@@ -3,8 +3,15 @@ import NavigationBar from '../../appComponents/NavigationBar/NavigationBar';
 import SearchBar from '../../appComponents/SearchBar/SearchBar';
 import OpeningMessage from '../../appComponents/OpeningMessage/OpeningMessage';
 import BlogPostPreviewCard from '../../appComponents/BlogPost/BlogPostPreviewCard';
+import axios from 'axios';
+
 
 export default function HomePage() {
+
+  
+
+
+
   return (
     <>
       <div className={styles.HomePageContainer}>

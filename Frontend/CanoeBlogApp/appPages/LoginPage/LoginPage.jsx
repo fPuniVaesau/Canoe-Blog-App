@@ -32,6 +32,7 @@ export default function LoginPage() {
         userData
       );
       console.log(response.data);
+      alert(`welcome ${c_username}`);
     } catch (err) {
       console.log(err);
     }
