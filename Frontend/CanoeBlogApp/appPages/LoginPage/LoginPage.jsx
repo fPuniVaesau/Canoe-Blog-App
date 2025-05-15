@@ -4,14 +4,49 @@ import { useState } from "react";
 import axios from "axios"
 
 export default function LoginPage() {
+ 
+  //setting our username and password
   const [c_username, setUsername] = useState("");
   const [c_password, setPassword] = useState("");
-  
-  const handleSubmit = (e) =>{
+
+  //functions to handle inputs for the username and the passowrd
+  const handleUsernameChange = (e) => {
+    setUsername(e.target.value);
+    console.log(c_username);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+    console.log(c_password);
+  };
+
+  const userData = {
+    username: c_username,
+    password: c_password,
+  };
+
+  const postLoginCredentials = async () => {
+    try {
+      const response = await axios.post(
+        `http://127.0.0.1:8000/api/authentication/login`,
+        userData
+      );
+      console.log(response.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setUsername("")
-    setPassword("")
-  }
+    console.log(userData);
+    //make a post request to the backend to login.
+    postLoginCredentials();
+    //reset user credentials
+    setUsername("");
+    setPassword("");
+  };
+
 
   return (
     <>
@@ -25,19 +60,31 @@ export default function LoginPage() {
             <div className={styles.welcomeMessageWrapper}>
               <h2>Welcome back</h2>
               <p>Let's enter your details!</p>
-              <p>Dont have an account yet!? <a className={styles.joinNowLink} href="#">Join now!</a> Not much to get started today.</p>
+              <p>
+                Dont have an account yet!?{" "}
+                <a className={styles.joinNowLink} href='#'>
+                  Join now!
+                </a>{" "}
+                Not much to get started today.
+              </p>
             </div>
 
-            <form onSubmit={handleSubmit} className={styles.formWrapper} action='submit'>
+            <form
+              className={styles.formWrapper}
+              action='submit'
+              onSubmit={(e) => {
+                handleSubmit(e);
+              }}
+            >
               <div className={styles.inputFieldWrappers}>
                 <label htmlFor='username'>Username</label>
                 <input
-                  onChange={(e)=>{setUsername(e.target.value)}}
-                  value={c_username}
                   className={styles.fieldInputs}
+                  onChange={(e) => {
+                    handleUsernameChange(e);
+                  }}
+                  value={c_username}
                   type='text'
-                  name=''
-                  id='username'
                   placeholder='username'
                   required
                 />
@@ -45,19 +92,24 @@ export default function LoginPage() {
               <div className={styles.inputFieldWrappers}>
                 <label htmlFor='Password'>Password</label>
                 <input
-                  onChange={(e)=>{setPassword(e.target.value)}}
-                  value={c_password}
                   className={styles.fieldInputs}
+                  onChange={(e) => {
+                    handlePasswordChange(e);
+                  }}
+                  value={c_password}
                   type='password'
-                  name=''
-                  id=''
                   placeholder='password'
                   required
                 />
               </div>
 
               <div className={styles.loginButtonWrapper}>
-                <button className={styles.loginButton}>Login</button>
+                <button 
+                className={styles.loginButton}
+                type="submit"
+                >
+                  Login
+                </button>
               </div>
             </form>
           </div>

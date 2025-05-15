@@ -1,9 +1,13 @@
 import { useState } from "react"
-export default function DevPages(){
+import axios from "axios";
 
+
+export default function DevPages(){
+  //setting our username and password
   const [c_username, setUsername] = useState("");
   const [c_password, setPassword] = useState("");
 
+  //functions to handle inputs for the username and the passowrd
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
     console.log(c_username);
@@ -15,18 +19,35 @@ export default function DevPages(){
   };
 
   const userData = {
-    userData: c_username,
-    c_password: c_password,
+    username: c_username,
+    password: c_password,
   };
-  
 
-  const handleSubmit = (e) => {
+  const postLoginCredentials = async () => {
+    try{
+      const response = await axios.post(
+        `http://127.0.0.1:8000/api/authentication/login`,
+        userData
+      );
+      console.log(response.data);
+    }
+    catch(err){
+      console.log(err)
+    }
+  }
+
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(userData)
+
+    postLoginCredentials();
+
     setUsername("");
     setPassword("");
   };
 
+  
 
   
   return (
