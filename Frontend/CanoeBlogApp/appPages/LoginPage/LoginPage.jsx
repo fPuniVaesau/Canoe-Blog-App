@@ -4,12 +4,12 @@ import { useState } from "react";
 import axios from "axios"
 
 export default function LoginPage() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [c_username, setUsername] = useState("");
+  const [c_password, setPassword] = useState("");
   
   const handleSubmit = (e) =>{
     e.preventDefault();
-    setEmail("")
+    setUsername("")
     setPassword("")
   }
 
@@ -30,15 +30,15 @@ export default function LoginPage() {
 
             <form onSubmit={handleSubmit} className={styles.formWrapper} action='submit'>
               <div className={styles.inputFieldWrappers}>
-                <label htmlFor='emailAddress'>Email address</label>
+                <label htmlFor='username'>Username</label>
                 <input
-                  onChange={(e)=>{setEmail(e.target.value)}}
-                  value={email}
+                  onChange={(e)=>{setUsername(e.target.value)}}
+                  value={c_username}
                   className={styles.fieldInputs}
-                  type='email'
+                  type='text'
                   name=''
-                  id=''
-                  placeholder='name@email.com'
+                  id='username'
+                  placeholder='username'
                   required
                 />
               </div>
@@ -46,7 +46,7 @@ export default function LoginPage() {
                 <label htmlFor='Password'>Password</label>
                 <input
                   onChange={(e)=>{setPassword(e.target.value)}}
-                  value={password}
+                  value={c_password}
                   className={styles.fieldInputs}
                   type='password'
                   name=''

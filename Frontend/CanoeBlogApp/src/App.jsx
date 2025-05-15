@@ -10,9 +10,9 @@ function App() {
     <div className={styles.wrapper}>
       {/* <HomePage /> */}
       {/* <LoginPage /> */}
-      {/* <SignUpPage /> */}
+      <SignUpPage />
       {/* <CreateBlogPost /> */}
-      <BlogPostPage />
+      {/* <BlogPostPage /> */}
     </div>
   );
 }
