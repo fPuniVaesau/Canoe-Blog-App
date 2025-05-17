@@ -1,7 +1,6 @@
 import styles from "./App.module.css";
-
+// Pages for the application
 import NavigationBar from "../appComponents/NavigationBar/NavigationBar";
-
 import HomePage from "../appPages/HomePage/HomePage";
 import LoginPage from "../appPages/LoginPage/LoginPage";
 import SignUpPage from "../appPages/SignUpPage/SignUpPage";
