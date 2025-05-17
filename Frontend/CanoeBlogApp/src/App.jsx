@@ -18,7 +18,7 @@ function App() {
       <NavigationBar />
       <Routes>
         <Route path="/" element={<WelcomePage/>} />
-        <Route path="/home" element={<HomePage />} />
+        <Route path="/api/home" element={<HomePage />} />
       </Routes>
 
       {/* <HomePage /> */}
