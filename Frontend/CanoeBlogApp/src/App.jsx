@@ -1,6 +1,7 @@
 import styles from "./App.module.css";
 // Pages for the application
 import NavigationBar from "../appComponents/NavigationBar/NavigationBar";
+import WelcomePage from "../appPages/WelcomePage/Welcome";
 import HomePage from "../appPages/HomePage/HomePage";
 import LoginPage from "../appPages/LoginPage/LoginPage";
 import SignUpPage from "../appPages/SignUpPage/SignUpPage";
@@ -16,6 +17,7 @@ function App() {
     <div className={styles.wrapper}>
       <NavigationBar />
       <Routes>
+        <Route path="/" element={<WelcomePage/>} />
         <Route path="/home" element={<HomePage />} />
       </Routes>
 
