@@ -8,11 +8,18 @@ import CreateBlogPost from "../appPages/CreateBlogPage/CreateBlogPost";
 import BlogPostPage from "../appPages/BlogPostPage/BlogPostPage";
 import DevPages from "../appPages/DevPages/DevPage";
 
+import { Routes, Route } from "react-router-dom";
+
 
 function App() {
   return (
     <div className={styles.wrapper}>
-      <HomePage />
+      <NavigationBar />
+      <Routes>
+        <Route path="/home" element={<HomePage />} />
+      </Routes>
+
+      {/* <HomePage /> */}
       {/* <LoginPage /> */}
       {/* <SignUpPage /> */}
       {/* <CreateBlogPost /> */}

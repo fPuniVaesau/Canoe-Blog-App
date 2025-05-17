@@ -16,7 +16,7 @@ export default function HomePage() {
     <>
       <div className={styles.HomePageContainer}>
         {/* navbar */}
-        <NavigationBar />
+        {/* <NavigationBar /> */}
 
         {/* search bar */}
         <SearchBar />
