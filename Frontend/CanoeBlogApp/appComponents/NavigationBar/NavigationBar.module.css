@@ -23,13 +23,26 @@
 }
 
 .mainNavBarListWrapper ul{
+  /* border: 1px solid orangered; */
   display: flex;
   gap: 1.5rem;
+  margin: auto;
 }
 
 .mainNavBarListWrapper ul li{
   transition: .3s ease-in-out;
+  list-style: none;
+  color: inherit;
+  margin: auto;
 }
+
+.mainNavBarListWrapper ul li a {
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  margin: auto;
+}
+
 
 .mainNavBarListWrapper ul> *:hover{
   color: rgb(145, 165, 114);
@@ -38,14 +51,15 @@
 }
 
 .buttonWrapper{
-  display: flex;
-  gap: .5rem;
+  /* display: flex; */
+  gap: 1rem;
 }
 
 .buttonWrapper > *{
   border: 1px solid #777;
   padding: 0 .5rem;
   border-radius: .5rem;
+  margin-right: 10px ;
 }
 
 .registerBtn{
