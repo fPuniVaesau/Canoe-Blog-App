@@ -19,6 +19,7 @@ function App() {
       <Routes>
         <Route path="/api/welcome" element={<WelcomePage/>} />
         <Route path="/api/home" element={<HomePage />} />
+        {/* <Route path="/api/login" element={<LoginPage/>}/> */}
       </Routes>
 
       {/* <HomePage /> */}
