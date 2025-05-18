@@ -17,7 +17,7 @@ function App() {
     <div className={styles.wrapper}>
       <NavigationBar />
       <Routes>
-        <Route path="/" element={<WelcomePage/>} />
+        <Route path="/api/welcome" element={<WelcomePage/>} />
         <Route path="/api/home" element={<HomePage />} />
       </Routes>
 
