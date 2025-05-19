@@ -67,7 +67,7 @@ export default function NavigationBar() {
             <a>Log In</a>
           </Link>
 
-          <Link>
+          <Link to="/api/register">
             <a>Register</a>
           </Link>
         </div>
