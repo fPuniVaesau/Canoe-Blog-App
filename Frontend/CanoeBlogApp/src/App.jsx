@@ -13,6 +13,7 @@ import SignUpPage from "../appPages/SignUpPage/SignUpPage";
 
 import CreateBlogPost from "../appPages/CreateBlogPage/CreateBlogPost";
 import DevPages from "../appPages/DevPages/DevPage";
+import NotFound from "../appComponents/NotFound/NotFound";
 
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from "react-router-dom";
 
@@ -32,7 +33,9 @@ function App() {
         <Route path="api/projects" element={<ProjectsPage />} />
         <Route path="api/login" element={<LoginPage/>}/>
         <Route path="api/register" element={<SignUpPage />} />
+        <Route path="*" element={<NotFound/>} />
       </Route>
+  
     )
   )
 
@@ -43,7 +46,6 @@ function App() {
     </div>
   );
 }
-
 
 
 export default App;
