@@ -23,6 +23,7 @@ function App() {
         <Route path="api/home" element={<HomePage />} />
         <Route path="api/login" element={<LoginPage/>}/>
         <Route path="api/register" element={<SignUpPage />} />
+        <Route path="api/blogs" element={<BlogPostPage />} />
       </Route>
     )
   )

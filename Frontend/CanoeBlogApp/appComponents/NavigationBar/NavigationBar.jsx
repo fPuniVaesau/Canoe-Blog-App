@@ -29,7 +29,7 @@ export default function NavigationBar() {
                   </li>
                 </NavLink>
 
-                <NavLink>
+                <NavLink to="/api/blogs">
                   <li>
                     <a href=''>Blog</a>
                   </li>
