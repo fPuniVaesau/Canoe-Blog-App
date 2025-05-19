@@ -8,6 +8,7 @@ import SignUpPage from "../appPages/SignUpPage/SignUpPage";
 import CreateBlogPost from "../appPages/CreateBlogPage/CreateBlogPost";
 import BlogPostPage from "../appPages/BlogPostPage/BlogPostPage";
 import FeaturedPage from "../appPages/FeaturedPage/FeaturedPage";
+import AboutPage from "../appPages/AboutPage/AboutPage";
 import DevPages from "../appPages/DevPages/DevPage";
 
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from "react-router-dom";
@@ -25,6 +26,7 @@ function App() {
         <Route path="api/register" element={<SignUpPage />} />
         <Route path="api/blogs" element={<BlogPostPage />} />
         <Route path="api/featured" element={<FeaturedPage />} />
+        <Route path="api/about" element={<AboutPage/>}/>
       </Route>
     )
   )

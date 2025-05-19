@@ -1,4 +1,4 @@
-
+import style from "./FeaturedPage.module.css";
 
 export default function FeaturedPage(){
   return (
