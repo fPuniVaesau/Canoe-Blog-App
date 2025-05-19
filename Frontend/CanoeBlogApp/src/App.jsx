@@ -11,7 +11,6 @@ import ProjectsPage from "../appPages/ProjectsPage/ProjectsPage";
 import LoginPage from "../appPages/LoginPage/LoginPage";
 import SignUpPage from "../appPages/SignUpPage/SignUpPage";
 
-
 import CreateBlogPost from "../appPages/CreateBlogPage/CreateBlogPost";
 import DevPages from "../appPages/DevPages/DevPage";
 
