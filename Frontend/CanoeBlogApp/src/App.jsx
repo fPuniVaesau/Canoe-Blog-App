@@ -24,12 +24,12 @@ function App() {
 
       </Routes>
 
+      {/* routes [will delete later once I configure the routing.] */}
       {/* <HomePage /> */}
       {/* <LoginPage /> */}
       {/* <SignUpPage /> */}
       {/* <CreateBlogPost /> */}
       {/* <BlogPostPage /> */}
-
       {/* <DevPages></DevPages> */}
     </div>
   );
