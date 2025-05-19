@@ -1,41 +1,57 @@
 import canoeLogo from '../../canoeResources/CanoeLogoWebV2.png';
-import styles from "./NavigationBar.module.css";
+import styles from './NavigationBar.module.css';
+import { Link } from 'react-router-dom';
 
-export default function NavigationBar(){
-
+export default function NavigationBar() {
   return (
     <>
       <div className={styles.mainNavBarLogoContainer}>
         {/* Logo and Navigation */}
         <div className={styles.logoNavbarWrapper}>
           <div>
-            <a href=''>
-              <img
-                className={styles.mainLogo}
-                src={canoeLogo}
-                alt='canoe logo'
-              />
-            </a>
+            <Link to='/api/home'>
+              <a href=''>
+                <img
+                  className={styles.mainLogo}
+                  src={canoeLogo}
+                  alt='canoe logo'
+                />
+              </a>
+            </Link>
           </div>
 
           <div>
             <nav className={styles.mainNavBarListWrapper}>
               <ul>
-                <li>
-                  <a href=''>Features</a>
-                </li>
-                <li>
-                  <a href=''>Blog</a>
-                </li>
-                <li>
-                  <a href=''>About</a>
-                </li>
-                <li>
-                  <a href=''>Contact</a>
-                </li>
-                <li>
-                  <a href=''>Projects</a>
-                </li>
+                <Link>
+                  <li>
+                    <a href=''>Features</a>
+                  </li>
+                </Link>
+
+                <Link>
+                  <li>
+                    <a href=''>Blog</a>
+                  </li>
+                </Link>
+
+                <Link>
+                  <li>
+                    <a href=''>About</a>
+                  </li>
+                </Link>
+
+                <Link>
+                  <li>
+                    <a href=''>Contact</a>
+                  </li>
+                </Link>
+
+                <Link>
+                  <li>
+                    <a href=''>Projects</a>
+                  </li>
+                </Link>
               </ul>
             </nav>
           </div>
@@ -47,8 +63,13 @@ export default function NavigationBar(){
 
         {/* Login and Register */}
         <div className={styles.buttonWrapper}>
-          <button className={styles.loginBtn}>Log In</button>
-          <button className={styles.registerBtn}>Register</button>
+          <Link to='/api/login'>
+            <a>Log In</a>
+          </Link>
+
+          <Link>
+            <a>Register</a>
+          </Link>
         </div>
       </div>
     </>
