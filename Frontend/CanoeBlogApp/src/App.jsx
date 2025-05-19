@@ -7,6 +7,7 @@ import FeaturedPage from "../appPages/FeaturedPage/FeaturedPage";
 import BlogPostPage from "../appPages/BlogPostPage/BlogPostPage";
 import AboutPage from "../appPages/AboutPage/AboutPage";
 import ContactPage from "../appPages/ContactPage/ContactPage"
+import ProjectsPage from "../appPages/ProjectsPage/ProjectsPage";
 import LoginPage from "../appPages/LoginPage/LoginPage";
 import SignUpPage from "../appPages/SignUpPage/SignUpPage";
 
@@ -29,10 +30,9 @@ function App() {
         <Route path="api/blogs" element={<BlogPostPage />} />
         <Route path="api/about" element={<AboutPage/>}/>
         <Route path="api/contact" element={<ContactPage />} />
+        <Route path="api/projects" element={<ProjectsPage />} />
         <Route path="api/login" element={<LoginPage/>}/>
         <Route path="api/register" element={<SignUpPage />} />
-
-
       </Route>
     )
   )
