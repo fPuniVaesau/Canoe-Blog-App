@@ -29,10 +29,8 @@ function App() {
 
   return (
     <div className={styles.wrapper}>
-
       {/* using a newer way to route our pages. */}
       <RouterProvider router={c_router}/>
-    
     </div>
   );
 }
