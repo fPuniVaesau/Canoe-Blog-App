@@ -3,12 +3,15 @@ import styles from "./App.module.css";
 import RootLayout from "../Layout/RootLayout";
 import WelcomePage from "../appPages/WelcomePage/Welcome";
 import HomePage from "../appPages/HomePage/HomePage";
+import FeaturedPage from "../appPages/FeaturedPage/FeaturedPage";
+import BlogPostPage from "../appPages/BlogPostPage/BlogPostPage";
+import AboutPage from "../appPages/AboutPage/AboutPage";
+import ContactPage from "../appPages/ContactPage/ContactPage"
 import LoginPage from "../appPages/LoginPage/LoginPage";
 import SignUpPage from "../appPages/SignUpPage/SignUpPage";
+
+
 import CreateBlogPost from "../appPages/CreateBlogPage/CreateBlogPost";
-import BlogPostPage from "../appPages/BlogPostPage/BlogPostPage";
-import FeaturedPage from "../appPages/FeaturedPage/FeaturedPage";
-import AboutPage from "../appPages/AboutPage/AboutPage";
 import DevPages from "../appPages/DevPages/DevPage";
 
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from "react-router-dom";
@@ -22,11 +25,14 @@ function App() {
       <Route path="/" element={<RootLayout/>}>
         <Route index element={<WelcomePage/>} />
         <Route path="api/home" element={<HomePage />} />
+        <Route path="api/featured" element={<FeaturedPage />} />
+        <Route path="api/blogs" element={<BlogPostPage />} />
+        <Route path="api/about" element={<AboutPage/>}/>
+        <Route path="api/contact" element={<ContactPage />} />
         <Route path="api/login" element={<LoginPage/>}/>
         <Route path="api/register" element={<SignUpPage />} />
-        <Route path="api/blogs" element={<BlogPostPage />} />
-        <Route path="api/featured" element={<FeaturedPage />} />
-        <Route path="api/about" element={<AboutPage/>}/>
+
+
       </Route>
     )
   )
