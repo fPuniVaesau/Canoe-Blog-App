@@ -6,7 +6,7 @@ export default function NavigationBar() {
   return (
     <>
       <div className={styles.mainNavBarLogoContainer}>
-        {/* Logo and Navigation */}
+        {/* Logo and Navigation (we need to work on stylng the a tags for the navbar)*/}
         <div className={styles.logoNavbarWrapper}>
           <div>
             <Link to='/api/home'>
@@ -61,7 +61,7 @@ export default function NavigationBar() {
           <button>menu</button>
         </div>
 
-        {/* Login and Register */}
+        {/* Login and Register (we need to work on styling the a tags for the for the register and login buttons)*/}
         <div className={styles.buttonWrapper}>
           <Link to='/api/login'>
             <a>Log In</a>
