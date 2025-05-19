@@ -1,6 +1,6 @@
 import canoeLogo from '../../canoeResources/CanoeLogoWebV2.png';
 import styles from './NavigationBar.module.css';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default function NavigationBar() {
   return (
@@ -9,7 +9,7 @@ export default function NavigationBar() {
         {/* Logo and Navigation (we need to work on stylng the a tags for the navbar)*/}
         <div className={styles.logoNavbarWrapper}>
           <div>
-            <Link to='/api/home'>
+            <NavLink to='/api/home'>
               <a href=''>
                 <img
                   className={styles.mainLogo}
@@ -17,41 +17,41 @@ export default function NavigationBar() {
                   alt='canoe logo'
                 />
               </a>
-            </Link>
+            </NavLink>
           </div>
 
           <div>
             <nav className={styles.mainNavBarListWrapper}>
               <ul>
-                <Link>
+                <NavLink>
                   <li>
                     <a href=''>Features</a>
                   </li>
-                </Link>
+                </NavLink>
 
-                <Link>
+                <NavLink>
                   <li>
                     <a href=''>Blog</a>
                   </li>
-                </Link>
+                </NavLink>
 
-                <Link>
+                <NavLink>
                   <li>
                     <a href=''>About</a>
                   </li>
-                </Link>
+                </NavLink>
 
-                <Link>
+                <NavLink>
                   <li>
                     <a href=''>Contact</a>
                   </li>
-                </Link>
+                </NavLink>
 
-                <Link>
+                <NavLink>
                   <li>
                     <a href=''>Projects</a>
                   </li>
-                </Link>
+                </NavLink>
               </ul>
             </nav>
           </div>
@@ -63,13 +63,13 @@ export default function NavigationBar() {
 
         {/* Login and Register (we need to work on styling the a tags for the for the register and login buttons)*/}
         <div className={styles.buttonWrapper}>
-          <Link to='/api/login'>
+          <NavLink to='/api/login'>
             <a>Log In</a>
-          </Link>
+          </NavLink>
 
-          <Link to="/api/register">
+          <NavLink to="/api/register">
             <a>Register</a>
-          </Link>
+          </NavLink>
         </div>
       </div>
     </>

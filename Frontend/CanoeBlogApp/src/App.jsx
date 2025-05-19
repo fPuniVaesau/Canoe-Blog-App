@@ -10,7 +10,7 @@ import CreateBlogPost from "../appPages/CreateBlogPage/CreateBlogPost";
 import BlogPostPage from "../appPages/BlogPostPage/BlogPostPage";
 import DevPages from "../appPages/DevPages/DevPage";
 
-import { Routes, Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from "react-router-dom";
+import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from "react-router-dom";
 
 
 function App() {
