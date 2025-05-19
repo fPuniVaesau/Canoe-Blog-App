@@ -23,7 +23,7 @@ export default function NavigationBar() {
           <div>
             <nav className={styles.mainNavBarListWrapper}>
               <ul>
-                <NavLink>
+                <NavLink to="/api/featured">
                   <li>
                     <a href=''>Features</a>
                   </li>
