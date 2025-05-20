@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import axios from "axios";
 
 
@@ -12,17 +12,14 @@ export default function DevPages(){
     setUsername(e.target.value);
     console.log(c_username);
   }
-
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
     console.log(c_password);
   };
-
   const userData = {
     username: c_username,
     password: c_password,
   };
-
   const postLoginCredentials = async () => {
     try{
       const response = await axios.post(
@@ -35,8 +32,6 @@ export default function DevPages(){
       console.log(err)
     }
   }
-
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(userData)
@@ -46,43 +41,60 @@ export default function DevPages(){
     setUsername("");
     setPassword("");
   };
+  const testForm = (
+    <form
+      action='submit'
+      onSubmit={(e) => {
+        handleSubmit(e);
+      }}
+    >
+      {/* handle the username field */}
+      <div>
+        <label htmlFor=''>username</label>
+        <input
+          type='text'
+          value={c_username}
+          onChange={(e) => {
+            handleUsernameChange(e);
+          }}
+        />
+      </div>
 
-  
+      {/* handle the password field */}
+      <div>
+        <label htmlFor=''>password</label>
+        <input
+          type='text'
+          value={c_password}
+          onChange={(e) => {
+            handlePasswordChange(e);
+          }}
+        />
+      </div>
+      <button type='submit'>submit</button>
+    </form>
+  );
 
+  const [blogData, setBlogData] = useState([])
+
+  async function getBlogs() {
+    try {
+      const response = await axios.get("http://127.0.0.1:8000/api/blogs");
+      console.error(response);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(()=>{
+    getBlogs();
+  }, [])
   
   return (
     <>
-      <form
-        action='submit'
-        onSubmit={(e) => {
-          handleSubmit(e);
-        }}
-      >
-        {/* handle the username field */}
-        <div>
-          <label htmlFor=''>username</label>
-          <input
-            type='text'
-            value={c_username}
-            onChange={(e) => {
-              handleUsernameChange(e);
-            }}
-          />
-        </div>
+      <h1>Development Page</h1>
 
-        {/* handle the password field */}
-        <div>
-          <label htmlFor=''>password</label>
-          <input
-            type='text'
-            value={c_password}
-            onChange={(e) => {
-              handlePasswordChange(e);
-            }}
-          />
-        </div>
-        <button type="submit">submit</button>
-      </form>
+
     </>
   );
 }
