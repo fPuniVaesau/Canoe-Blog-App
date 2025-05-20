@@ -61,12 +61,12 @@ export default function NavigationBar() {
 
         {/* Login and Register (we need to work on styling the a tags for the for the register and login buttons)*/}
         <div className={styles.buttonWrapper}>
-          <NavLink to='/api/login'>
-            <a>Log In</a>
+          <NavLink to='/api/login' className={styles.loginBtn}>
+            Log In
           </NavLink>
 
-          <NavLink to="/api/register">
-            <a>Register</a>
+          <NavLink to="/api/register" className={styles.registerBtn}>
+            Register
           </NavLink>
         </div>
       </div>
