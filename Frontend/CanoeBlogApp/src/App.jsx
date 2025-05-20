@@ -28,6 +28,7 @@ function App() {
         <Route path="api/home" element={<HomePage />} />
         <Route path="api/featured" element={<FeaturedPage />} />
         <Route path="api/blogs" element={<BlogPostPage />} />
+        
         <Route path="api/about" element={<AboutPage/>}/>
         <Route path="api/contact" element={<ContactPage />} />
         <Route path="api/projects" element={<ProjectsPage />} />
