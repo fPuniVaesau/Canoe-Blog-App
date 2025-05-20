@@ -23,31 +23,31 @@ export default function NavigationBar() {
           <div>
             <nav className={styles.mainNavBarListWrapper}>
               <ul>
-                <NavLink to="/api/featured">
+                <NavLink to="api/featured">
                   <li>
                     <a href=''>Featured</a>
                   </li>
                 </NavLink>
 
-                <NavLink to="/api/blogs">
+                <NavLink to="api/blogs">
                   <li>
-                    <a href=''>Blogs</a>
+                    <a href=''>Blog</a>
                   </li>
                 </NavLink>
 
-                <NavLink to="/api/about">
+                <NavLink to="api/about">
                   <li>
                     <a href=''>About</a>
                   </li>
                 </NavLink>
 
-                <NavLink to="/api/contact">
+                <NavLink to="api/contact">
                   <li>
                     <a href=''>Contact</a>
                   </li>
                 </NavLink>
 
-                <NavLink to="/api/projects">
+                <NavLink to="api/projects">
                   <li>
                     <a href=''>Projects</a>
                   </li>

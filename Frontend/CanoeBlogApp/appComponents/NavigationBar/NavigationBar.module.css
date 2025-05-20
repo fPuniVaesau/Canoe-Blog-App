@@ -43,6 +43,13 @@
   margin: auto;
 }
 
+.mainNavBarListWrapper ul li p {
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  margin: auto;
+}
+
 
 .mainNavBarListWrapper ul> *:hover{
   color: rgb(145, 165, 114);
