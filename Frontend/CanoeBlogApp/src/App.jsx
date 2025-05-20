@@ -4,6 +4,7 @@ import RootLayout from "../Layout/RootLayout";
 import WelcomePage from "../appPages/WelcomePage/Welcome";
 import HomePage from "../appPages/HomePage/HomePage";
 import FeaturedPage from "../appPages/FeaturedPage/FeaturedPage";
+import BlogsLayout from "../Layout/BlogsLayout";
 import BlogPostPage from "../appPages/BlogPostPage/BlogPostPage";
 import AboutPage from "../appPages/AboutPage/AboutPage";
 import ContactPage from "../appPages/ContactPage/ContactPage"
@@ -27,8 +28,10 @@ function App() {
         <Route index element={<WelcomePage/>} />
         <Route path="api/home" element={<HomePage />} />
         <Route path="api/featured" element={<FeaturedPage />} />
-        <Route path="api/blogs" element={<BlogPostPage />} />
-        
+        <Route path="api/blogs" element={<BlogsLayout/>}>
+          <Route index element={<BlogPostPage />} />
+        </Route>
+
         <Route path="api/about" element={<AboutPage/>}/>
         <Route path="api/contact" element={<ContactPage />} />
         <Route path="api/projects" element={<ProjectsPage />} />

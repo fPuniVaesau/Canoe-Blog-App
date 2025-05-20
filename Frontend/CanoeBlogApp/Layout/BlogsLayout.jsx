@@ -1,8 +1,10 @@
-import { useNavigate, Outlet } from "react-router-dom"
+import { Outlet } from "react-router-dom"
 
-export const BlogsLayout = () => {
+export default function BlogsLayout(){
   return (
-    <div>BlogsLayout</div>
-    
+    <>
+      <h1>Blogs Page</h1>
+      <Outlet />
+    </>
   )
 }
