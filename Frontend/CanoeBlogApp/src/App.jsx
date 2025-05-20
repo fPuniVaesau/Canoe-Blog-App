@@ -38,6 +38,9 @@ function App() {
         <Route path="api/login" element={<LoginPage/>}/>
         <Route path="api/register" element={<SignUpPage />} />
         <Route path="*" element={<NotFound/>} />
+
+        {/* route for development */}
+        <Route path="api/dev" element={<DevPages />}/>
       </Route>
   
     )
