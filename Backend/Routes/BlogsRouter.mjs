@@ -17,6 +17,7 @@ BlogRouter.get("/", async (request, response) => {
     if(!filter && !value){
        
         const allBlogs = await BlogPost.find({})
+        console.log(allBlogs);
         return response.send(allBlogs);
     }
     //working on filtering logic for searches
