@@ -25,13 +25,13 @@ export default function NavigationBar() {
               <ul>
                 <NavLink to="/api/featured">
                   <li>
-                    <a href=''>Features</a>
+                    <a href=''>Featured</a>
                   </li>
                 </NavLink>
 
                 <NavLink to="/api/blogs">
                   <li>
-                    <a href=''>Blog</a>
+                    <a href=''>Blogs</a>
                   </li>
                 </NavLink>
 
