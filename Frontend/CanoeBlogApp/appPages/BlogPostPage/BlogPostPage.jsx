@@ -4,6 +4,7 @@ import styles from "./BlogPostPage.module.css"
 import BlogPostPreviewCard from "../../appComponents/BlogPost/BlogPostPreviewCard"
 
 export default function BlogPostPage(){
+  //use axios to fetch data that we filter.
 
   return(
     <div className={styles.OutterBlogContainer}>
