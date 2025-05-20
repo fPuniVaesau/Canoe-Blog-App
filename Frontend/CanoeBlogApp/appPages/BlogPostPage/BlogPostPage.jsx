@@ -46,5 +46,7 @@ export default function BlogPostPage(){
 
 export const BlogsLoader = async () => {
   const blogData = await fetch('http://127.0.0.1:8000/api/blogs');
-  return blogData.json();
+  const resData = await blogData.json();
+  console.log(blogData);
+  return resData;
 }

@@ -10,13 +10,11 @@ export default function NavigationBar() {
         <div className={styles.logoNavbarWrapper}>
           <div>
             <NavLink to='/api/home'>
-              <a href=''>
                 <img
                   className={styles.mainLogo}
                   src={canoeLogo}
                   alt='canoe logo'
                 />
-              </a>
             </NavLink>
           </div>
 
@@ -25,31 +23,31 @@ export default function NavigationBar() {
               <ul>
                 <NavLink to="api/featured">
                   <li>
-                    <p href=''>Featured</p>
+                    <p>Featured</p>
                   </li>
                 </NavLink>
 
                 <NavLink to="api/blogs">
                   <li>
-                    <p href=''>Blogs</p>
+                    <p>Blogs</p>
                   </li>
                 </NavLink>
 
                 <NavLink to="api/about">
                   <li>
-                    <p href=''>About</p>
+                    <p>About</p>
                   </li>
                 </NavLink>
 
                 <NavLink to="api/contact">
                   <li>
-                    <p href=''>Contact</p>
+                    <p>Contact</p>
                   </li>
                 </NavLink>
 
                 <NavLink to="api/projects">
                   <li>
-                    <p href=''>Projects</p>
+                    <p>Projects</p>
                   </li>
                 </NavLink>
               </ul>
