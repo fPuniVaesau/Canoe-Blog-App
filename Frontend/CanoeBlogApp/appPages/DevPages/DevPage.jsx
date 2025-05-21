@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import axios from "axios";
 import BlogPostPreviewCard from "../../appComponents/BlogPost/BlogPostPreviewCard";
+import Tiptap from "../../appComponents/RichTextEditor/TipTap";
 
 
 export default function DevPages(){
@@ -102,6 +103,7 @@ export default function DevPages(){
        
       ))}
 
+      <Tiptap />
     </>
   );
 }
