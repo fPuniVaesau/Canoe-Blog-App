@@ -1,0 +1,28 @@
+.buttongroup button{
+  align-items: center;
+  padding: 6px 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  border-radius: 6px;
+  border: none;
+  margin-right: 5px;
+  background: #5e5852;
+  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
+  color: #DFDEDF;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  font-size: .85rem;
+  transition: .2s ease-in-out;
+}
+
+.buttongroup button:hover{
+  background-color: rgb(255, 136, 0);
+  letter-spacing: 3px;
+}
+
+.buttongroup button:active{
+  background-color: rgb(7, 7, 7);
+  color: #DFDEDF;
+  letter-spacing: 3px;
+}
+
