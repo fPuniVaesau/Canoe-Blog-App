@@ -1,6 +1,6 @@
 import styles from './BlogPostPreviewCard.module.css';
 
-export default function BlogPostPreviewCard({ imgUrl, author }) {
+export default function BlogPostPreviewCard({ imgUrl, author, title }) {
   return (
     <>
       <div className={styles.blogPostWrapper}>
@@ -11,6 +11,9 @@ export default function BlogPostPreviewCard({ imgUrl, author }) {
               src={imgUrl}
               alt='blog post image'
             />
+            <div>
+             <h3>{title}</h3>
+            </div>
             <div className={styles.blogAuthorDateWrapper}>
               <p className={styles.blogAuthor}>{author}</p>
               <div className={styles.dateAndTimeWrapper}>

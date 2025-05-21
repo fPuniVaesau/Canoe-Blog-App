@@ -1,8 +1,13 @@
 import { useState, useEffect } from "react"
 import axios from "axios";
+import BlogPostPreviewCard from "../../appComponents/BlogPost/BlogPostPreviewCard";
 
 
 export default function DevPages(){
+
+  const baseURL = "http://127.0.0.1:8000/api/";
+  const blogEndpoint = "blogs";
+
   //setting our username and password
   const [c_username, setUsername] = useState("");
   const [c_password, setPassword] = useState("");
@@ -77,23 +82,25 @@ export default function DevPages(){
 
   const [blogData, setBlogData] = useState([])
 
-  async function getBlogs() {
-    try {
-      const response = await axios.get("http://127.0.0.1:8000/api/blogs");
-      console.error(response);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
   useEffect(()=>{
-    getBlogs();
+    const getPosts = async () => {
+      try {
+        const response = await axios.get(`${baseURL}${blogEndpoint}`);
+        setBlogData(response.data)
+      } catch (error) {
+        console.log(err)
+      }
+    };
+    getPosts();
   }, [])
   
   return (
     <>
       <h1>Development Page</h1>
-
+      {blogData.map(blog =>(
+        <BlogPostPreviewCard title={blog.title} author={blog.author}/>
+       
+      ))}
 
     </>
   );
