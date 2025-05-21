@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import axios from "axios";
 import BlogPostPreviewCard from "../../appComponents/BlogPost/BlogPostPreviewCard";
 import Tiptap from "../../appComponents/RichTextEditor/TipTap";
+import style from "./DevPage.module.css"
 
 
 export default function DevPages(){
@@ -102,8 +103,9 @@ export default function DevPages(){
         <BlogPostPreviewCard title={blog.title} author={blog.author}/>
        
       ))}
-
-      <Tiptap />
+      <div className={style.test} >
+        <Tiptap />
+      </div>
     </>
   );
 }
