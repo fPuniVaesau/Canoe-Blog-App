@@ -48,7 +48,7 @@ BlogRouter.get("/:id", (request, response) => {
         return response.status(401).send({msg: "we hit a snag!", error: "blog id can not be found."});
     }
     
-    return response.send(findBlog);
+    return response.json(findBlog);
 })
 
 // POST request to add new blog post.
