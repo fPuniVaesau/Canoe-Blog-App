@@ -14,3 +14,7 @@ a{
   min-height: 700px;
   margin-top: 1rem
 }
+
+.tiptap .highlighter {
+  background-color: rgb(255, 198, 73);
+}

@@ -2,6 +2,7 @@
 import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import TextAlign from "@tiptap/extension-text-align";
+import Highlight from "@tiptap/extension-highlight";
 import styles from "./TipTap.module.css";
 import MenuBar from "./MenuBar/MenuBar";
 
@@ -10,7 +11,12 @@ const extensions = [
   TextAlign.configure({
     types: ["heading", "paragraph"],
     defaultAlignment: "left",
-  })
+  }),
+  Highlight.configure({
+    HTMLAttributes: {
+      class: "highlighter",
+    },
+  }),
 ];
 
 const content = '<p>lets get started.</p>'
