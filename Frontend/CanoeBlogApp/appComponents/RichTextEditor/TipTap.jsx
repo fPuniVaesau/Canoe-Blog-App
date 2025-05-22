@@ -3,6 +3,7 @@ import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import TextAlign from "@tiptap/extension-text-align";
 import Highlight from "@tiptap/extension-highlight";
+import Placeholder from '@tiptap/extension-placeholder';
 import styles from "./TipTap.module.css";
 import MenuBar from "./MenuBar/MenuBar";
 
@@ -17,14 +18,18 @@ const extensions = [
       class: "highlighter",
     },
   }),
+  Placeholder.configure({
+    emptyEditorClass: "is-editor-empty",
+    placeholder: "lets get started."
+  })
 ];
 
-const content = '<p>lets get started.</p>'
+// const content = '<p>lets get started.</p>'
 
 export default function Tiptap(){
   const editor = useEditor({
     extensions,
-    content,
+    // content,
   });
 
   return (
