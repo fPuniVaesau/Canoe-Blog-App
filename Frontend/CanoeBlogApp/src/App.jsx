@@ -24,27 +24,27 @@ function App() {
   // New way of handlng routes for the application.
   const c_router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<RootLayout/>}>
-        <Route index element={<WelcomePage/>} />
-        <Route path="api/home" element={<HomePage />} />
-        <Route path="api/featured" element={<FeaturedPage />} />
-        <Route path="api/blogs" element={<BlogsLayout/>}>
-          <Route index element={<BlogPostPage />} loader={BlogsLoader}/>
+      <Route path='/' element={<RootLayout />}>
+        <Route index element={<WelcomePage />} />
+        <Route path='api/home' element={<HomePage />} />
+        <Route path='api/featured' element={<FeaturedPage />} />
+        <Route path='api/blogs' element={<BlogsLayout />}>
+          <Route index element={<BlogPostPage />} loader={BlogsLoader} />
         </Route>
+        <Route path='api/newBlog' element={<CreateBlogPost />} />
 
-        <Route path="api/about" element={<AboutPage/>}/>
-        <Route path="api/contact" element={<ContactPage />} />
-        <Route path="api/projects" element={<ProjectsPage />} />
-        <Route path="api/login" element={<LoginPage/>}/>
-        <Route path="api/register" element={<SignUpPage />} />
-        <Route path="*" element={<NotFound/>} />
+        <Route path='api/about' element={<AboutPage />} />
+        <Route path='api/contact' element={<ContactPage />} />
+        <Route path='api/projects' element={<ProjectsPage />} />
+        <Route path='api/login' element={<LoginPage />} />
+        <Route path='api/register' element={<SignUpPage />} />
+        <Route path='*' element={<NotFound />} />
 
         {/* route for development */}
-        <Route path="api/dev" element={<DevPages />}/>
+        <Route path='api/dev' element={<DevPages />} />
       </Route>
-  
     )
-  )
+  );
 
   return (
     <div className={styles.wrapper}>

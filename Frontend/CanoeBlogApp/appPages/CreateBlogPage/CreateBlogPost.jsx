@@ -1,6 +1,7 @@
 import styles from './CreateBlogPost.module.css';
 import { useState } from 'react';
 import axios from 'axios';
+import Tiptap from '../../appComponents/RichTextEditor/TipTap';
 
 export default function CreateBlogPost() {
   const newBlogData = {
@@ -65,16 +66,8 @@ export default function CreateBlogPost() {
           </div>
           <div className={styles.textAreaWrapper}>
             <label htmlFor=''>content</label>
-            <textarea
-              onChange={(e) => {
-                handleChange(e);
-              }}
-              value={blogData.content}
-              name='content'
-              placeholder="Let's get started..."
-              id=''
-              className={styles.textAreaStyling}
-            ></textarea>
+            {/* using a rich text editor */}
+            <Tiptap />
           </div>
         </div>
         {/* button wrapper */}

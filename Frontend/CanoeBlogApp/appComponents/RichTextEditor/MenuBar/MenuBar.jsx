@@ -39,9 +39,9 @@ export default function MenuBar({editor}){
           Strike
         </button>
 
-        <button onClick={() => editor.chain().focus().toggleHighlight().run()} className={editor.isActive('highlight') ? 'is-active' : ''}>
+        {/* <button onClick={() => editor.chain().focus().toggleHighlight().run()} className={editor.isActive('highlight') ? 'is-active' : ''}>
           Highlight
-        </button>
+        </button> */}
 
         <button onClick={() => editor.chain().focus().setTextAlign('left').run()} className={editor.isActive({ textAlign: 'left' }) ? 'is-active' : ''}>
           Left
@@ -55,9 +55,9 @@ export default function MenuBar({editor}){
           Right
         </button>
 
-        <button onClick={() => editor.chain().focus().setTextAlign('justify').run()} className={editor.isActive({ textAlign: 'justify' }) ? 'is-active' : ''}>
+        {/* <button onClick={() => editor.chain().focus().setTextAlign('justify').run()} className={editor.isActive({ textAlign: 'justify' }) ? 'is-active' : ''}>
           Justify
-        </button>
+        </button> */}
       </div>
     </div>
   )

@@ -22,10 +22,10 @@ export default function Tiptap(){
   });
 
   return (
-    <>
+    <div className={styles.editorContainer}>
       <MenuBar editor={editor}/>
       <EditorContent editor={editor} />
-    </>
+    </div>
   )
 }
 

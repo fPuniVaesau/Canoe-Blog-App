@@ -41,8 +41,22 @@
 }
 
 .buttonWrapper > button {
-  background-color: tomato;
-  padding: 5px 10px;
-  border-radius: 7px;
-  width: 100%;
+  align-items: center;
+  padding: 6px 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  border-radius: 6px;
+  border: none;
+  float: right;
+  background: #6E6D70;
+  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
+  color: #DFDEDF;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  transition: .3s ease-in-out;
+}
+
+.buttonWrapper > button:hover {
+  background-color: #9cb92f;
+  letter-spacing: 2px;
 }

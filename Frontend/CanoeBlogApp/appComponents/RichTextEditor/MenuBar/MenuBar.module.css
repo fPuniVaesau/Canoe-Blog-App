@@ -18,6 +18,7 @@
 .buttongroup button:hover{
   background-color: rgb(255, 136, 0);
   letter-spacing: 3px;
+  cursor: pointer;
 }
 
 .buttongroup button:active{
