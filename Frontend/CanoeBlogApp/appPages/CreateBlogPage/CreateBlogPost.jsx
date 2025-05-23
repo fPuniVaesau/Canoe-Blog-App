@@ -4,24 +4,25 @@ import axios from 'axios';
 import Tiptap from '../../appComponents/RichTextEditor/TipTap';
 
 export default function CreateBlogPost() {
+ 
+  // setting the state for the the post fields.
+  const [blogAuthor, setBlogAuthor] = useState('')
+  const [blogTitle, setBlogTitle] = useState('')
+  const [blogContent, setBlogContent] =useState('');
+
+  // creating a new object to send as a post request to the backend server.
   const newBlogData = {
-    author: '',
-    title: '',
-    content: '',
+    blogAuthor,
+    blogTitle,
+    blogContent
   };
 
-  const [blogData, setBlogData] = useState(newBlogData);
-
-  const handleChange = (e) => {
-    setBlogData({ ...blogData, [e.target.name]: e.target.value });
-    console.log(blogData);
-  };
-
+  //on submit we send as post request to the backend with the data we have provided for the blog post.
   const handleSubmit = (e) => {
     e.preventDefault();
     // making a HTTP request to the backend of the application.
     axios
-      .post('http://127.0.0.1:8000/api/blogs/new_post', blogData)
+      .post('http://127.0.0.1:8000/api/blogs/new_post', newBlogData)
       .then((response) => {
         console.log(response);
       })
@@ -32,6 +33,7 @@ export default function CreateBlogPost() {
       setBlogData(newBlogData);
   };
 
+  //returning what will be rendered for our blog post page of our application.
   return (
     <div className={styles.mainContainer}>
       <h2>New Post</h2>
@@ -42,10 +44,10 @@ export default function CreateBlogPost() {
           <input
             className={styles.inputStyling}
             onChange={(e) => {
-              handleChange(e);
+              setBlogAuthor(e.target.value);
             }}
             name='author'
-            value={blogData.author}
+            value={blogAuthor}
             type='text'
           />
         </div>
@@ -57,17 +59,18 @@ export default function CreateBlogPost() {
             <input
               className={styles.inputStyling}
               onChange={(e) => {
-                handleChange(e);
+                setBlogTitle(e.target.value);
               }}
               name='title'
-              value={blogData.title}
+              value={blogTitle}
               type='text'
             />
           </div>
+
           <div className={styles.textAreaWrapper}>
             <label htmlFor=''>content</label>
             {/* using a rich text editor */}
-            <Tiptap />
+            <Tiptap onContentChange={setBlogContent} />
           </div>
         </div>
         {/* button wrapper */}
@@ -81,6 +84,14 @@ export default function CreateBlogPost() {
           </button>
         </div>
       </form>
+      
+      {/* testing to see if the objects and the state has been updated with the correct information. */}
+      {/* <div>
+        <p>{newBlogData.blogAuthor}</p>
+        <p>{newBlogData.blogTitle}</p>
+        <p>{newBlogData.blogContent}</p>
+      </div> */}
+
     </div>
   );
 }

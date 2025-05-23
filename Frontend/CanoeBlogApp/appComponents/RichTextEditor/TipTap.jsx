@@ -26,10 +26,13 @@ const extensions = [
 
 // const content = '<p>lets get started.</p>'
 
-export default function Tiptap(){
+export default function Tiptap({onContentChange}){
   const editor = useEditor({
     extensions,
-    // content,
+    content: "",
+    onUpdate : ({editor})=>{
+      onContentChange(editor.getHTML())
+    }
   });
 
   return (
