@@ -2,12 +2,14 @@ import styles from "./LoginPage.module.css";
 import canoe3D from "../../canoeResources/3dCanoeV2.png";
 import { useState } from "react";
 import axios from "axios"
+import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
  
   //setting our username and password
   const [c_username, setUsername] = useState("");
   const [c_password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   //functions to handle inputs for the username and the passowrd
   const handleUsernameChange = (e) => {
@@ -31,9 +33,13 @@ export default function LoginPage() {
         `http://127.0.0.1:8000/api/authentication/login`,
         userData
       );
-      console.log(response.data);
-      alert(`welcome ${c_username}`);
+      if(response){
+        alert(`welcome ${c_username}`);
+        navigate('api/home', {replace: true});
+        console.log(response.data);
+      }
     } catch (err) {
+      alert("wrong credentials entered")
       console.log(err);
     }
   };
@@ -105,10 +111,7 @@ export default function LoginPage() {
               </div>
 
               <div className={styles.loginButtonWrapper}>
-                <button 
-                className={styles.loginButton}
-                type="submit"
-                >
+                <button className={styles.loginButton} type='submit'>
                   Login
                 </button>
               </div>
