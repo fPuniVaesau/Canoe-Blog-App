@@ -9,11 +9,11 @@ HomePageRouter.get("/", (request, response)=>{
   // console.log(request.session.id);
 
   //this is just to see the session store data
-  request.sessionStore.get(request.session.id, (err, sessionData)=>{
-    if(err) {console.log(err); throw err;};
-    console.log(sessionData);
-  });
-
+  // request.sessionStore.get(request.session.id, (err, sessionData)=>{
+  //   if(err) {console.log(err); throw err;};
+  //   console.log(sessionData);
+  // });
+  console.log(request.session)
   response.status(200).send({msg: "Welcome to the application."})
 });
 
