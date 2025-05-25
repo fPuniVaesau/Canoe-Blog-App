@@ -34,7 +34,6 @@ export default function LoginPage() {
         userData
       );
       if(response.status === 200){
-        alert(`welcome ${c_username}`);
         navigate('/home');
         console.log(response.data);
       }
