@@ -30,9 +30,7 @@ authenticationRouter.get("/status", async (request, response)=>{
 
 //Post request used to login in the user using passport local strategy | username and password.
 authenticationRouter.post("/login", passport.authenticate("local"), (request, response) => {
-    console.log(`Inside the aunthentication endpoint`);
     console.log("Login Successful");
-    console.log(request.user);
     return response.status(200).send({status: `login sucessful, welcome ${request.user.username}`});
 });
 

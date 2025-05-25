@@ -30,7 +30,7 @@ passport.deserializeUser( async (id, done)=>{
 //this function is for validating the user.
 export default passport.use(
   new Strategy(async (username, password, done)=>{
-    console.log("Inside Local Strategy Authenticator");
+    // console.log("Inside Local Strategy Authenticator");
     try {
       //we search the database for the user that matches the username provided by client.
       const foundUser = await User.findOne({username: username});
