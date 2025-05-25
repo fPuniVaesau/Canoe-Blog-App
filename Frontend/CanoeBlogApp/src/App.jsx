@@ -31,7 +31,7 @@ function App() {
         <Route path='blogs' element={<BlogsLayout />}>
           <Route index element={<BlogPostPage />} loader={BlogsLoader} />
         </Route>
-        <Route path='api/newBlog' element={<CreateBlogPost />} />
+        <Route path='newBlog' element={<CreateBlogPost />} />
 
         <Route path='about' element={<AboutPage />} />
         <Route path='contact' element={<ContactPage />} />
