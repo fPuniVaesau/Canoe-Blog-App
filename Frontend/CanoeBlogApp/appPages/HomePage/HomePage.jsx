@@ -9,19 +9,18 @@ import { useEffect } from 'react';
 
 export default function HomePage() {
 
-  const baseUrl = "http://127.0.0.1:8000/";
+  const baseUrl = "http://127.0.0.1:8000/api/home";
 
-  async function accessHome() {
-  try {
-    const response = await axios.get(baseUrl);
-    console.log(response);
-  } catch (error) {
-    console.error(error);
-  }
-}
-  useEffect(async ()=>{
-   accessHome()
-  },[])
+  useEffect(() => {
+    const fetchAndSetCookie = async () => {
+      try {
+        await axios.get(baseUrl); // Important for sending/receiving cookies
+      } catch (error) {
+        console.error('Failed to set cookie:', error);
+      }
+    };
+    fetchAndSetCookie();
+  }, []);
 
 
 
