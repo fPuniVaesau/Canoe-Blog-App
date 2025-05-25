@@ -17,7 +17,10 @@ authenticationRouter.get("/status", async (request, response)=>{
     // Mongoose method to locate the usernamen in the DB if the username attached to the session obj matches.
     let findOneUser = await User.find({username : x_username });
     // if no user is found we send status 400.
-    if(!findOneUser) return response.status(400).send({user: "no user found."});
+    if(!findOneUser){
+        console.log("No user found.");
+        return response.status(400).send({user: "no user found."});
+    } 
     // if we find user we return the response to the user with the username that is logged in and status of the user.
     return response.status(200).send({
         user: x_username, 
@@ -28,6 +31,7 @@ authenticationRouter.get("/status", async (request, response)=>{
 //Post request used to login in the user using passport local strategy | username and password.
 authenticationRouter.post("/login", passport.authenticate("local"), (request, response) => {
     console.log(`Inside the aunthentication endpoint`);
+    console.log("Login Successful");
     console.log(request.user);
     return response.status(200).send({status: `login sucessful, welcome ${request.user.username}`});
 });
@@ -40,6 +44,7 @@ authenticationRouter.post('/logout', (request, response)=>{
     //if user is logged in we log user out.
     request.logout((error)=>{
         if(error) return response.sendStatus(400);
+        console.log("Logout Successful")
         return response.status(200).send({status: "logout successful"});
     })
 });
