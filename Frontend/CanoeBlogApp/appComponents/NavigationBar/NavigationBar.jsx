@@ -9,7 +9,7 @@ export default function NavigationBar() {
         {/* Logo and Navigation (we need to work on stylng the a tags for the navbar)*/}
         <div className={styles.logoNavbarWrapper}>
           <div>
-            <NavLink to='/api/home'>
+            <NavLink to='home'>
                 <img
                   className={styles.mainLogo}
                   src={canoeLogo}
@@ -21,31 +21,31 @@ export default function NavigationBar() {
           <div>
             <nav className={styles.mainNavBarListWrapper}>
               <ul>
-                <NavLink to="api/featured">
+                <NavLink to="featured">
                   <li>
                     <p>Featured</p>
                   </li>
                 </NavLink>
 
-                <NavLink to="api/blogs">
+                <NavLink to="blogs">
                   <li>
                     <p>Blogs</p>
                   </li>
                 </NavLink>
 
-                <NavLink to="api/about">
+                <NavLink to="about">
                   <li>
                     <p>About</p>
                   </li>
                 </NavLink>
 
-                <NavLink to="api/contact">
+                <NavLink to="contact">
                   <li>
                     <p>Contact</p>
                   </li>
                 </NavLink>
 
-                <NavLink to="api/projects">
+                <NavLink to="projects">
                   <li>
                     <p>Projects</p>
                   </li>
@@ -61,11 +61,11 @@ export default function NavigationBar() {
 
         {/* Login and Register (we need to work on styling the a tags for the for the register and login buttons)*/}
         <div className={styles.buttonWrapper}>
-          <NavLink to='/api/login' className={styles.loginBtn}>
+          <NavLink to='login' className={styles.loginBtn}>
             Log In
           </NavLink>
 
-          <NavLink to="/api/register" className={styles.registerBtn}>
+          <NavLink to="register" className={styles.registerBtn}>
             Register
           </NavLink>
         </div>

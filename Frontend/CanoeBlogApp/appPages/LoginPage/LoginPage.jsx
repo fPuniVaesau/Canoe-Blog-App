@@ -33,9 +33,9 @@ export default function LoginPage() {
         `http://127.0.0.1:8000/api/authentication/login`,
         userData
       );
-      if(response){
+      if(response.status === 200){
         alert(`welcome ${c_username}`);
-        navigate('api/home', {replace: true});
+        navigate('home', {replace: true});
         console.log(response.data);
       }
     } catch (err) {
