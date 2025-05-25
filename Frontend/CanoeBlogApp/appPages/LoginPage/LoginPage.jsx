@@ -35,7 +35,7 @@ export default function LoginPage() {
       );
       if(response.status === 200){
         alert(`welcome ${c_username}`);
-        navigate('home', {replace: true});
+        navigate('/home');
         console.log(response.data);
       }
     } catch (err) {
