@@ -4,11 +4,24 @@ import SearchBar from '../../appComponents/SearchBar/SearchBar';
 import OpeningMessage from '../../appComponents/OpeningMessage/OpeningMessage';
 import BlogPostPreviewCard from '../../appComponents/BlogPost/BlogPostPreviewCard';
 import axios from 'axios';
+import { useEffect } from 'react';
 
 
 export default function HomePage() {
 
-  
+  const baseUrl = "http://127.0.0.1:8000/";
+
+  async function accessHome() {
+  try {
+    const response = await axios.get(baseUrl);
+    console.log(response);
+  } catch (error) {
+    console.error(error);
+  }
+}
+  useEffect(async ()=>{
+   accessHome()
+  },[])
 
 
 
