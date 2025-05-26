@@ -6,32 +6,51 @@ import Tiptap from '../../appComponents/RichTextEditor/TipTap';
 export default function CreateBlogPost() {
  
   // setting the state for the the post fields.
-  const [blogAuthor, setBlogAuthor] = useState('')
+  const [blogSummary, setBlogSummary] = useState('')
   const [blogTitle, setBlogTitle] = useState('')
   const [blogContent, setBlogContent] =useState('');
+  const [files, setFiles] = useState("");
 
   // creating a new object to send as a post request to the backend server.
-  const newBlogData = {
-    blogAuthor,
-    blogTitle,
-    blogContent
-  };
+  // const newBlogData = {
+  //   blogAuthor,
+  //   blogTitle,
+  //   blogContent
+  // };
 
   //on submit we send as post request to the backend with the data we have provided for the blog post.
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // making a HTTP request to the backend of the application.
-    axios
-      .post('http://127.0.0.1:8000/api/blogs/new_post', newBlogData)
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   // making a HTTP request to the backend of the application.
+  //   axios
+  //   .post('http://127.0.0.1:8000/api/blogs/new_post', newBlogData)
+  //     .then((response) => {
+  //       console.log(response);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
       
-      setBlogData(newBlogData);
-  };
+  //     setBlogData(newBlogData);
+  // };
+
+
+
+  const handleSubmit = (e) => {
+
+    const data = new FormData();
+    data.set('title', blogTitle);
+    data.set('summary', blogSummary);
+    data.set('content', blogContent);
+    data.set('file', files[0]);
+    console.log(data)
+    e.preventDefault()
+
+    const blogPostData = axios.post("http://127.0.0.1:8000/api/blogs/new_post",
+      {
+
+      })
+  }
 
   //returning what will be rendered for our blog post page of our application.
   return (
@@ -40,14 +59,14 @@ export default function CreateBlogPost() {
       <form onSubmit={handleSubmit} action='submit'>
         {/* author wrapper */}
         <div className={styles.titleWrapper}>
-          <label htmlFor=''>author</label>
           <input
+            placeholder='Title'
             className={styles.inputStyling}
             onChange={(e) => {
-              setBlogAuthor(e.target.value);
+              setBlogTitle(e.target.value);
             }}
-            name='author'
-            value={blogAuthor}
+            name='title'
+            value={blogTitle}
             type='text'
           />
         </div>
@@ -55,22 +74,30 @@ export default function CreateBlogPost() {
         {/* content wrapper */}
         <div className={styles.BlogContentContainer}>
           <div className={styles.titleWrapper}>
-            <label htmlFor=''>title</label>
             <input
+              placeholder='Summary'
               className={styles.inputStyling}
               onChange={(e) => {
-                setBlogTitle(e.target.value);
+                setBlogSummary(e.target.value);
               }}
-              name='title'
-              value={blogTitle}
+              name='summary'
+              value={blogSummary}
               type='text'
             />
           </div>
 
+          <div className={styles.titleWrapper}>
+            <input className={styles.inputStyling}
+              type="file"
+              name='file'
+              onChange={(e)=>{setFiles(e.target.files)}}
+             />
+          </div>
+
           <div className={styles.textAreaWrapper}>
-            <label htmlFor=''>content</label>
+  
             {/* using a rich text editor */}
-            <Tiptap onContentChange={setBlogContent} />
+            <Tiptap name="content" value={blogContent} onContentChange={setBlogContent} />
           </div>
         </div>
         {/* button wrapper */}
@@ -86,11 +113,9 @@ export default function CreateBlogPost() {
       </form>
       
       {/* testing to see if the objects and the state has been updated with the correct information. */}
-      {/* <div>
-        <p>{newBlogData.blogAuthor}</p>
-        <p>{newBlogData.blogTitle}</p>
-        <p>{newBlogData.blogContent}</p>
-      </div> */}
+      <div>
+       {console.log()}
+      </div>
 
     </div>
   );
