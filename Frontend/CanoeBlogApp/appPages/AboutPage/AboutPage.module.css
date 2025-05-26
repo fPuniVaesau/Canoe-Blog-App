@@ -1,0 +1,43 @@
+.mainContainer{
+  /* border: 1px solid green; */
+  margin: 0 2rem;
+}
+
+.title{
+  font-size: 5rem;
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 1rem;
+}
+
+.subTitle{
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 1rem;
+}
+
+.summaryContainer{
+  /* border: 1px solid blue; */
+  display: grid;
+  place-content: center;
+}
+
+.summaryContainer p {
+  font-size: 1rem;
+  place-content: cemter;
+  max-width: 700px;
+}
+
+.imgContainer{
+  display: grid;
+  place-content: center;
+  width: 100%;
+  /* border: 1px solid ; */
+}
+
+.imgContainer img{
+  object-fit: cover;
+  margin: auto;
+  max-width: 700px;
+}
