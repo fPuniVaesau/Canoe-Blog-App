@@ -45,11 +45,11 @@ export default function NavigationBar() {
                   </li>
                 </NavLink>
 
-                <NavLink to="projects">
+                {/* <NavLink to="projects">
                   <li>
                     <p>Projects</p>
                   </li>
-                </NavLink>
+                </NavLink> */}
               </ul>
             </nav>
           </div>
