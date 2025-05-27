@@ -36,7 +36,7 @@ export default function CreateBlogPost() {
 
 
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
 
     const data = new FormData();
     data.set('title', blogTitle);
@@ -46,10 +46,13 @@ export default function CreateBlogPost() {
     console.log(data)
     e.preventDefault()
 
-    const blogPostData = axios.post("http://127.0.0.1:8000/api/blogs/new_post",
+    const blogPostData = await axios.post(
+      "http://127.0.0.1:8000/api/blogs/new_post",
+      data,
       {
-
-      })
+        headers: { "Content-Type": "multipart/form-data" },
+      }
+    );
   }
 
   //returning what will be rendered for our blog post page of our application.
