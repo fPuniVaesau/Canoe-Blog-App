@@ -97,6 +97,11 @@ BlogRouter.get("/dev/myBlogs", async(request, response)=>{
     return response.status(201).send({msg: "ok"});
 })
 
+BlogRouter.post('/create', uploadMiddleware.single('file'), async (request, response)=>{
+    
+    console.log("Inside new create blog route.")
+    return response.status(200).send("OK");
+})
 export default BlogRouter;
 
 // Find the user data, 
