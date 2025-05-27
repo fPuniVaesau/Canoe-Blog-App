@@ -3,8 +3,10 @@ import { query, validationResult, matchedData, checkSchema } from "express-valid
 import BlogPostSchema from "../ExpressValidations/BlogPostSchema.mjs";
 import BlogPost from "../MongooseValidations/MongooseSchemas/BlogPostSchema.mjs";
 import User from "../MongooseValidations/MongooseSchemas/UserSchema.mjs";
+import CreateBlog from "../MongooseValidations/MongooseSchemas/CreateBlogSchema.mjs";
 import passport from "passport";
 import multer from "multer";
+import fs from "fs"
 
 const uploadMiddleware = multer({dest : './Uploads'})
 
@@ -98,9 +100,27 @@ BlogRouter.get("/dev/myBlogs", async(request, response)=>{
 })
 
 BlogRouter.post('/create', uploadMiddleware.single('file'), async (request, response)=>{
+    const { title, summary, content } = request.body
+    const { originalname, path } = request.file;
+
+    //getting the original name for the img file, getting the ext from the original name to append it to the file that is saved into the uploads folder. The new path is the name of the image with the img extension on the end of it. 
+    const parts = originalname.split(".");
+    const ext = parts[parts.length - 1];
+    const newPath = path+"."+ext;
+
+    //we rename the original path to the new path that has the extension.
+    fs.renameSync(path, newPath);
     
-    console.log("Inside new create blog route.")
-    return response.status(200).send("OK");
+    //creating a new blog post document to add to the database (mongoDB)
+    const createBlog = await CreateBlog.create({
+        title,
+        summary,
+        content,
+        image : newPath
+    });
+
+    //we confirm that a blog post is created.
+    return response.status(201).json(createBlog);
 })
 export default BlogRouter;
 
