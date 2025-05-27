@@ -33,6 +33,13 @@ const BlogPostSchema = {
       errorMessage: "Content is not long enough, it must be a minimim of 3 characters long."
     },
     trim: true
+  },
+  summary : {
+    notEmpty: {
+      errorMessage: "Please add brief summary of the blog post."
+    },
+    isString : true,
+    trim: true
   }
 }
 

@@ -4,6 +4,9 @@ import BlogPostSchema from "../ExpressValidations/BlogPostSchema.mjs";
 import BlogPost from "../MongooseValidations/MongooseSchemas/BlogPostSchema.mjs";
 import User from "../MongooseValidations/MongooseSchemas/UserSchema.mjs";
 import passport from "passport";
+import multer from "multer";
+
+const uploadMiddleware = multer({dest : './Uploads'})
 
 //Blog Router
 const BlogRouter = Router();
@@ -53,7 +56,8 @@ BlogRouter.get("/:id", (request, response) => {
 
 // POST request to add new blog post.
 //This route should only be allowed for users ONLY. We can potentially guard this route by checking to see if the users session object contains the proper credentials. Check if the user is registered with the app, usernamen and password are correct and if so we can modify the session accordingly for access to create posts for the blog application.
-BlogRouter.post("/new_post", checkSchema(BlogPostSchema), async(request, response) => {
+BlogRouter.post("/new_post",uploadMiddleware.single('file'), checkSchema(BlogPostSchema), async(request, response) => {
+
     const errorResults = validationResult(request);
     // checks if the validation results is not empty which means there are errors
     if(!errorResults.isEmpty()){
@@ -80,7 +84,7 @@ BlogRouter.post("/new_post", checkSchema(BlogPostSchema), async(request, respons
     const populatedData = await User.findById(newBlog.author).populate("blogs");
     console.log('Updated User: ', populatedData );
    
-    return response.status(200).send({newBlog});
+    return response.json(request.file)
 })
 
 //Devlopement route to llok up all blogs from a specific user
