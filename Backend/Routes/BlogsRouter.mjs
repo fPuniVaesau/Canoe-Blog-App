@@ -58,46 +58,36 @@ BlogRouter.get("/:id", (request, response) => {
 
 // POST request to add new blog post.
 //This route should only be allowed for users ONLY. We can potentially guard this route by checking to see if the users session object contains the proper credentials. Check if the user is registered with the app, usernamen and password are correct and if so we can modify the session accordingly for access to create posts for the blog application.
-BlogRouter.post("/new_post",uploadMiddleware.single('file'), checkSchema(BlogPostSchema), async(request, response) => {
+// BlogRouter.post("/new_post",uploadMiddleware.single('file'), checkSchema(BlogPostSchema), async(request, response) => {
 
-    const errorResults = validationResult(request);
-    // checks if the validation results is not empty which means there are errors
-    if(!errorResults.isEmpty()){
-        return response.status(400).send({validationErrors : errorResults.array()});
-    }
+//     const errorResults = validationResult(request);
+//     // checks if the validation results is not empty which means there are errors
+//     if(!errorResults.isEmpty()){
+//         return response.status(400).send({validationErrors : errorResults.array()});
+//     }
     
-    console.log(request.session.passport);
-    if(!request.session.passport.user){
-        console.log(request.session)
-        return response.status(401).send({msg : "unauthorized user."});
-    }
+//     console.log(request.session.passport);
+//     if(!request.session.passport.user){
+//         console.log(request.session)
+//         return response.status(401).send({msg : "unauthorized user."});
+//     }
 
-    const userID = request.session.passport.user._id
-    // if all fields pass validation, send the confirmed body.
-    const confrimedData = matchedData(request)
-    // console.log(confrimedData);
+//     const userID = request.session.passport.user._id
+//     // if all fields pass validation, send the confirmed body.
+//     const confrimedData = matchedData(request)
+//     // console.log(confrimedData);
  
-    const newBlog = await BlogPost.create({...confrimedData, author : userID});
-    console.log(newBlog);
+//     const newBlog = await BlogPost.create({...confrimedData, author : userID});
+//     console.log(newBlog);
 
-    const foundUser = await User.findById(newBlog.author); //find the user. 
-    await foundUser.blogs.push(newBlog._id);
-    const savedData = await foundUser.save();
-    const populatedData = await User.findById(newBlog.author).populate("blogs");
-    console.log('Updated User: ', populatedData );
+//     const foundUser = await User.findById(newBlog.author); //find the user. 
+//     await foundUser.blogs.push(newBlog._id);
+//     const savedData = await foundUser.save();
+//     const populatedData = await User.findById(newBlog.author).populate("blogs");
+//     console.log('Updated User: ', populatedData );
    
-    return response.json(request.file)
-})
-
-//Devlopement route to llok up all blogs from a specific user
-BlogRouter.get("/dev/myBlogs", async(request, response)=>{
-    const userID = request.session.passport.user._id;
-    const myBlogData = await User.findById(userID)
-    console.log(myBlogData)
-    console.log(myBlogData.blogs);
-
-    return response.status(201).send({msg: "ok"});
-})
+//     return response.json(request.file)
+// })
 
 BlogRouter.post('/create', uploadMiddleware.single('file'), async (request, response)=>{
     const { title, summary, content } = request.body
