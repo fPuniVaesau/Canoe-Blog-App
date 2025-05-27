@@ -46,13 +46,13 @@ export default function CreateBlogPost() {
     console.log(data)
     e.preventDefault()
 
-    const blogPostData = await axios.post(
-      "http://127.0.0.1:8000/api/blogs/new_post",
-      data,
-      {
-        headers: { "Content-Type": "multipart/form-data" },
-      }
-    );
+    const response = await fetch("http://127.0.0.1:8000/api/blogs/new_post", {
+      method : 'POST',
+      body : data
+    })
+
+    console.log(await response.json());
+    
   }
 
   //returning what will be rendered for our blog post page of our application.
