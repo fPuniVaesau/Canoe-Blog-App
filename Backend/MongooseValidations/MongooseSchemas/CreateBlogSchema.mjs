@@ -1,6 +1,10 @@
 import { mongoose, Schema } from "mongoose";
 
 const CreateBlogSchema = new Schema({
+  // author: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: "User"
+  // },
   title: {
     type: String,
     trim: true,

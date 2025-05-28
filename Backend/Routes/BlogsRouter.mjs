@@ -1,14 +1,14 @@
 import { Router } from "express";
 import { query, validationResult, matchedData, checkSchema } from "express-validator";
 import BlogPostSchema from "../ExpressValidations/BlogPostSchema.mjs";
-import BlogPost from "../MongooseValidations/MongooseSchemas/BlogPostSchema.mjs";
+// import BlogPost from "../MongooseValidations/MongooseSchemas/BlogPostSchema.mjs";
 import User from "../MongooseValidations/MongooseSchemas/UserSchema.mjs";
 import CreateBlog from "../MongooseValidations/MongooseSchemas/CreateBlogSchema.mjs";
 import passport from "passport";
 import multer from "multer";
 import fs from "fs"
 
-const uploadMiddleware = multer({dest : './Uploads'})
+const uploadMiddleware = multer({dest : 'Uploads'})
 
 //Blog Router
 const BlogRouter = Router();
@@ -21,7 +21,7 @@ BlogRouter.get("/", async (request, response) => {
     const {query: {filter, value}} = request;
     if(!filter && !value){
        
-        const allBlogs = await CreateBlog.find({})
+        const allBlogs = await CreateBlog.find({});
         console.log(allBlogs);
         return response.json(allBlogs);
     }
