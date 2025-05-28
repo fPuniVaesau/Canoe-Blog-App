@@ -24,16 +24,11 @@ export default function BlogPostPage(){
 
   return(
     <div className={styles.OutterBlogContainer}>
-        <div>
-          {blogPosts.map(post => (<div>
-            <BlogPostPreviewCard title={post.title} summary={post.summary} createdAt={post.createdAt} author={"Filo Vaesau"} image={post.image}/>
-            {/* <h2>{post.title}</h2>
-            <h3>{post.summary}</h3>
-            <p>{post.content}</p> */}
-          </div>))}
-        </div>
-      
-
+      {
+        blogPosts.length > 0 && blogPosts.map(post => (
+        <BlogPostPreviewCard {...post}/>
+        ))
+      }
     </div>
   )
 }

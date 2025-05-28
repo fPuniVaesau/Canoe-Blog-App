@@ -1,5 +1,6 @@
 import styles from './BlogPostPreviewCard.module.css';
 import { useEffect } from 'react';
+import { compareAsc, format, formatISO9075 } from "date-fns";
 import axios from 'axios';
 
 export default function BlogPostPreviewCard({ title, author, content, summary, image, createdAt }) {
@@ -16,20 +17,18 @@ export default function BlogPostPreviewCard({ title, author, content, summary, i
               alt='blog post image'
             />
             <div>
-             <h3>{prompt.title}</h3>
+              <h3>{prompt.title}</h3>
             </div>
             <div className={styles.blogAuthorDateWrapper}>
               <p className={styles.blogAuthor}>{author}</p>
               <div className={styles.dateAndTimeWrapper}>
-                <p>{createdAt}</p>
+                <p>{format(new Date(createdAt), "MMM do, yyyy h:mm aa")}</p>
               </div>
             </div>
           </div>
           {/* blog post discription section */}
           <div className={styles.blogPostDiscriptionWrapper}>
-            <p>
-              {summary}
-            </p>
+            <p>{summary}</p>
           </div>
         </div>
 
