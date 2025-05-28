@@ -92,7 +92,7 @@ BlogRouter.get("/:id", (request, response) => {
 BlogRouter.post('/create', uploadMiddleware.single('file'), async (request, response)=>{
     const { title, summary, content } = request.body
     const { originalname, path } = request.file;
-
+    console.log(request.file);
     //getting the original name for the img file, getting the ext from the original name to append it to the file that is saved into the uploads folder. The new path is the name of the image with the img extension on the end of it. 
     const parts = originalname.split(".");
     const ext = parts[parts.length - 1];
