@@ -2,6 +2,7 @@ import styles from './CreateBlogPost.module.css';
 import { useState } from 'react';
 import axios from 'axios';
 import Tiptap from '../../appComponents/RichTextEditor/TipTap';
+import { useNavigate } from "react-router-dom";
 
 export default function CreateBlogPost() {
  
@@ -10,6 +11,8 @@ export default function CreateBlogPost() {
   const [blogTitle, setBlogTitle] = useState('')
   const [blogContent, setBlogContent] =useState('');
   const [files, setFiles] = useState("");
+  const [redirect, setRedirect] = useState(false)
+ 
 
   // creating a new object to send as a post request to the backend server.
   // const newBlogData = {
@@ -34,7 +37,7 @@ export default function CreateBlogPost() {
   //     setBlogData(newBlogData);
   // };
 
-
+  const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
 
@@ -46,13 +49,18 @@ export default function CreateBlogPost() {
     console.log(data)
     e.preventDefault()
 
-    const response = await fetch("http://127.0.0.1:8000/api/blogs/new_post", {
+    const response = await fetch("http://127.0.0.1:8000/api/blogs/create", {
       method : 'POST',
       body : data
     })
-
-    console.log(await response.json());
     
+    if(response.ok){
+      setRedirect(true)
+    }
+  }
+
+  if(redirect){
+    return navigate("/home")
   }
 
   //returning what will be rendered for our blog post page of our application.
