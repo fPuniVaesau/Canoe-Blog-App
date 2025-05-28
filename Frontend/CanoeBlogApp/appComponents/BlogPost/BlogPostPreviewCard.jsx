@@ -17,7 +17,7 @@ export default function BlogPostPreviewCard({ title, author, content, summary, i
               alt='blog post image'
             />
             <div>
-              <h3>{prompt.title}</h3>
+              <h3>{title}</h3>
             </div>
             <div className={styles.blogAuthorDateWrapper}>
               <p className={styles.blogAuthor}>{author}</p>
