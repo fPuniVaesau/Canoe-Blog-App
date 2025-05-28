@@ -5,7 +5,17 @@ import BlogPostPreviewCard from "../../appComponents/BlogPost/BlogPostPreviewCar
 import {useLoaderData} from "react-router-dom"
 
 export default function BlogPostPage(){
+  const [allBlogs, setAllBlogs] = useState([]);
+
   //use axios to fetch data that we filter.
+    const blogsURL = 'http://localhost:8000/api/blogs';
+  
+    useEffect(async ()=>{
+      const response = await axios.get(blogsURL);
+      const data = await response.json();
+      console.log(data);
+      setAllBlogs(data);
+    }, [])
 
   return(
     <div className={styles.OutterBlogContainer}>

@@ -1,6 +1,10 @@
 import styles from './BlogPostPreviewCard.module.css';
+import { useEffect } from 'react';
+import axios from 'axios';
 
 export default function BlogPostPreviewCard({ imgUrl, author, title }) {
+
+
   return (
     <>
       <div className={styles.blogPostWrapper}>
