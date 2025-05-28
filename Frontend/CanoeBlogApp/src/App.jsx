@@ -5,7 +5,7 @@ import WelcomePage from "../appPages/WelcomePage/Welcome";
 import HomePage from "../appPages/HomePage/HomePage";
 import FeaturedPage from "../appPages/FeaturedPage/FeaturedPage";
 import BlogsLayout from "../Layout/BlogsLayout";
-import BlogPostPage, {BlogsLoader} from "../appPages/BlogPostPage/BlogPostPage";
+import BlogPostPage from "../appPages/BlogPostPage/BlogPostPage";
 import AboutPage from "../appPages/AboutPage/AboutPage";
 import ContactPage from "../appPages/ContactPage/ContactPage"
 import ProjectsPage from "../appPages/ProjectsPage/ProjectsPage";
@@ -29,7 +29,7 @@ function App() {
         <Route path='home' element={<HomePage />} />
         <Route path='featured' element={<FeaturedPage />} />
         <Route path='blogs' element={<BlogsLayout />}>
-          <Route index element={<BlogPostPage />} loader={BlogsLoader} />
+          <Route index element={<BlogPostPage />} />
         </Route>
         <Route path='create' element={<CreateBlogPost />} />
 
