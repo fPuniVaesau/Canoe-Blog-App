@@ -13,7 +13,7 @@ export default function BlogPostPreviewCard({ title, author, content, summary, i
           <div className={styles.blogImgAndAuthorWrapper}>
             <img
               className={styles.blogPostImage}
-              src={image}
+              src={'http://localhost:8000/' + image}
               alt='blog post image'
             />
             <div>
