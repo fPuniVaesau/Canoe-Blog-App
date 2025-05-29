@@ -27,11 +27,6 @@ export default function HomePage() {
   return (
     <>
       <div className={styles.HomePageContainer}>
-        {/* navbar */}
-        {/* <NavigationBar /> */}
-
-        {/* search bar */}
-        {/* <SearchBar /> */}
 
         {/* blog home page message */}
         <OpeningMessage />
