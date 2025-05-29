@@ -46,10 +46,9 @@ export default function HomePage() {
 
         {/* blog home page message */}
         <OpeningMessage />
-
+        <h3>featured blog</h3>
         <div className={styles.blogCardContainer}>
           {/* blog post preview */}
-          <h2>Featured Blog</h2>
           <div>
               {
               blogs.length > 0 && blogs.map(post => (

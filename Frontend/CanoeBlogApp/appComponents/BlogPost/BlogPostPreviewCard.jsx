@@ -20,7 +20,7 @@ export default function BlogPostPreviewCard({ title, author, content, summary, i
               <h3>{title}</h3>
             </div>
             <div className={styles.blogAuthorDateWrapper}>
-              <p className={styles.blogAuthor}>{author}</p>
+              <p className={styles.blogAuthor}>filo.vaesau</p>
               <div className={styles.dateAndTimeWrapper}>
                 <p>{format(new Date(createdAt), "MMM do, yyyy h:mm aa")}</p>
               </div>
