@@ -4,22 +4,38 @@ import SearchBar from '../../appComponents/SearchBar/SearchBar';
 import OpeningMessage from '../../appComponents/OpeningMessage/OpeningMessage';
 import BlogPostPreviewCard from '../../appComponents/BlogPost/BlogPostPreviewCard';
 import axios from 'axios';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 
 export default function HomePage() {
 
-  const baseUrl = "http://127.0.0.1:8000/api/home";
+  const baseUrl = "http://127.0.0.1:8000/api/"
+  const homeEndpoint = "home";
+  const blogsEndpoint = "blogs"
+  const [blogs, setBlogs] = useState([])
+
 
   useEffect(() => {
     const fetchAndSetCookie = async () => {
       try {
-        await axios.get(baseUrl); // Important for sending/receiving cookies
+        await axios.get(`${baseUrl}${homeEndpoint}`); // Important for sending/receiving cookies
       } catch (error) {
         console.error('Failed to set cookie:', error);
       }
     };
     fetchAndSetCookie();
+
+    const fetchFeaturedBlogs = async () => {
+      try{
+        const response = await axios.get(`${baseUrl}${blogsEndpoint}`);
+        const blogData = await response.data;
+        setBlogs(blogData);
+      }
+      catch(error){
+        console.log(error);
+      }
+    }
+    fetchFeaturedBlogs();
   }, []);
 
 
@@ -34,6 +50,13 @@ export default function HomePage() {
         <div className={styles.blogCardContainer}>
           {/* blog post preview */}
           <h2>Featured Blog</h2>
+          <div>
+              {
+              blogs.length > 0 && blogs.map(post => (
+              <BlogPostPreviewCard {...post}/>
+              ))
+              }
+          </div>
         </div>
        
       </div>
