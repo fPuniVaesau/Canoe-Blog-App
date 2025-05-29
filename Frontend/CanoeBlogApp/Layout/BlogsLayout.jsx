@@ -1,9 +1,10 @@
 import { Outlet } from "react-router-dom"
+import SearchBar from "../appComponents/SearchBar/SearchBar"
 
 export default function BlogsLayout(){
   return (
     <>
-      <h1>Blogs Page</h1>
+      <SearchBar />
       <Outlet />
     </>
   )

@@ -1,4 +1,5 @@
 .OutterBlogContainer{
+  margin-top: 1.75rem;
   border: 1px solid lawngreen;
   display: grid;
   grid-template-columns: repeat(4, 1fr);

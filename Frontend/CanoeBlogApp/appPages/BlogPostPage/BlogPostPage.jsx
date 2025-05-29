@@ -3,6 +3,7 @@ import axios from "axios";
 import styles from "./BlogPostPage.module.css"
 import BlogPostPreviewCard from "../../appComponents/BlogPost/BlogPostPreviewCard"
 // import {useLoaderData} from "react-router-dom"
+import SearchBar from "../../appComponents/SearchBar/SearchBar";
 
 export default function BlogPostPage(){
   const [blogPosts, setBlogPosts] = useState([]);
@@ -23,12 +24,13 @@ export default function BlogPostPage(){
     }, [])
 
   return(
-    <div className={styles.OutterBlogContainer}>
+     <div className={styles.OutterBlogContainer}>
       {
         blogPosts.length > 0 && blogPosts.map(post => (
         <BlogPostPreviewCard {...post}/>
         ))
       }
     </div>
+
   )
 }
