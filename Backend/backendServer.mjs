@@ -14,7 +14,7 @@ import multer from "multer";
 // express instance
 const app = express();
 const PORT = process.env.PORT || 8000;
-
+const dirname = import.meta.dirname
 //cors options
 const corsOptions = {
     origin: "*",
@@ -25,9 +25,11 @@ const mongoDBusername = process.env.MONGODB_USER
 const mongoDBpassword = process.env.MONGODB_PW;
 const connectionString =`mongodb+srv://${mongoDBusername}:${mongoDBpassword}@projectcanoe.jcfsi.mongodb.net/?retryWrites=true&w=majority&appName=projectCANOE`;
 
-// middleware 
+// middleware
 app.use(express.json()); //used to format json provided by clients
 app.use(cookieParser()); //used for working with cookies for users sessions.
+app.use("/Uploads", express.static( dirname + "/Uploads"));
+
 app.use(
   session({
     secret: "blogPostBackend",

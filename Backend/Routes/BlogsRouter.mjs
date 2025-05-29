@@ -21,7 +21,7 @@ BlogRouter.get("/", async (request, response) => {
     const {query: {filter, value}} = request;
     if(!filter && !value){
        
-        const allBlogs = await CreateBlog.find({});
+        const allBlogs = await CreateBlog.find({}).sort({createdAt: -1}).limit(10);
         console.log(allBlogs);
         return response.json(allBlogs);
     }
