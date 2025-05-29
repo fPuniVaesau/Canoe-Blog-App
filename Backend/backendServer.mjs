@@ -14,7 +14,8 @@ import multer from "multer";
 // express instance
 const app = express();
 const PORT = process.env.PORT || 8000;
-const dirname = import.meta.dirname
+//used to get the __dirname in express and node using ES Modules.
+const dirname = import.meta.dirname 
 //cors options
 const corsOptions = {
     origin: "*",
@@ -28,8 +29,7 @@ const connectionString =`mongodb+srv://${mongoDBusername}:${mongoDBpassword}@pro
 // middleware
 app.use(express.json()); //used to format json provided by clients
 app.use(cookieParser()); //used for working with cookies for users sessions.
-app.use("/Uploads", express.static( dirname + "/Uploads"));
-
+app.use("/Uploads", express.static( dirname + "/Uploads")); //serving static image files for the blog
 app.use(
   session({
     secret: "blogPostBackend",
