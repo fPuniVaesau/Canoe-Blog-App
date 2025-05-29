@@ -40,17 +40,12 @@ BlogRouter.get("/", async (request, response) => {
 })
 
 // GET request used to fetch Blogs by ID.
-BlogRouter.get("/:id", (request, response) => {
+BlogRouter.get("/:id", async (request, response) => {
     const { params:{id} } = request
-    const parsedID = parseInt(id);
+    const findBlog = await CreateBlog.findById(id);
 
-    if(isNaN(id)){
-        return response.status(400).send({msg: "we hit a snag!"});
-    }
-    // we are searching the demo blog array and filtering through using the provided parameters.
-    const findBlog = demoBlogData.find(blog => blog.id === parsedID);
     if(!findBlog){
-        return response.status(401).send({msg: "we hit a snag!", error: "blog id can not be found."});
+        return response.status(404).send("Blog Cannot be found");
     }
     
     return response.json(findBlog);
