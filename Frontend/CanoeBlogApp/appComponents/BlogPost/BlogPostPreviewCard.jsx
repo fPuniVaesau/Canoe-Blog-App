@@ -2,8 +2,9 @@ import styles from './BlogPostPreviewCard.module.css';
 import { useEffect } from 'react';
 import { compareAsc, format, formatISO9075 } from "date-fns";
 import axios from 'axios';
+import {Link} from "react-router-dom"
 
-export default function BlogPostPreviewCard({ title, author, content, summary, image, createdAt }) {
+export default function BlogPostPreviewCard({_id, title, author, content, summary, image, createdAt }) {
 
 
   return (
@@ -11,14 +12,16 @@ export default function BlogPostPreviewCard({ title, author, content, summary, i
       <div className={styles.blogPostWrapper}>
         <div className={styles.blogPostCardContainer}>
           <div className={styles.blogImgAndAuthorWrapper}>
-            <img
-              className={styles.blogPostImage}
-              src={'http://localhost:8000/' + image}
-              alt='blog post image'
-            />
-            <div>
+            <Link to={`/blogs/${_id}`}>
+              <img
+                className={styles.blogPostImage}
+                src={'http://localhost:8000/' + image}
+                alt='blog post image'
+              />
+            </Link>
+            <Link to={`/blogs/${_id}`}>
               <h3>{title}</h3>
-            </div>
+            </Link>
             <div className={styles.blogAuthorDateWrapper}>
               <p className={styles.blogAuthor}>filo.vaesau</p>
               <div className={styles.dateAndTimeWrapper}>

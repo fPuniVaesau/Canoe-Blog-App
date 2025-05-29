@@ -6,6 +6,7 @@ import HomePage from "../appPages/HomePage/HomePage";
 import FeaturedPage from "../appPages/FeaturedPage/FeaturedPage";
 import BlogsLayout from "../Layout/BlogsLayout";
 import BlogPostPage from "../appPages/BlogPostPage/BlogPostPage";
+import SinglePost from "../appPages/SinglePostPage/SinglePost";
 import AboutPage from "../appPages/AboutPage/AboutPage";
 import ContactPage from "../appPages/ContactPage/ContactPage"
 import ProjectsPage from "../appPages/ProjectsPage/ProjectsPage";
@@ -31,6 +32,7 @@ function App() {
         <Route path='blogs' element={<BlogsLayout />}>
           <Route index element={<BlogPostPage />} />
         </Route>
+        <Route path='blogs/:id' element={<SinglePost />} />
         <Route path='create' element={<CreateBlogPost />} />
 
         <Route path='about' element={<AboutPage />} />
