@@ -30,6 +30,7 @@ export default function HomePage() {
         const response = await axios.get(`${baseUrl}${blogsEndpoint}`);
         const blogData = await response.data;
         setBlogs(blogData);
+        setFeaturedBlog(blogData[0]);
       }
       catch(error){
         console.log(error);
@@ -46,7 +47,9 @@ export default function HomePage() {
 
         {/* blog home page message */}
         <OpeningMessage />
-        <h3>featured blog</h3>
+        <div>
+          <h3>featured blog</h3>
+        </div>
         <div className={styles.blogCardContainer}>
           {/* blog post preview */}
           <div>
@@ -57,7 +60,6 @@ export default function HomePage() {
               }
           </div>
         </div>
-       
       </div>
     </>
   );

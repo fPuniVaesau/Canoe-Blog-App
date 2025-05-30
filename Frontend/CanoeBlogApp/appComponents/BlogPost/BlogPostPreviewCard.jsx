@@ -4,7 +4,7 @@ import { compareAsc, format, formatISO9075 } from "date-fns";
 import axios from 'axios';
 import {Link} from "react-router-dom"
 
-export default function BlogPostPreviewCard({_id, title, author, content, summary, image, createdAt }) {
+export default function BlogPostPreviewCard({_id, title, summary, image, createdAt }) {
 
 
   return (
