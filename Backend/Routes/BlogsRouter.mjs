@@ -39,6 +39,12 @@ BlogRouter.get("/", async (request, response) => {
     // }
 })
 
+BlogRouter.get("/featured", async (request, response) => {
+    const allBlogs = await CreateBlog.find({}).sort({createdAt: -1}).limit(10);
+    console.log(allBlogs[0]);
+    return response.json(allBlogs[0]);
+});
+
 // GET request used to fetch Blogs by ID.
 BlogRouter.get("/:id", async (request, response) => {
     const { params:{id} } = request
@@ -47,42 +53,11 @@ BlogRouter.get("/:id", async (request, response) => {
     if(!findBlog){
         return response.status(404).send("Blog Cannot be found");
     }
-    
+
     return response.json(findBlog);
 })
 
-// POST request to add new blog post.
-//This route should only be allowed for users ONLY. We can potentially guard this route by checking to see if the users session object contains the proper credentials. Check if the user is registered with the app, usernamen and password are correct and if so we can modify the session accordingly for access to create posts for the blog application.
-// BlogRouter.post("/new_post",uploadMiddleware.single('file'), checkSchema(BlogPostSchema), async(request, response) => {
 
-//     const errorResults = validationResult(request);
-//     // checks if the validation results is not empty which means there are errors
-//     if(!errorResults.isEmpty()){
-//         return response.status(400).send({validationErrors : errorResults.array()});
-//     }
-    
-//     console.log(request.session.passport);
-//     if(!request.session.passport.user){
-//         console.log(request.session)
-//         return response.status(401).send({msg : "unauthorized user."});
-//     }
-
-//     const userID = request.session.passport.user._id
-//     // if all fields pass validation, send the confirmed body.
-//     const confrimedData = matchedData(request)
-//     // console.log(confrimedData);
- 
-//     const newBlog = await BlogPost.create({...confrimedData, author : userID});
-//     console.log(newBlog);
-
-//     const foundUser = await User.findById(newBlog.author); //find the user. 
-//     await foundUser.blogs.push(newBlog._id);
-//     const savedData = await foundUser.save();
-//     const populatedData = await User.findById(newBlog.author).populate("blogs");
-//     console.log('Updated User: ', populatedData );
-   
-//     return response.json(request.file)
-// })
 
 BlogRouter.post('/create', uploadMiddleware.single('file'), async (request, response)=>{
     const { title, summary, content } = request.body
