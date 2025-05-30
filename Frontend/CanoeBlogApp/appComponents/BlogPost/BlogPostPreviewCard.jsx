@@ -11,7 +11,9 @@ export default function BlogPostPreviewCard({_id, title, summary, image, created
     <>
       <div className={styles.blogPostWrapper}>
         <div className={styles.blogPostCardContainer}>
+
           <div className={styles.blogImgAndAuthorWrapper}>
+            {/* image */}
             <Link to={`/blogs/${_id}`}>
               <img
                 className={styles.blogPostImage}
@@ -19,23 +21,37 @@ export default function BlogPostPreviewCard({_id, title, summary, image, created
                 alt='blog post image'
               />
             </Link>
-            <Link to={`/blogs/${_id}`}>
-              <h3>{title}</h3>
-            </Link>
-            <div className={styles.blogAuthorDateWrapper}>
-              <p className={styles.blogAuthor}>filo.vaesau</p>
-              <div className={styles.dateAndTimeWrapper}>
-                <p>{format(new Date(createdAt), "MMM do, yyyy h:mm aa")}</p>
+
+
+            <div className={styles.titleNameDate}>
+              {/* main title */}
+              <Link className={styles.mainTitle} to={`/blogs/${_id}`}>
+                <h3>{title}</h3>
+              </Link>
+
+              {/* wrapper with name and date created */}
+              <div className={styles.blogAuthorDateWrapper}>
+                {/* author wrapper */}
+                <div>
+                  <p className={styles.blogAuthor}>filo.vaesau</p>
+                </div>
+
+                {/* date and time wrapper */}
+                <div className={styles.dateAndTimeWrapper}>
+                  <p>{format(new Date(createdAt), "MMM do, yyyy h:mm aa")}</p>
+                </div>
               </div>
+
             </div>
+            
           </div>
           {/* blog post discription section */}
-          <div className={styles.blogPostDiscriptionWrapper}>
+          <div className={styles.blogSummaryWrapper}>
             <p>{summary}</p>
           </div>
         </div>
 
-        <a className={styles.readFullBlogOutter} href=''>
+        {/* <Link to={`/blogs/${_id}`} className={styles.readFullBlogOutter} href=''>
           <div className={styles.readFullBlogContainer}>
             <svg
               className={styles.fullBlogIcon}
@@ -49,7 +65,7 @@ export default function BlogPostPreviewCard({_id, title, summary, image, created
             </svg>
             <p>Open Blog</p>
           </div>
-        </a>
+        </Link> */}
       </div>
     </>
   );
